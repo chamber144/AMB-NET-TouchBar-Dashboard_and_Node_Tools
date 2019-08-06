@@ -104,9 +104,13 @@ You can create a preset in terminal with a background image for your node. When 
 ![alt text](https://github.com/inlak16/AMB-NET-Touchbar-Dashboard/blob/master/tutorial-images/11.png)
 
 
-When you are logged through the <_ - button on the touchbar, BetterTouchTool automatically switches to the Terminal Triggers. There are two options on the top level. Analysis and Node Control.
+When you are logged through the >_ button on the touchbar, BetterTouchTool automatically switches to the Terminal Triggers. There are two options on the top level. Analysis and Node Control.
 Clicking on Analysis gives all kind of information. First you should run 
 
 `docker ps`
 
+and depending on wether you are running ATLAS or APOLLO, you insert the resulting IDs in the logs scripts.
+For APOLLO there is only one ID that has to be put in the parity Logs script. Click Terminal on the left and then double click the analysis group, go to parity logs 1h and click run apple script.
+
+![alt text](https://github.com/inlak16/AMB-NET-Touchbar-Dashboard/blob/master/tutorial-images/12.png)
 
