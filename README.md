@@ -92,10 +92,16 @@ Pushing the price ticker on the touchbar opens Ambrosus Reddit, Ambrosus Twitter
 # Logging into your node
 
 Now that we have the visuals going, lets get to the control Dashboard.
-As mentioned in the beginning the top layers are for logging into one or multiple nodes. You gain access to the scripts again with the run apple script button. Just input your user@ip and save. 
+As mentioned in the beginning, the top layers are for logging into one or multiple nodes. You gain access to the scripts again with the run apple script button. Just input your user@ip and save. 
+
+I recommend running from user instead of root and if you want to have maximum security, install 2FA on your node:
+https://www.linuxbabe.com/ubuntu/two-factor-authentication-ssh-key-ubuntu-18-04
 
 ![alt text](https://github.com/inlak16/AMB-NET-Touchbar-Dashboard/blob/master/tutorial-images/10.png)
 
-Know that having a user instead of root is more save and I additionally recommend using 2FA for your node:
-https://www.linuxbabe.com/ubuntu/two-factor-authentication-ssh-key-ubuntu-18-04
+You can create a preset in terminal with a background image for your node. When you run more than one node, the apple script would switch the background to give more visual overview on where you are logged in. I've uploaded a PSD file and some png images here that can be used.
+
+
+
+
 
