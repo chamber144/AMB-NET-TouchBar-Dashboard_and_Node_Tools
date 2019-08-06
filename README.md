@@ -110,7 +110,7 @@ Clicking on Analysis gives all kind of information. First you should run
 `docker ps`
 
 and depending on wether you are running ATLAS or APOLLO, you insert the resulting IDs in the logs scripts.
-For APOLLO there is only one ID that has to be put in the Parity Logs script. Click Terminal on the left and then double click the analysis group, go to parity logs 1h and click run apple script.
+For APOLLO there is only one ID that has to be put in the Parity Logs script. Click Terminal on the left and then double click the Analysis group, go to Parity Logs 1h and click run apple script to access the script.
 
 ![alt text](https://github.com/inlak16/AMB-NET-Touchbar-Dashboard/blob/master/tutorial-images/12.png)
 
