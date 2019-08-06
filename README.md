@@ -10,7 +10,7 @@ Also note that as soon as the Ambrosus-API is altered in any way, the pulled nod
 
 # Installing BetterTouchTool
 
-So let's get started. My setup only works with a tool called BetterTouchTool, which you can purchase here for 7,5 USD for a 2 year license or try it for 45 days for free:
+So let's get started. My setup only works with a tool called BetterTouchTool, which you can purchase for 7,5 USD for a 2 year license or try for free for 45 days:
 
 https://folivora.ai/buy
 
@@ -34,4 +34,4 @@ On the very left you have the programs that have touchbar presets in them. Close
 
 ![alt text](https://github.com/inlak16/AMB-NET-Touchbar-Dashboard/blob/master/tutorial-images/03.png)
 
-As you can see, I tried to keep it as flexible as possible. from top to bottom there is a login script (opening terminal with ssh connection), a group of several login scripts (In case you plan to run several nodes now that the floodgates to onboarding are open :D ), two price tickers (the first in EUR, which needs coinmarketcap api registration and the second in USD, running directly from Ambrosus API), Apollo Online Status (Online/Offline/Retired), Apollo Main Stats (Balance, Block, Stake), Atlas Online Status (Onboarded/Offline), Atlas Main Stats (Balance,Sheltered Bundels,Stake) and AMB-Net Stats (Daily Bundles, AMB per Bundle).
+As you can see, I tried to keep it as flexible as possible. from top to bottom there is a **login script** (opening terminal with ssh connection), **a group of several login scripts** (In case you plan to run several nodes now that the floodgates to onboarding are open :D ), **two price tickers** (the first in EUR, which needs coinmarketcap api registration and the second in USD, running directly from Ambrosus API), **Apollo Online Status** (Online/Offline/Retired), **Apollo Main Stats** (Balance, Block, Stake), **Atlas Online Status** (Onboarded/Offline), **Atlas Main Stats** (Balance,Sheltered Bundels,Stake) and **AMB-Net Stats** (Daily Bundles, AMB per Bundle).
