@@ -19,7 +19,7 @@ https://bettertouchtool.net/releases/BetterTouchTool.zip
 If you ask yourself if it is worth it, I definitely say, yes. They regularly update the software and compared to other mac tools 7 bucks is not too expensive.
 Luckily this is the only thing that needs to be bought if you are already own a MacBook with Touchbar. AQuite some time I have wondered if it was really worth to get the more expensive MacBook with Touchbar. But now it has gotten really useful for quickly controlling my node on AMB-Net.
 
-# Getting Started
+# Overview of BetterTouchTool and Dashboard
 
 After you have purchased your BetterTouchTool license and installed the software, 
 just open it and import the newest AMB-DASHBOARD*.bbtpreset file that I have put up here for download by using the preset function in the top right corner and click on import.
@@ -45,3 +45,9 @@ To give a better overview here are two setups with different triggers activated 
 
 **AMB USD - Apollo Online Status - Apollo Main Stats - AMB-Net Stats**:
 ![alt text](https://github.com/inlak16/AMB-NET-Touchbar-Dashboard/blob/master/tutorial-images/09.png)
+
+Now lets add you node in there.
+Set visibility of layers accordingly to your nodetype and click on its online status layer.
+On the right side there is the option to switch beteen common, which is mainly UI settings and widget specific which contains the whole Applescript to load a specific nodes online status into the dashboard.
+Just enter your nodes public address into the script und click save at the top.
+![alt text](https://github.com/inlak16/AMB-NET-Touchbar-Dashboard/blob/master/tutorial-images/04.png)
