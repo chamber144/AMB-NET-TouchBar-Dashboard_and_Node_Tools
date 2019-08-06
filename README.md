@@ -1,5 +1,6 @@
 # AMB-NET-Touchbar-Dashboard
-A Macbook Touchbar Dashboard created for easily monitoring and controlling your ATLAS or APOLLO Node on AMB-Net through BetterTouchTool.
+A Macbook Touchbar Dashboard created for easily monitoring and controlling your 
+ATLAS or APOLLO Node on AMB-Net through BetterTouchTool.
 
 Hello fellow AMB-Net node operator. Welcome to this little repository.
 Here I present a complete setup that may help you monitor and control your ATLAS or APOLLO through a MacBook Touchbar.
