@@ -55,9 +55,9 @@ Just enter your nodes public address into the script und click save at the top w
 ![alt text](https://github.com/inlak16/AMB-NET-Touchbar-Dashboard/blob/master/tutorial-images/04.png)
 
 After doing the same with the according Main Stats Layer, the **Shift Command** Dashboard already works.
-After activating the Online Status layer again, click on the "run apple script" button directly beside the layers.
+Activating the Online-Status-Layer again, click on the "run apple script" button directly beside the layers at the top.
 This triggers commands when pushing the area of the touchbar where the building block is appearing.
 
-![alt text](https://github.com/inlak16/AMB-NET-Touchbar-Dashboard/blob/master/tutorial-images/04.png)
+![alt text](https://github.com/inlak16/AMB-NET-Touchbar-Dashboard/blob/master/tutorial-images/07.png)
 
-If you add your adress in here, holding **Shift Command** and pressing on the Online Status of the Dashboard opens the Ambrosus Explorer with your nodes page in Brave. If you dont have the Brave browser installed, you can change the script to safari or chrome.
+If you add your address in here, holding **Shift Command** and pushing on the Online Status of the Dashboard, opens the Ambrosus Explorer with your nodes page in Brave. If you dont have the Brave browser installed, you can change the script to any other browser.
