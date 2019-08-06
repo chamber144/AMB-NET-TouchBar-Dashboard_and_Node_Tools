@@ -38,7 +38,7 @@ As you can see, I tried to keep it as flexible as possible. from top to bottom t
 
 ![alt text](https://github.com/inlak16/AMB-NET-Touchbar-Dashboard/blob/master/tutorial-images/05.png)
 
-To give a better overview here are two setups with different triggers activated and its resulting Dashboard that is activated by holding **Shift Command**.
+To give a better overview here are two setups with different triggers activated and its resulting Dashboard that is activated by holding **Shift Command** on the keyboard.
 
 **AMB USD - Atlas Online Status - Atlas Main Stats - AMB-Net Stats**:
 ![alt text](https://github.com/inlak16/AMB-NET-Touchbar-Dashboard/blob/master/tutorial-images/08.png)
