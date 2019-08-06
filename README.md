@@ -92,7 +92,7 @@ Pushing the price ticker on the touchbar opens Ambrosus Reddit, Ambrosus Twitter
 ### Logging into your node
 
 Now that we have the visuals going, lets get to the control Dashboard.
-As mentioned in the beginning, the top layers are for logging into one or multiple nodes. You gain access to the scripts again with the run apple script button. Just input your user@ip and save. 
+As mentioned in the beginning, the top layers are for logging into one or multiple nodes. You gain access to the scripts again with the run apple script button. Just input your user@ip and save.
 
 I recommend running from user instead of root and if you want to have maximum security, install 2FA on your node:
 https://www.linuxbabe.com/ubuntu/two-factor-authentication-ssh-key-ubuntu-18-04
@@ -110,7 +110,12 @@ Clicking on Analysis gives all kind of information. First you should run
 `docker ps`
 
 and depending on wether you are running ATLAS or APOLLO, you insert the resulting IDs in the logs scripts.
-For APOLLO there is only one ID that has to be put in the parity Logs script. Click Terminal on the left and then double click the analysis group, go to parity logs 1h and click run apple script.
+For APOLLO there is only one ID that has to be put in the Parity Logs script. Click Terminal on the left and then double click the analysis group, go to parity logs 1h and click run apple script.
 
 ![alt text](https://github.com/inlak16/AMB-NET-Touchbar-Dashboard/blob/master/tutorial-images/12.png)
+
+For Atlas there are several IDs that docker ps outputs.
+Atlas worker is the ID für the Atlas Logs scripts and Parity is for the Parity Log script. The Atlas log shows challenges Parity logs shows the Blockchain connection through its Peercount and Blockheight.
+
+For multiple nodes you can use the hidden group of log scripts a level higher in BetterTouchTool.
 
