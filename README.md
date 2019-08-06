@@ -1,4 +1,4 @@
-### AMB-NET-Touchbar-Dashboard
+# AMB-NET-Touchbar-Dashboard
 
 Hello fellow AMB-Net node operators. Welcome to this little repository.
 Here I present a complete setup that may help you monitor and control your ATLAS or APOLLO through a MacBook Touchbar.
@@ -11,7 +11,7 @@ There may be a much better way to pull node information like sheltered bundles f
 Right now the scripts are iterating through many pages of transactions to count an atlas nodes challenges.
 
 
-# Installing BetterTouchTool
+### Installing BetterTouchTool
 
 So let's get started. My setup only works with a tool called BetterTouchTool, which you can purchase for 7,5 USD for a 2 year license or try for free for 45 days:
 
@@ -23,7 +23,7 @@ If you ask yourself if it is worth it, I definitely say, yes. They regularly upd
 Luckily this is the only thing that needs to be bought if you are already own a MacBook with Touchbar. AQuite some time I have wondered if it was really worth to get the more expensive MacBook with Touchbar. But now it has gotten really useful for quickly controlling my node on AMB-Net.
 
 
-# Overview of BetterTouchTool and Dashboard
+### Overview of BetterTouchTool and Dashboard
 
 After you have purchased your BetterTouchTool license and installed the software, 
 just open it and import the newest AMB-DASHBOARD*.bbtpreset file that I have put up here for download by using the preset function in the top right corner and click on import.
@@ -61,7 +61,7 @@ To give a better overview, here are two setups with different triggers activated
 
 
 
-# Setting up your node in the Dashboard
+### Setting up your node in the Dashboard
 
 Now lets add your node in there.
 Set visibility of layers according to your nodetype and click on its online status layer.
@@ -89,7 +89,7 @@ If you add your address in here, holding **Shift Command** and pushing on the On
 Pushing the price ticker on the touchbar opens Ambrosus Reddit, Ambrosus Twitter and Coinmarketcap.
 
 
-# Logging into your node
+### Logging into your node
 
 Now that we have the visuals going, lets get to the control Dashboard.
 As mentioned in the beginning, the top layers are for logging into one or multiple nodes. You gain access to the scripts again with the run apple script button. Just input your user@ip and save. 
