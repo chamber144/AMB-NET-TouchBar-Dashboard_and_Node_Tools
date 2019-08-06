@@ -101,7 +101,7 @@ https://www.linuxbabe.com/ubuntu/two-factor-authentication-ssh-key-ubuntu-18-04
 
 You can create a preset in terminal with a background image for your node. When you run more than one node, the apple script would switch the background to give more visual overview on where you are logged in. I've uploaded a PSD file and some png images here that can be used.
 
-
+![alt text](https://github.com/inlak16/AMB-NET-Touchbar-Dashboard/blob/master/tutorial-images/11.png)
 
 
 
