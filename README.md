@@ -46,8 +46,18 @@ To give a better overview here are two setups with different triggers activated 
 **AMB USD - Apollo Online Status - Apollo Main Stats - AMB-Net Stats**:
 ![alt text](https://github.com/inlak16/AMB-NET-Touchbar-Dashboard/blob/master/tutorial-images/09.png)
 
-Now lets add you node in there.
-Set visibility of layers accordingly to your nodetype and click on its online status layer.
-On the right side there is the option to switch beteen common, which is mainly UI settings and widget specific which contains the whole Applescript to load a specific nodes online status into the dashboard.
-Just enter your nodes public address into the script und click save at the top.
+
+Now lets add your node in there.
+Set visibility of layers according to your nodetype and click on its online status layer.
+On the right side there is the option to switch beteen common, which is mainly UI settings and widget-specific, which contains the whole Applescript to load a nodes online status into the dashboard.
+Just enter your nodes public address into the script und click save at the top when the option comes up.
+
 ![alt text](https://github.com/inlak16/AMB-NET-Touchbar-Dashboard/blob/master/tutorial-images/04.png)
+
+After doing the same with the according Main Stats Layer, the **Shift Command** Dashboard already works.
+After activating the Online Status layer again, click on the "run apple script" button directly beside the layers.
+This triggers commands when pushing the area of the touchbar where the building block is appearing.
+
+![alt text](https://github.com/inlak16/AMB-NET-Touchbar-Dashboard/blob/master/tutorial-images/04.png)
+
+If you add your adress in here, holding **Shift Command** and pressing on the Online Status of the Dashboard opens the Ambrosus Explorer with your nodes page in Brave. If you dont have the Brave browser installed, you can change the script to safari or chrome.
