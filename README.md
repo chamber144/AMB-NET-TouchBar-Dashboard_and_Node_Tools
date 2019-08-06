@@ -13,6 +13,7 @@ Also note that as soon as the Ambrosus-API is altered in any way, the pulled nod
 So let's get started. My setup only works with a tool called BetterTouchTool, which you can purchase here for 7,5 USD for a 2 year license or try it for 45 days for free:
 
 https://folivora.ai/buy
+
 https://bettertouchtool.net/releases/BetterTouchTool.zip
 
 If you ask yourself if it is worth it, I definitely say, yes. They regularly update the software and compared to other mac tools 7 bucks is not too expensive.
@@ -21,7 +22,7 @@ Luckily this is the only thing that needs to be bought if you are already own a 
 # Getting Started
 
 After you have purchased your BetterTouchTool license and installed the software, 
-just open it and import the newest AMB-DASHBOARD*.bbtpreset file that I have put up here for download by using the preset function in the left corner and click on import.
+just open it and import the newest AMB-DASHBOARD*.bbtpreset file that I have put up here for download by using the preset function in the top right corner and click on import.
 
 ![alt text](https://github.com/inlak16/AMB-NET-Touchbar-Dashboard/blob/master/tutorial-images/01.png)
 
