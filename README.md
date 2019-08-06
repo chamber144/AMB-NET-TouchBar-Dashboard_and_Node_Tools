@@ -1,12 +1,14 @@
 # AMB-NET-Touchbar-Dashboard
 
-Hello fellow AMB-Net node operator. Welcome to this little repository.
+Hello fellow AMB-Net node operators. Welcome to this little repository.
 Here I present a complete setup that may help you monitor and control your ATLAS or APOLLO through a MacBook Touchbar.
 
 Please note that this is NOT an official tool created by Ambrosus, but a set that I built to control my own node and found quite useful to share with the whole community. 
-Although I don't expect any dangerous errors, I give no warranty that this is bug-free, so please look at the code, before executing. 
+Although I don't expect any dangerous errors, I give no warranty that this is bug-free, so please look at the code, before running it. 
 
 Also note that as soon as the Ambrosus-API is altered in any way, the pulled node info might not work as expected anymore and changes to the code may be needed. Thats why I'm posting all the code snippets in here seperately aswell.
+There may be a much better way to pull node information like sheltered bundles for Atlas in the future, too. 
+Right now the scripts are iterating through many pages of transactions to count an atlas nodes challenges.
 
 
 # Installing BetterTouchTool
@@ -85,3 +87,15 @@ This triggers commands when pushing the area of the touchbar where the building 
 If you add your address in here, holding **Shift Command** and pushing on the Online Status of your node on the Touchbar opens the Ambrosus Explorer with your nodes page in Brave. If you dont have the Brave browser installed, you can change the script to any other browser.
 
 Pushing the price ticker on the touchbar opens Ambrosus Reddit, Ambrosus Twitter and Coinmarketcap.
+
+
+# Logging into your node
+
+Now that we have the visuals going, lets get to the control Dashboard.
+As mentioned in the beginning the top layers are for logging into one or multiple nodes. You gain access to the scripts again with the run apple script button. Just input your user@ip and save. 
+
+![alt text](https://github.com/inlak16/AMB-NET-Touchbar-Dashboard/blob/master/tutorial-images/10.png)
+
+Know that having a user instead of root is more save and I additionally recommend using 2FA for your node:
+https://www.linuxbabe.com/ubuntu/two-factor-authentication-ssh-key-ubuntu-18-04
+
