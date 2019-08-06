@@ -20,4 +20,5 @@ Luckily this is the only thing that needs to be bought if you are already own a 
 After you have purchased your BetterTouchTool license and installed the software, 
 just open it and import the newest AMB-DASHBOARD*.bbtpreset file that I have put up here for download by using the preset Function in the to left corner.
 
+![alt text](https://github.com/inlak16/AMB-NET-Touchbar-Dashboard/blob/master/tutorial-images/01.png)
 
