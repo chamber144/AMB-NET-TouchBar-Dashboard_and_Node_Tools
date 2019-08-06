@@ -36,12 +36,12 @@ On the very left you have the programs that have touchbar presets in them. Close
 
 As you can see, I tried to keep it as flexible as possible. from top to bottom there is a **login script** (opening terminal with ssh connection), **a group of several login scripts** (In case you plan to run several nodes now that the floodgates to onboarding are open :D ), **two price tickers** (the first in EUR, which needs coinmarketcap api registration and the second in USD, running directly from Ambrosus API), **Apollo Online Status** (Online/Offline/Retired), **Apollo Main Stats** (Balance, Block, Stake), **Atlas Online Status** (Onboarded/Offline), **Atlas Main Stats** (Balance,Sheltered Bundles,Stake) and **AMB-Net Stats** (Daily Bundles, AMB per Bundle).
 
+![alt text](https://github.com/inlak16/AMB-NET-Touchbar-Dashboard/blob/master/tutorial-images/05.png)
+
 To give a better overview here are two setups with different triggers activated and its resulting Dashboard that is activated by holding **Shift Command**.
 
-**AMB USD - Atlas Online Status - Atlas Main Stats - AMB-Net Stats**::
-![alt text](https://github.com/inlak16/AMB-NET-Touchbar-Dashboard/blob/master/tutorial-images/05.png)
+**AMB USD - Atlas Online Status - Atlas Main Stats - AMB-Net Stats**:
 ![alt text](https://github.com/inlak16/AMB-NET-Touchbar-Dashboard/blob/master/tutorial-images/08.png)
 
 **AMB USD - Apollo Online Status - Apollo Main Stats - AMB-Net Stats**:
-![alt text](https://github.com/inlak16/AMB-NET-Touchbar-Dashboard/blob/master/tutorial-images/06.png)
 ![alt text](https://github.com/inlak16/AMB-NET-Touchbar-Dashboard/blob/master/tutorial-images/09.png)
