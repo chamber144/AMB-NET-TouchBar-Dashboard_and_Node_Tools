@@ -30,13 +30,18 @@ When the file has been loaded it should look something like this:
 
 ![alt text](https://github.com/inlak16/AMB-NET-Touchbar-Dashboard/blob/master/tutorial-images/02.png)
 
+
 On the very left you have the programs that have touchbar presets in them. Closer to the center is the area where so called triggers are layered. These are individual setups that contain code snippets and are fully customizable, in the end being the single building blocks of the dashboard. If you click on one of them, you see on the right hand side that the containing parameters are shown. One of the most important is the enabled/visibility parameter to turn on and off single building blocks of the setup.
+
 
 ![alt text](https://github.com/inlak16/AMB-NET-Touchbar-Dashboard/blob/master/tutorial-images/03.png)
 
+
 As you can see, I tried to keep it as flexible as possible. from top to bottom there is a **login script** (opening terminal with ssh connection), **a group of several login scripts** (In case you plan to run several nodes now that the floodgates to onboarding are open :D ), **two price tickers** (the first in EUR, which needs coinmarketcap api registration and the second in USD, running directly from Ambrosus API), **Apollo Online Status** (Online/Offline/Retired), **Apollo Main Stats** (Balance, Block, Stake), **Atlas Online Status** (Onboarded/Offline), **Atlas Main Stats** (Balance,Sheltered Bundles,Stake) and **AMB-Net Stats** (Daily Bundles, AMB per Bundle).
 
+
 ![alt text](https://github.com/inlak16/AMB-NET-Touchbar-Dashboard/blob/master/tutorial-images/05.png)
+
 
 To give a better overview here are two setups with different triggers activated and its resulting Dashboard that is activated by holding **Shift Command** on the keyboard.
 
@@ -46,18 +51,23 @@ To give a better overview here are two setups with different triggers activated 
 **AMB USD - Apollo Online Status - Apollo Main Stats - AMB-Net Stats**:
 ![alt text](https://github.com/inlak16/AMB-NET-Touchbar-Dashboard/blob/master/tutorial-images/09.png)
 
+# Setting up your node in the Dashboard
 
 Now lets add your node in there.
 Set visibility of layers according to your nodetype and click on its online status layer.
 On the right side there is the option to switch beteen common, which is mainly UI settings and widget-specific, which contains the whole Applescript to load a nodes online status into the dashboard.
 Just enter your nodes public address into the script und click save at the top when the option comes up.
 
+
 ![alt text](https://github.com/inlak16/AMB-NET-Touchbar-Dashboard/blob/master/tutorial-images/04.png)
 
+
 After doing the same with the according Main Stats Layer, the **Shift Command** Dashboard already works.
-Activating the Online-Status-Layer again, click on the "run apple script" button directly beside the layers at the top.
-This triggers commands when pushing the area of the touchbar where the building block is appearing.
+Activating the Online-Status-Layer again, now click on the "run apple script" at the top center.
+This triggers commands when pushing the area of the touchbar where the building block/layer is appearing.
+
 
 ![alt text](https://github.com/inlak16/AMB-NET-Touchbar-Dashboard/blob/master/tutorial-images/07.png)
 
-If you add your address in here, holding **Shift Command** and pushing on the Online Status of the Dashboard, opens the Ambrosus Explorer with your nodes page in Brave. If you dont have the Brave browser installed, you can change the script to any other browser.
+
+If you add your address in here, holding **Shift Command** and pushing on the Online Status of your node on the Touchbar opens the Ambrosus Explorer with your nodes page in Brave. If you dont have the Brave browser installed, you can change the script to any other browser.
