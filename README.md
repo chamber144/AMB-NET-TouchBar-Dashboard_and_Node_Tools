@@ -119,3 +119,9 @@ Atlas worker is the ID für the Atlas Logs scripts and Parity is for the Parity 
 
 For multiple nodes you can use the hidden group of log scripts a level higher in BetterTouchTool.
 
+![alt text](https://github.com/inlak16/AMB-NET-Touchbar-Dashboard/blob/master/tutorial-images/14.png)
+
+From left to right here are the scripts in teh Analysis Group:
+![alt text](https://github.com/inlak16/AMB-NET-Touchbar-Dashboard/blob/master/tutorial-images/13.png)
+
+
