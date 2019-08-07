@@ -63,9 +63,9 @@ To give a better overview, here are two setups with different triggers activated
 
 ### Setting up your node in the Dashboard
 
-Now lets add your node in there.
-Set visibility of layers according to your nodetype and click on its online status layer.
-On the right side there is the option to switch beteen common, which is mainly UI settings and widget-specific, which contains the whole Applescript to load a nodes online status into the dashboard.
+Now lets add your node in there. The addresses set for demonstration purposes are just the longest running nodes I could find and are likely run by Ambrosus.
+Set visibility of layers according to your nodetype and click on the online status layer.
+On the right side there is the option to switch between common, which is mainly UI settings and widget-specific, which contains the whole Applescript to load a nodes online status into the dashboard.
 Just enter your nodes public address into the script und click save at the top when the option comes up.
 
 
