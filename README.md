@@ -90,17 +90,17 @@ If you add your nodes public address in here, holding **Shift Command** and push
 Pushing the price ticker on the touchbar opens Ambrosus Reddit, Ambrosus Twitter and Coinmarketcap.
 
 
-### Logging into your node
+### Logging into your node and preparations of the control Dashboard
 
 Now that we have the visuals going, lets get to the control Dashboard.
-As mentioned in the beginning, the top layers are for logging into one or multiple nodes. You gain access to the scripts again with the run apple script button. Just input your user@ip and save.
+As mentioned in the beginning, the top layers in BetterTouchTool are for logging into one or multiple nodes. You gain access to the scripts again with the run apple script button. Just input your user@ip and save.
 
 I recommend running from user instead of root and if you want to have maximum security, install 2FA on your node:
 https://www.linuxbabe.com/ubuntu/two-factor-authentication-ssh-key-ubuntu-18-04
 
 ![alt text](https://github.com/inlak16/AMB-NET-Touchbar-Dashboard/blob/master/tutorial-images/10.png)
 
-You can create a preset in terminal with a background image for your node. When you run more than one node, the apple script would switch the background to give more visual overview on where you are logged in. If you use the Exit scripts that are on every level of the Control Dashboard, the Terminal preset is automatically set back to basic. If you are not using this, you may have to create a preset in Terminal called basic or alter all the exit scripts. I've uploaded a PSD file and some png images here that you can use as Node Backdrop.
+You can create a preset in terminal with a background image for your node. When you run more than one node, the apple script would switch the background to give more visual overview on where you are logged in. If you use the Exit scripts that are on every level of the control Dashboard, the Terminal preset is automatically set back to Basic. If you are not using this, you may have to create a preset in Terminal called Basic or alter all the exit scripts. I've uploaded a PSD file and some png images here that you can use as Node Backdrop.
 
 ![alt text](https://github.com/inlak16/AMB-NET-Touchbar-Dashboard/blob/master/tutorial-images/11.png)
 
@@ -108,7 +108,7 @@ You can create a preset in terminal with a background image for your node. When 
 When you are logged in through the >_ button on the touchbar, BetterTouchTool automatically switches to the Triggers for the Terminal application on your Touch bar. There are two options on the top level. Analysis and Node Control.
 ![alt text](https://github.com/inlak16/AMB-NET-Touchbar-Dashboard/blob/master/tutorial-images/14.png)
 
-Clicking on Analysis on the Touch bar gives all kind of information. First you should run 
+Clicking on Analysis on the Touch bar gives all kind of options. But first you should run 
 
 `docker ps`
 
@@ -120,10 +120,19 @@ For APOLLO there is only one ID that has to be put in the Parity Logs script. Cl
 For Atlas there are several IDs that docker ps outputs.
 Atlas worker is the ID für the Atlas Logs scripts and Parity is for the Parity Log script. The Atlas log shows challenges and Parity logs shows the Blockchain connection through its Peercount and Blockheight.
 
-To save the log commands for multiple nodes, you can use the hidden group of log scripts a level higher in BetterTouchTool.
+To save the log commands for multiple nodes, you can use the hidden group of log scripts a level higher outside the Analysis Group in BetterTouchTool.
+
+### Analysis functions on the control Dashboard
 
 From left to right here are the scripts in the Analysis Group that you can scroll through on your Touch bar:
 **Atlas Logs 1h - Parity Logs 1h - Sheltered Bundles - TimeServer - TempBannedIP - BruteForce Protection - Granted Logins - Failed Logins - SSH Connections - Parity Version**
 ![alt text](https://github.com/inlak16/AMB-NET-Touchbar-Dashboard/blob/master/tutorial-images/13.png)
+
+Just disable unneeded functions by turning of their Triggers visibility in BetterTouchTool.
+
+The **Sheltered Bundles** function gives ATLAS node operators certainty of the Bundles held on their nodes harddrive.
+If you click this on the Touch Bar, it outputs a text in Terminal with the number of sheltered Bundles in the very last line.
+
+
 
 
