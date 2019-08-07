@@ -90,6 +90,8 @@ If you add your nodes public address in here, holding **Shift Command** and push
 
 Pushing the price ticker on the touchbar opens Ambrosus Reddit, Ambrosus Twitter and Coinmarketcap.
 
+Clicking the grey AMB-net Info part of the Dashboar don the Touch bar opens the main page of the Ambrosus-Explorer.
+
 
 ### Logging into your node and preparations of the control Dashboard
 
