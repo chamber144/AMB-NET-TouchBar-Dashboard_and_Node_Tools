@@ -85,7 +85,7 @@ This triggers commands when pushing the area of the touchbar where the building 
 
 
 
-If you add your address in here, holding **Shift Command** and pushing on the Online Status of your node on the Touchbar opens the Ambrosus Explorer with your nodes page in Brave. If you dont have the Brave browser installed, you can change the script to any other browser.
+If you add your nodes public address in here, holding **Shift Command** and pushing on the Online Status of your node on the Touchbar opens the Ambrosus Explorer with your nodes page in Brave. If you dont have the Brave browser installed, you can change the script to any other browser.
 
 Pushing the price ticker on the touchbar opens Ambrosus Reddit, Ambrosus Twitter and Coinmarketcap.
 
