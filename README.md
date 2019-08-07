@@ -100,25 +100,25 @@ https://www.linuxbabe.com/ubuntu/two-factor-authentication-ssh-key-ubuntu-18-04
 
 ![alt text](https://github.com/inlak16/AMB-NET-Touchbar-Dashboard/blob/master/tutorial-images/10.png)
 
-You can create a preset in terminal with a background image for your node. When you run more than one node, the apple script would switch the background to give more visual overview on where you are logged in. If you use the Exit scripts that are on everey level of the Control Dashboard, the Terminal preset is automatically set back to basic. I've uploaded a PSD file and some png images here that you can use as Node Backdrop.
+You can create a preset in terminal with a background image for your node. When you run more than one node, the apple script would switch the background to give more visual overview on where you are logged in. If you use the Exit scripts that are on every level of the Control Dashboard, the Terminal preset is automatically set back to basic. If you are not using this, you may have to create a preset in Terminal called basic or alter all the exit scripts. I've uploaded a PSD file and some png images here that you can use as Node Backdrop.
 
 ![alt text](https://github.com/inlak16/AMB-NET-Touchbar-Dashboard/blob/master/tutorial-images/11.png)
 
 
-When you are logged through the >_ button on the touchbar, BetterTouchTool automatically switches to the Terminal Triggers. There are two options on the top level. Analysis and Node Control.
-Clicking on Analysis gives all kind of information. First you should run 
+When you are logged in through the >_ button on the touchbar, BetterTouchTool automatically switches to the Triggers for the Terminal application on your Touch bar. There are two options on the top level. Analysis and Node Control.
+Clicking on Analysis on the Touch bar gives all kind of information. First you should run 
 
 `docker ps`
 
-and depending on wether you are running ATLAS or APOLLO, you insert the resulting IDs in the logs scripts.
+and depending on wether you are running ATLAS or APOLLO, you insert the resulting IDs in the logs scripts in BetterTouchTool.
 For APOLLO there is only one ID that has to be put in the Parity Logs script. Click Terminal on the left and then double click the Analysis group, go to Parity Logs 1h and click run apple script to access the script.
 
 ![alt text](https://github.com/inlak16/AMB-NET-Touchbar-Dashboard/blob/master/tutorial-images/12.png)
 
 For Atlas there are several IDs that docker ps outputs.
-Atlas worker is the ID für the Atlas Logs scripts and Parity is for the Parity Log script. The Atlas log shows challenges Parity logs shows the Blockchain connection through its Peercount and Blockheight.
+Atlas worker is the ID für the Atlas Logs scripts and Parity is for the Parity Log script. The Atlas log shows challenges and Parity logs shows the Blockchain connection through its Peercount and Blockheight.
 
-For multiple nodes you can use the hidden group of log scripts a level higher in BetterTouchTool.
+To save the log commands for multiple nodes, you can use the hidden group of log scripts a level higher in BetterTouchTool.
 
 ![alt text](https://github.com/inlak16/AMB-NET-Touchbar-Dashboard/blob/master/tutorial-images/14.png)
 
