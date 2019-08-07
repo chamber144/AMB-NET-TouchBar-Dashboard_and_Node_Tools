@@ -106,12 +106,14 @@ You can create a preset in terminal with a background image for your node. When 
 
 
 When you are logged in through the >_ button on the touchbar, BetterTouchTool automatically switches to the Triggers for the Terminal application on your Touch bar. There are two options on the top level. Analysis and Node Control.
+![alt text](https://github.com/inlak16/AMB-NET-Touchbar-Dashboard/blob/master/tutorial-images/14.png)
+
 Clicking on Analysis on the Touch bar gives all kind of information. First you should run 
 
 `docker ps`
 
-and depending on wether you are running ATLAS or APOLLO, you insert the resulting IDs in the logs scripts in BetterTouchTool.
-For APOLLO there is only one ID that has to be put in the Parity Logs script. Click Terminal on the left and then double click the Analysis group, go to Parity Logs 1h and click run apple script to access the script.
+in Terminal and depending on wether you are running ATLAS or APOLLO, you insert the resulting IDs in the logs scripts in BetterTouchTool.
+For APOLLO there is only one ID that has to be put in the Parity Logs script. Click Terminal on the left in BetterTouchTool and then double click the Analysis group, go to Parity Logs 1h and click run apple script to access the script.
 
 ![alt text](https://github.com/inlak16/AMB-NET-Touchbar-Dashboard/blob/master/tutorial-images/12.png)
 
@@ -120,9 +122,8 @@ Atlas worker is the ID für the Atlas Logs scripts and Parity is for the Parity 
 
 To save the log commands for multiple nodes, you can use the hidden group of log scripts a level higher in BetterTouchTool.
 
-![alt text](https://github.com/inlak16/AMB-NET-Touchbar-Dashboard/blob/master/tutorial-images/14.png)
-
-From left to right here are the scripts in teh Analysis Group:
+From left to right here are the scripts in the Analysis Group that you can scroll through on your Touch bar:
+**Atlas Logs 1h - Parity Logs 1h - Sheltered Bundles - TimeServer - TempBannedIP - BruteForce Protection - Granted Logins - Failed Logins - SSH Connections - Parity Version**
 ![alt text](https://github.com/inlak16/AMB-NET-Touchbar-Dashboard/blob/master/tutorial-images/13.png)
 
 
