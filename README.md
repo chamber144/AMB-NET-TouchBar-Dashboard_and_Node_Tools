@@ -63,7 +63,8 @@ To give a better overview, here are two setups with different triggers activated
 
 ### Setting up your node in the Dashboard
 
-Now lets add your node in there. The addresses set for demonstration purposes are just the longest running nodes I could find and are likely run by Ambrosus.
+The addresses set for demonstration purposes are just the longest running nodes I could find and are likely run by Ambrosus.
+Now lets add your node in there.
 Set visibility of layers according to your nodetype and click on the online status layer.
 On the right side there is the option to switch between common, which is mainly UI settings and widget-specific, which contains the whole Applescript to load a nodes online status into the dashboard.
 Just enter your nodes public address into the script und click save at the top when the option comes up.
@@ -99,7 +100,7 @@ https://www.linuxbabe.com/ubuntu/two-factor-authentication-ssh-key-ubuntu-18-04
 
 ![alt text](https://github.com/inlak16/AMB-NET-Touchbar-Dashboard/blob/master/tutorial-images/10.png)
 
-You can create a preset in terminal with a background image for your node. When you run more than one node, the apple script would switch the background to give more visual overview on where you are logged in. I've uploaded a PSD file and some png images here that can be used.
+You can create a preset in terminal with a background image for your node. When you run more than one node, the apple script would switch the background to give more visual overview on where you are logged in. If you use the Exit scripts that are on everey level of the Control Dashboard, the Terminal preset is automatically set back to basic. I've uploaded a PSD file and some png images here that you can use as Node Backdrop.
 
 ![alt text](https://github.com/inlak16/AMB-NET-Touchbar-Dashboard/blob/master/tutorial-images/11.png)
 
