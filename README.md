@@ -129,7 +129,7 @@ From left to right here are the scripts in the Analysis Group that you can scrol
 **Atlas Logs 1h - Parity Logs 1h - Sheltered Bundles - TimeServer - TempBannedIP - BruteForce Protection - Granted Logins - Failed Logins - SSH Connections - Parity Version**
 ![alt text](https://github.com/inlak16/AMB-NET-Touchbar-Dashboard/blob/master/tutorial-images/13.png)
 
-Just disable unneeded functions by disabling their Triggers visibility in BetterTouchTool.
+Just disable unneeded functions by turning off their Triggers visibility in BetterTouchTool.
 
 The **Sheltered Bundles** function gives ATLAS node operators certainty of the Bundles held on their nodes harddrive.
 If you click this on the Touch Bar, it outputs a text in Terminal with the number of sheltered Bundles in the very last line.
