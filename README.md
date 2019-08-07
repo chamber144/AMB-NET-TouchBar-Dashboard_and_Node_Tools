@@ -9,7 +9,7 @@ Although I don't expect any dangerous errors to occur, I give no warranty that t
 
 Also note that as soon as the Ambrosus-API is altered in any way, the pulled node info might not work as expected anymore and changes to the code may be needed. Thats why I'm posting all the code snippets in here seperately aswell.
 _These code snippets can be encapsulated as executable apple scripts with Automator, too. So they may be helpful even without a Touch bar._
-There may be a much better way to pull node information like sheltered bundles for Atlas in the future, too. 
+There may be a much better way to pull node information like sheltered bundles for Atlas in the future. 
 Right now the scripts are iterating through many pages of transactions to count an atlas nodes challenges.
 
 
