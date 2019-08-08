@@ -95,7 +95,7 @@ If you add your nodes public address in here, holding **Shift Command** and push
 
 Pushing the price ticker on the touchbar opens Ambrosus Reddit, Ambrosus Twitter and Coinmarketcap.
 
-Clicking the grey AMB-net Info part of the Dashboar don the Touch bar opens the main page of the Ambrosus-Explorer.
+Tapping the grey AMB-net Info part of the Dashboard on the Touch bar opens the main page of the Ambrosus-Explorer.
 
 
 ### Logging into your node and preparations of the control Dashboard
@@ -111,7 +111,7 @@ https://www.linuxbabe.com/ubuntu/two-factor-authentication-ssh-key-ubuntu-18-04
 You can create a preset in terminal with a background image for your node. And if you run more than one node, the apple script would switch the background according to the node to give a better visual overview on where you are logged in. If you use the Exit scripts that are on every level of the control Dashboard, the Terminal preset is automatically reset to Basic. If you are not using this, you may have to create a preset in Terminal called Basic or alter all the exit scripts. I've uploaded a PSD Photoshop file and created some network graphics variations, so you can fully customize your node backdrop image with your Server location and public address. For those of you that have no option to ob
 pen a Photoshop file, I have generated some variations of the Backdrop and uploaded them here as png images. All of these can be found in the Node-Backdrop folder.
 
-Layeroverview of the Photoshop file:
+Layer overview of the Photoshop file:
 ![alt text](https://github.com/inlak16/AMB-NET-Touchbar-Dashboard/blob/master/tutorial-images/15.png)
 
 Terminal Profile Settings with preset "Amb1" having loaded a Backdrop image called "Amb_node_1.png":
@@ -121,7 +121,7 @@ Terminal Profile Settings with preset "Amb1" having loaded a Backdrop image call
 When you are logged in through the >_ button on the touchbar, BetterTouchTool automatically switches to the Triggers for the Terminal application on your Touch bar. There are two options on the top level. Analysis and Node Control.
 ![alt text](https://github.com/inlak16/AMB-NET-Touchbar-Dashboard/blob/master/tutorial-images/14.png)
 
-Clicking on Analysis on the Touch bar gives all kind of options. But first you should run 
+Tapping on Analysis on the Touch bar gives all kind of options. But set set things up, first you should run 
 
 `docker ps`
 
@@ -131,7 +131,7 @@ For APOLLO there is only one ID that has to be put in the Parity Logs script. Cl
 ![alt text](https://github.com/inlak16/AMB-NET-Touchbar-Dashboard/blob/master/tutorial-images/12.png)
 
 For Atlas there are several IDs that docker ps outputs.
-Atlas worker is the ID für the Atlas Logs scripts and Parity is for the Parity Log script. The Atlas log shows challenges and Parity logs shows the Blockchain connection through its Peercount and Blockheight.
+Atlas worker is the ID für the Atlas Logs scripts and Parity is for the Parity Log script. The Atlas log shows challenges and Parity logs shows the Blockchain connection through its Peercount (should be higher than 15 in my experience) and Blockheight (if node is showing offline, compare the Blockheight with the Ambrosus Explorer and see if the node is still syncing).
 
 To save the log commands for multiple nodes, you can use the hidden group of log scripts a level higher outside the Analysis Group in BetterTouchTool.
 
@@ -144,8 +144,13 @@ From left to right here are the scripts in the Analysis Group that you can scrol
 Just disable unneeded functions by turning off their Triggers visibility in BetterTouchTool.
 
 The **Sheltered Bundles** function gives ATLAS node operators certainty of the Bundles held on their nodes harddrive.
-If you click this on the Touch Bar, it outputs a text in Terminal with the number of sheltered Bundles in the very last line.
+If you tap this on the Touch Bar, it outputs a text in Terminal with the number of sheltered Bundles in the very last line.
 
+**TimeServer** returns the connection to different ntp timeservers and its delay. I have this installed to be sure, my node has the correct time. You can install ntp simply by running the following. The last line is the same as in this function to query connection to timeservers:
 
+´sudo timedatectl set-ntp off
+timedatectl status
+sudo apt install ntp
+ntpq -p´
 
 
