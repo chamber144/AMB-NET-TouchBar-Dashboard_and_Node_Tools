@@ -112,7 +112,7 @@ I have generated some variations of the Backdrop and uploaded them here as png i
 
 
 Layer overview of the Photoshop file:
-![alt text](https://github.com/inlak16/AMB-NET-Touchbar-Dashboard/blob/master/tutorial-images/15.png)
+![alt text](https://github.com/inlak16/AMB-NET-Touchbar-Dashboard/blob/master/tutorial-images/15_.png)
 
 
 Terminal Profile Settings with preset "Amb1" having loaded a Backdrop image called "Amb_node_1.png":
