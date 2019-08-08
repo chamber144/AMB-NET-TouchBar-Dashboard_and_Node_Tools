@@ -207,9 +207,10 @@ I'm excited to hear about ideas and useful commands that can be implemented and 
 Please feel free to get back to me on Ambrosus slack (user inla). 
 I'm planning to keep updating this repository as my time suits it.
 
-If you like this project and its functionality, I am grateful for any tip in AMB or ETH:
+If you like this project and its functionality, here is my tip jar that gratefully accepts AMB or ETH:
 _0xaBA817a774bf3dB1faB3c5cf867a82A683D74D22_
 
 
+I'm excited for the future of AMB-Net :D !
 
 
