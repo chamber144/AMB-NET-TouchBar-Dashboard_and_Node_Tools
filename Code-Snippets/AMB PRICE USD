@@ -1,0 +1,66 @@
+
+set mJson to do shell script "curl -s 'https://token.ambrosus.com/'"
+set AppleScript's text item delimiters to {","}
+set keyValueList to (every text item in mJson) as list
+set AppleScript's text item delimiters to ""
+
+set theKeyValuePair to item 13 of keyValueList
+set AppleScript's text item delimiters to {": "}
+set theKeyValueBufferList to (every text item in theKeyValuePair) as list
+set AppleScript's text item delimiters to ""
+set usdPrice to item 2 of theKeyValueBufferList
+
+
+set theKeyValuePair to item 11 of keyValueList
+set AppleScript's text item delimiters to {": "}
+set theKeyValueBufferList to (every text item in theKeyValuePair) as list
+set AppleScript's text item delimiters to ""
+set change to item 2 of theKeyValueBufferList
+
+set usdPrice to RemoveFromString("\"", usdPrice)
+set usdPrice to RoundImperialNumberToThreeDecimals(usdPrice)
+set change to RemoveFromString("\"", change)
+set change to RoundImperialNumberToOneDecimals(change)
+
+set arrow to " ▲"
+
+if change < 0 then
+	set arrow to " ▼"
+end if
+
+set unformatedValue to " $ " & usdPrice & " " & arrow & " " & change & "%"
+
+return RemoveFromString("\"", unformatedValue)
+
+
+-- remove character or string from given string
+on RemoveFromString(CharOrString, txt)
+	set AppleScript's text item delimiters to CharOrString
+	set temp to txt's text items
+	set AppleScript's text item delimiters to ""
+	return temp as text
+end RemoveFromString
+
+on RoundImperialNumberToThreeDecimals(txt)
+	set AppleScript's text item delimiters to "."
+	set decimals to text item 2 of txt
+	if (count decimals) < 3 then
+		set decimals to decimals & "0"
+	end if
+	set decimals to (text 1 thru 3 of decimals)
+	set theNumber to text item 1 of txt & "." & decimals
+	set AppleScript's text item delimiters to ""
+	return theNumber
+end RoundImperialNumberToThreeDecimals
+
+on RoundImperialNumberToOneDecimals(txt)
+	set AppleScript's text item delimiters to "."
+	set decimals to text item 2 of txt
+	if (count decimals) < 1 then
+		set decimals to decimals & "0"
+	end if
+	set decimals to (text 1 thru 1 of decimals)
+	set theNumber to text item 1 of txt & "." & decimals
+	set AppleScript's text item delimiters to ""
+	return theNumber
+end RoundImperialNumberToOneDecimals
