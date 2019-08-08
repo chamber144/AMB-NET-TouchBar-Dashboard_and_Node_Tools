@@ -1,0 +1,62 @@
+-- get AMB-NET stats info
+set mJson to do shell script "curl -s 'https://explorer-api.ambrosus.com/info'"
+set AppleScript's text item delimiters to {","}
+set keyValueList to (every text item in mJson) as list
+set AppleScript's text item delimiters to ""
+
+set theKeyValuePair to item 9 of keyValueList
+set AppleScript's text item delimiters to {": "}
+set theKeyValueBufferList to (every text item in theKeyValuePair) as list
+set AppleScript's text item delimiters to ""
+set apollos to item 2 of theKeyValueBufferList
+
+-- get network bundles
+set theKeyValuePair to item 30 of keyValueList
+set AppleScript's text item delimiters to {": "}
+set theKeyValueBufferList to (every text item in theKeyValuePair) as list
+set AppleScript's text item delimiters to ""
+set dailybundles to item 2 of theKeyValueBufferList
+
+-- get bundlecost
+set theKeyValuePair to item 32 of keyValueList
+set AppleScript's text item delimiters to {": "}
+set theKeyValueBufferList to (every text item in theKeyValuePair) as list
+set AppleScript's text item delimiters to ""
+set bundlecost to item 2 of theKeyValueBufferList
+
+
+set dailybundles to RemoveFromString("\"", dailybundles)
+set apollos to RemoveFromString("\"", apollos)
+set bundlecost to returnNumbersInString(bundlecost)
+
+
+set unformatedValue to dailybundles & " Bundles | " & bundlecost & " AMB "
+return RemoveFromString("\"", unformatedValue)
+
+
+------- functions below -----------------------
+
+-- remove character or string from given string
+on RemoveFromString(CharOrString, txt)
+	set AppleScript's text item delimiters to CharOrString
+	set temp to txt's text items
+	set AppleScript's text item delimiters to ""
+	return temp as text
+end RemoveFromString
+
+-- convert string to numbers
+on returnNumbersInString(inputString)
+	set s to quoted form of inputString
+	do shell script "sed s/[a-zA-Z\\']//g <<< " & s
+	set dx to the result
+	set numlist to {}
+	repeat with i from 1 to count of words in dx
+		set this_item to word i of dx
+		try
+			set this_item to this_item as number
+			set the end of numlist to this_item
+		end try
+	end repeat
+	return numlist
+end returnNumbersInString
+
