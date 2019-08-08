@@ -1,0 +1,194 @@
+-- input your Apollo node Address here:
+set nodeaddress to "0x0000000000000000000000000000000000000000"
+
+
+
+-- get info around particular Apollo node
+set mJson to do shell script "curl -s 'https://explorer-api.ambrosus.com/apollos'"
+set AppleScript's text item delimiters to {nodeaddress}
+set keyNodeList to (every text item in mJson) as list
+set AppleScript's text item delimiters to ""
+
+set listSize to count of keyNodeList
+set page to 1
+-- iterate through pages of 50 nodes to find the right one
+repeat while listSize = 1
+	set AppleScript's text item delimiters to {"\"next\":"}
+	set keyNodeList to (every text item in mJson) as list
+	set AppleScript's text item delimiters to ""
+	set pageEnd to item 2 of keyNodeList
+	
+	set AppleScript's text item delimiters to {","}
+	set nextPageIdList to (every text item in pageEnd) as list
+	set AppleScript's text item delimiters to ""
+	set nextpageid to item 1 of nextPageIdList
+	
+	set nextpageid to RemoveFromString("\"", nextpageid)
+	set nextpageid to RemoveFromString(" ", nextpageid)
+	set newlink to "https://explorer-api.ambrosus.com/apollos?next=" & nextpageid
+	set page to page + 1
+	set mJson to do shell script "curl -s " & newlink
+	set AppleScript's text item delimiters to {nodeaddress}
+	set keyNodeList to (every text item in mJson) as list
+	set AppleScript's text item delimiters to ""
+	
+	set listSize to count of keyNodeList
+	--display dialog ((count of keyNodeList) as string)
+	if listSize is not equal to 1 then exit repeat
+end repeat
+
+
+-- get status
+set firstSet to item 2 of keyNodeList
+set AppleScript's text item delimiters to {","}
+set keyValueList to (every text item in firstSet) as list
+set AppleScript's text item delimiters to ""
+
+set theKeyValuePair to item 4 of keyValueList
+set AppleScript's text item delimiters to {": "}
+set theKeyValueBufferList to (every text item in theKeyValuePair) as list
+set AppleScript's text item delimiters to ""
+set status to item 2 of theKeyValueBufferList
+set status to RemoveFromString("\"", status)
+
+if status is equal to "ONLINE" then
+	-- get stake
+	set firstSet to item 2 of keyNodeList
+	set AppleScript's text item delimiters to {"stake"}
+	set keyValueList to (every text item in firstSet) as list
+	set AppleScript's text item delimiters to ""
+	
+	set firstSet to item 2 of keyValueList
+	set AppleScript's text item delimiters to {","}
+	set keyValueList to (every text item in firstSet) as list
+	set AppleScript's text item delimiters to ""
+	
+	set theKeyValuePair to item 2 of keyValueList
+	set AppleScript's text item delimiters to {": "}
+	set theKeyValueBufferList to (every text item in theKeyValuePair) as list
+	set AppleScript's text item delimiters to ""
+	set stake to item 2 of theKeyValueBufferList
+	
+	
+	-- get blocks
+	set firstSet to item 2 of keyNodeList
+	set AppleScript's text item delimiters to {","}
+	set keyValueList to (every text item in firstSet) as list
+	set AppleScript's text item delimiters to ""
+	
+	set theKeyValuePair to item 3 of keyValueList
+	set AppleScript's text item delimiters to {": "}
+	set theKeyValueBufferList to (every text item in theKeyValuePair) as list
+	set AppleScript's text item delimiters to ""
+	set blocks to item 2 of theKeyValueBufferList
+	
+	-- get balance
+	set firstSet to item 3 of keyNodeList
+	set AppleScript's text item delimiters to {","}
+	set keyValueList to (every text item in firstSet) as list
+	set AppleScript's text item delimiters to ""
+	
+	set theKeyValuePair to item 4 of keyValueList
+	set AppleScript's text item delimiters to {": "}
+	set theKeyValueBufferList to (every text item in theKeyValuePair) as list
+	set AppleScript's text item delimiters to ""
+	set balance to item 2 of theKeyValueBufferList
+end if
+
+if status is not equal to "ONLINE" then
+	-- get stake
+	set firstSet to item 2 of keyNodeList
+	set AppleScript's text item delimiters to {"stake"}
+	set keyValueList to (every text item in firstSet) as list
+	set AppleScript's text item delimiters to ""
+	
+	set firstSet to item 2 of keyValueList
+	set AppleScript's text item delimiters to {","}
+	set keyValueList to (every text item in firstSet) as list
+	set AppleScript's text item delimiters to ""
+	
+	set theKeyValuePair to item 2 of keyValueList
+	set AppleScript's text item delimiters to {": "}
+	set theKeyValueBufferList to (every text item in theKeyValuePair) as list
+	set AppleScript's text item delimiters to ""
+	set stake to item 2 of theKeyValueBufferList
+	
+	-- get blocks
+	set firstSet to item 2 of keyNodeList
+	set AppleScript's text item delimiters to {","}
+	set keyValueList to (every text item in firstSet) as list
+	set AppleScript's text item delimiters to ""
+	
+	set theKeyValuePair to item 3 of keyValueList
+	set AppleScript's text item delimiters to {": "}
+	set theKeyValueBufferList to (every text item in theKeyValuePair) as list
+	set AppleScript's text item delimiters to ""
+	set blocks to item 2 of theKeyValueBufferList
+	
+	-- get balance
+	set firstSet to item 3 of keyNodeList
+	set AppleScript's text item delimiters to {","}
+	set keyValueList to (every text item in firstSet) as list
+	set AppleScript's text item delimiters to ""
+	
+	set theKeyValuePair to item 4 of keyValueList
+	set AppleScript's text item delimiters to {": "}
+	set theKeyValueBufferList to (every text item in theKeyValuePair) as list
+	set AppleScript's text item delimiters to ""
+	set balance to item 2 of theKeyValueBufferList
+end if
+
+
+set stake to RemoveFromString("\"", stake)
+
+set stake to returnNumbersInString(stake)
+set status to RemoveFromString("\"", status)
+set blocks to RemoveFromString("\"", blocks)
+set balance to RemoveFromString("\"", balance)
+set balance to RemoveFromString("}", balance)
+
+set balance to RoundImperialNumberToTwoDecimals(balance)
+
+set unformatedValue to "| " & balance & " AMB | " & blocks & " Blocks | " & stake & " Stake |"
+
+return RemoveFromString("\"", unformatedValue)
+
+
+------- functions below -----------------------
+
+-- remove character or string from given string
+on RemoveFromString(CharOrString, txt)
+	set AppleScript's text item delimiters to CharOrString
+	set temp to txt's text items
+	set AppleScript's text item delimiters to ""
+	return temp as text
+end RemoveFromString
+
+-- round balance to two decimals
+on RoundImperialNumberToTwoDecimals(txt)
+	set AppleScript's text item delimiters to "."
+	set decimals to text item 2 of txt
+	if (count decimals) < 2 then
+		set decimals to decimals & "0"
+	end if
+	set decimals to (text 1 thru 2 of decimals)
+	set theNumber to text item 1 of txt & "." & decimals
+	set AppleScript's text item delimiters to ""
+	return theNumber
+end RoundImperialNumberToTwoDecimals
+
+-- convert string to numbers
+on returnNumbersInString(inputString)
+	set s to quoted form of inputString
+	do shell script "sed s/[a-zA-Z\\']//g <<< " & s
+	set dx to the result
+	set numlist to {}
+	repeat with i from 1 to count of words in dx
+		set this_item to word i of dx
+		try
+			set this_item to this_item as number
+			set the end of numlist to this_item
+		end try
+	end repeat
+	return numlist
+end returnNumbersInString
