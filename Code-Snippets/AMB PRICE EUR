@@ -1,0 +1,55 @@
+-- You need to signup an api account at https://pro.coinmarketcap.com/migrate/ to get EUR or other Currency than USD. its free for basic use
+
+
+set mJson to do shell script "curl -s 'https://pro-api.coinmarketcap.com/v1/cryptocurrency/quotes/latest?id=2081&convert=EUR&CMC_PRO_API_KEY=PUTKEYHERE'"
+set AppleScript's text item delimiters to {","}
+set keyValueList to (every text item in mJson) as list
+set AppleScript's text item delimiters to ""
+
+set theKeyValuePair to item 23 of keyValueList
+set AppleScript's text item delimiters to {": "}
+set theKeyValueBufferList to (every text item in theKeyValuePair) as list
+set AppleScript's text item delimiters to ""
+set usdPrice to item 4 of theKeyValueBufferList
+
+
+set theKeyValuePair to item 26 of keyValueList
+set AppleScript's text item delimiters to {": "}
+set theKeyValueBufferList to (every text item in theKeyValuePair) as list
+set AppleScript's text item delimiters to ""
+set change to item 2 of theKeyValueBufferList
+
+set usdPrice to RemoveFromString("\"", usdPrice)
+set usdPrice to RoundImperialNumberToThreeDecimals(usdPrice)
+set change to RemoveFromString("\"", change)
+
+set arrow to " ▲"
+
+if change < 0 then
+	set arrow to " ▼"
+end if
+
+set unformatedValue to "€ " & usdPrice & " " & arrow & " " & change & "%"
+
+return RemoveFromString("\"", unformatedValue)
+
+
+-- remove character or string from given string
+on RemoveFromString(CharOrString, txt)
+	set AppleScript's text item delimiters to CharOrString
+	set temp to txt's text items
+	set AppleScript's text item delimiters to ""
+	return temp as text
+end RemoveFromString
+
+on RoundImperialNumberToThreeDecimals(txt)
+	set AppleScript's text item delimiters to "."
+	set decimals to text item 2 of txt
+	if (count decimals) < 3 then
+		set decimals to decimals & "0"
+	end if
+	set decimals to (text 1 thru 3 of decimals)
+	set theNumber to text item 1 of txt & "." & decimals
+	set AppleScript's text item delimiters to ""
+	return theNumber
+end RoundImperialNumberToTwoDecimals
