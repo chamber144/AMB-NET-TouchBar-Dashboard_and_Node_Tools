@@ -1,6 +1,6 @@
 # AMB-NET-Touchbar-Dashboard
 
-![alt text](https://github.com/inlak16/AMB-NET-Touchbar-Dashboard/blob/master/tutorial-images/Node_Control_Touchbar_sm.jpg)
+![alt text](https://github.com/inlak16/AMB-NET-Touchbar-Dashboard/blob/master/tutorial-images/Node_Info_Touchbar_sm.jpg)
 
 Hello fellow AMB-Net node operators. Welcome to this little repository.
 
