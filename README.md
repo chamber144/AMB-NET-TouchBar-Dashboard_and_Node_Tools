@@ -105,9 +105,11 @@ https://www.linuxbabe.com/ubuntu/two-factor-authentication-ssh-key-ubuntu-18-04
 ![alt text](https://github.com/inlak16/AMB-NET-Touchbar-Dashboard/blob/master/tutorial-images/10.png)
 
 You can create a preset in terminal with a background image for your node. And if you run more than one node, the apple script would switch the background according to the node to give a better visual overview on where you are logged in. If you use the Exit scripts that are on every level of the control Dashboard, the Terminal preset is automatically reset to Basic. If you are not using this, you may have to create a preset in Terminal called Basic or alter all the exit scripts. I've uploaded a PSD Photoshop file and created some network graphics variations, so you can fully customize your node backdrop image with your Server location and public address. For those of you that have no option to oben a Photoshop file, I have generated some Variations of the Backdrop and uploaded them here as png images. All of these can be found in the Node-Backdrop folder.
-Ovreview of the Photoshop file:
+
+Layeroverview of the Photoshop file:
 ![alt text](https://github.com/inlak16/AMB-NET-Touchbar-Dashboard/blob/master/tutorial-images/15.png)
 
+Terminal Profile Settings with preset "Amb1" having loaded a Backdrop image called "Amb_node_1.png":
 ![alt text](https://github.com/inlak16/AMB-NET-Touchbar-Dashboard/blob/master/tutorial-images/11.png)
 
 
