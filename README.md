@@ -202,15 +202,13 @@ From left to right you stop the node, update the node and/or the system and star
 
 And that's basically the functionality for now. 
 
-I'm excited to hear about ideas and useful commands that can be implemented and what you are going to customize with this set of tools. 
+I'm excited to hear about ideas and useful commands that can be implemented and what you are going to customize out of this set of tools. 
 
 Please feel free to get back to me on Ambrosus slack (user inla). 
 I'm planning to keep updating this repository as my time suits it.
 
-If you like this project and its functionality, here is my tip jar that gratefully accepts AMB or ETH:
+And if you like this project and its functionality, here is my tip jar that gratefully accepts AMB or ETH:
 _0xaBA817a774bf3dB1faB3c5cf867a82A683D74D22_
 
-
-I'm excited for the future of AMB-Net :D !
 
 
