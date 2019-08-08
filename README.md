@@ -31,7 +31,7 @@ Luckily this is the only thing that needs to be bought if you already own a MacB
 ### Overview of BetterTouchTool and Dashboard
 
 After you have purchased your BetterTouchTool license and installed the software, 
-just open it and import the newest AMB_Dashboard*.bbtpreset file that I have put up here for download by using the preset function in the top right corner and click on import.
+just open it and import the newest **AMB_Dashboard*.bbtpreset** file that I have put up here for download by using the preset function in the top right corner and click on import.
 
 ![alt text](https://github.com/inlak16/AMB-NET-Touchbar-Dashboard/blob/master/tutorial-images/01.png)
 
