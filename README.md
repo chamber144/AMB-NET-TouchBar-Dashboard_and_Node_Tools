@@ -122,11 +122,11 @@ Terminal Profile Settings with preset "Amb1" having loaded a Backdrop image call
 When you are logged in through the >_ button on the touchbar, BetterTouchTool automatically switches to the Triggers for the Terminal application on your Touch bar. There are two options on the top level. Analysis and Node Control.
 ![alt text](https://github.com/inlak16/AMB-NET-Touchbar-Dashboard/blob/master/tutorial-images/14.png)
 
-Tapping on Analysis on the Touch bar gives all kind of options. But set set things up, first you should run 
+Tapping on Analysis on the Touch bar gives all kind of options. But let's set things up first. Run the following command  in Terminal:
 
 `docker ps`
 
-in Terminal and depending on wether you are running ATLAS or APOLLO, you insert the resulting IDs in the logs scripts in BetterTouchTool.
+Depending on wether you are running ATLAS or APOLLO, you insert the resulting IDs in the logs scripts in BetterTouchTool.
 For APOLLO there is only one ID that has to be put in the Parity Logs script. Click Terminal on the left in BetterTouchTool and then double click the Analysis group, go to Parity Logs 1h and click run apple script to access the script.
 
 ![alt text](https://github.com/inlak16/AMB-NET-Touchbar-Dashboard/blob/master/tutorial-images/12.png)
