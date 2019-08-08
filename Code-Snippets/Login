@@ -1,0 +1,17 @@
+
+(* 
+tell application "Terminal"
+	-- you can change the background image for your node in terminal settings by defining a new preset calling it Amb in this example. Only your node is going to be opened with this window setting.
+	
+	set default settings to settings set "Amb"
+	quit
+end tell
+*)
+
+tell application "Terminal"
+	if not (exists window 1) then reopen
+	activate
+	
+	-- set your username and ip	
+	do script "ssh user@154.35.175.25" in window 1
+end tell
