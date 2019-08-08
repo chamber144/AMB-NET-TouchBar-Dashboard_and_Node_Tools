@@ -1,0 +1,87 @@
+-- input your Apollo node Address here:
+set nodeaddress to "0x0000000000000000000000000000000000000000"
+
+
+
+-- get info around particular Apollo node
+set mJson to do shell script "curl -s 'https://explorer-api.ambrosus.com/apollos'"
+set AppleScript's text item delimiters to {nodeaddress}
+set keyNodeList to (every text item in mJson) as list
+set AppleScript's text item delimiters to ""
+
+set listSize to count of keyNodeList
+set page to 1
+-- iterate through pages of 50 nodes to find the right one
+repeat while listSize = 1
+	set AppleScript's text item delimiters to {"\"next\":"}
+	set keyNodeList to (every text item in mJson) as list
+	set AppleScript's text item delimiters to ""
+	set pageEnd to item 2 of keyNodeList
+	
+	set AppleScript's text item delimiters to {","}
+	set nextPageIdList to (every text item in pageEnd) as list
+	set AppleScript's text item delimiters to ""
+	set nextpageid to item 1 of nextPageIdList
+	
+	set nextpageid to RemoveFromString("\"", nextpageid)
+	set nextpageid to RemoveFromString(" ", nextpageid)
+	set newlink to "https://explorer-api.ambrosus.com/apollos?next=" & nextpageid
+	set page to page + 1
+	set mJson to do shell script "curl -s " & newlink
+	set AppleScript's text item delimiters to {nodeaddress}
+	set keyNodeList to (every text item in mJson) as list
+	set AppleScript's text item delimiters to ""
+	
+	set listSize to count of keyNodeList
+	--display dialog ((count of keyNodeList) as string)
+	if listSize is not equal to 1 then exit repeat
+end repeat
+
+
+-- get status
+set firstSet to item 2 of keyNodeList
+set AppleScript's text item delimiters to {","}
+set keyValueList to (every text item in firstSet) as list
+set AppleScript's text item delimiters to ""
+
+set theKeyValuePair to item 5 of keyValueList
+set AppleScript's text item delimiters to {": "}
+set theKeyValueBufferList to (every text item in theKeyValuePair) as list
+set AppleScript's text item delimiters to ""
+set retired to item 2 of theKeyValueBufferList
+set retired to RemoveFromString("\"", retired)
+
+set theKeyValuePair to item 4 of keyValueList
+set AppleScript's text item delimiters to {": "}
+set theKeyValueBufferList to (every text item in theKeyValuePair) as list
+set AppleScript's text item delimiters to ""
+set status to item 2 of theKeyValueBufferList
+set status to RemoveFromString("\"", status)
+
+
+if status is not equal to "ONLINE" then
+	set theKeyValuePair to item 4 of keyValueList
+	set AppleScript's text item delimiters to {": "}
+	set theKeyValueBufferList to (every text item in theKeyValuePair) as list
+	set AppleScript's text item delimiters to ""
+	set status to item 2 of theKeyValueBufferList
+	set status to RemoveFromString("\"", status)
+end if
+
+if retired is equal to "RETIRED" then
+	set status to "RETIRED"
+end if
+
+set unformatedValue to "APOLLO " & status
+return RemoveFromString("\"", unformatedValue)
+
+
+------- functions below -----------------------
+
+-- remove character or string from given string
+on RemoveFromString(CharOrString, txt)
+	set AppleScript's text item delimiters to CharOrString
+	set temp to txt's text items
+	set AppleScript's text item delimiters to ""
+	return temp as text
+end RemoveFromString
