@@ -201,7 +201,9 @@ From left to right you stop the node, update the node and/or the system and star
 
 
 And that's basically the functionality for now. 
+
 I'm excited to hear about ideas and useful commands that can be implemented and what you are going to customize with this set of tools. 
+
 Please feel free to get back to me on Ambrosus slack (user inla). 
 I'm planning to keep updating this repository as my time suits it.
 
