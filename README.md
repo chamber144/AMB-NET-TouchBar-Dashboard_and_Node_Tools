@@ -1,8 +1,8 @@
 # AMB-NET-Touchbar-Dashboard
 
-![alt text](https://github.com/inlak16/AMB-NET-Touchbar-Dashboard/blob/master/tutorial-images/Node_Info_Touchbar.jpg)
-
 ![alt text](https://github.com/inlak16/AMB-NET-Touchbar-Dashboard/blob/master/tutorial-images/Node_Control_Touchbar_sm_.jpg)
+
+![alt text](https://github.com/inlak16/AMB-NET-Touchbar-Dashboard/blob/master/tutorial-images/Node_Info_Touchbar.jpg)
 
 Hello fellow AMB-Net node operators. Welcome to this little repository.
 
@@ -187,4 +187,9 @@ And that's if for the analisys part.
 
 The Node control part is pretty self explanatory.
 From left to right you stop the node, update the node and or the system and start the node again.
+
+![alt text](https://github.com/inlak16/AMB-NET-Touchbar-Dashboard/blob/master/tutorial-images/16.png)
+
+And that's basically the functionality for now. I'm excited to hear about ideas and useful commands that can be implemented.
+If you like this dashboard and its functionality, feel free to send me a tip in AMB or ETH to the following address:
 
