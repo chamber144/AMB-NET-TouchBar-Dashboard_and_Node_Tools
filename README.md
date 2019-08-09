@@ -159,7 +159,7 @@ ntpq -p
 ```
 
 **TempBannedIP** is a function that calls a list of ips that have been banned through the BruteForce Protection.
-I'm using Fail2Ban to permit bots and hackers from bruteforcing into my node. You can install the software by following these steps:
+I'm using fail2Ban to permit bots and hackers from bruteforcing into my node. You can install the software by following these steps:
 
 ```
 sudo apt-get install -y fail2ban
@@ -193,6 +193,8 @@ The function **SSH Connections** returns just the attemps that have been made wi
 With **Parity Version** you can simply check which version of parity your node is running to know if an update is needed.
 
 And that's it for the Analysis part.
+
+### Controlling your node on the Dashboard
 
 The Node control part is pretty self explanatory.
 From left to right you stop the node, update the node and/or the system and start the node again.
