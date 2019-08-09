@@ -1,0 +1,6 @@
+-- run docker ps to get your docker ID
+ 
+ tell application "Terminal"
+	set currentTab to do script "docker logs --since 1h ID" in window 1
+	
+end tell
