@@ -1,4 +1,4 @@
-# AMB-NET-Touchbar-Dashboard
+# AMB-NET TouchBar Dashboard
 
 ![alt text](https://github.com/inlak16/AMB-NET-Touchbar-Dashboard/blob/master/tutorial-images/Node_Control_Touchbar_sm_.jpg)
 
@@ -82,7 +82,7 @@ Just enter your nodes public address into the script und click save at the top w
 
 After doing the same with the according Main Stats Layer, the **Shift Command** Dashboard already works.
 Activating the Online-Status-Layer again, now click on the "run apple script" at the top center.
-This triggers commands when pushing the area of the touchbar where the building block/layer is appearing.
+This triggers commands when pushing the area of the Touch bar where the building block/layer is appearing.
 
 
 
