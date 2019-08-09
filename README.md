@@ -27,7 +27,7 @@ https://bettertouchtool.net/releases/BetterTouchTool.zip
 
 If you ask yourself if this is worth it, I definitely say, yes. The devs regularly update the software and compared to other mac tools, 7 bucks is not too expensive.
 
-Quite some time I have wondered if it was really worth to get the more expensive MacBook with Touchbar. But now it has gotten really useful for quickly controlling my node on AMB-Net.
+Quite some time I have wondered if it was really worth to get the more expensive MacBook with Touch bar. But now with this setup, it has gotten really useful for quickly controlling my node. In the long run it is saving alot of time that I would need typing or copying commands.
 
 
 ### Overview of BetterTouchTool and Dashboard
