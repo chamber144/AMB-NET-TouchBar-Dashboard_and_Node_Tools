@@ -42,7 +42,7 @@ When the file has been loaded it should look like this:
 
 
 
-On the very left you have the programs that have TouchBar presets in them. Closer to the center is the area where so called triggers are layered. These are individual setups that contain code snippets and are fully customizable, in the end being the single building blocks of the dashboard. If you click on one of them, you see on the right hand side that the containing parameters are shown. One of the most important is the enabled/visibility parameter to turn on and off single building blocks of the setup.
+On the very left you have the programs that have TouchBar presets in them. Closer to the center is the area where so called triggers are layered. These are individual setups that contain code snippets and are fully customizable, in the end being the single building blocks of the dashboard. If you click on one of them, you see that the containing parameters are shown on the right hand side. One of the most important is the enabled/visible on TouchBar parameter to turn on and off single building blocks of the setup.
 
 
 
@@ -70,8 +70,8 @@ To give a better overview, here are two setups with different triggers activated
 
 The addresses set for demonstration purposes are just the longest running nodes I could find and are likely run by Ambrosus.
 Now lets add your node in there.
-Set visibility of layers according to your nodetype and click on the online status layer.
-On the right side there is the option to switch between common, which is mainly UI settings and widget-specific, which contains the whole Applescript to load a nodes online status into the dashboard.
+Set visibility of layers according to your nodetype ATLAS or APOLLO and click on it's according online status layer.
+On the right side there is the option to switch between common, which is mainly UI settings and widget-specific, which contains the whole Applescript to pull a nodes online status into the dashboard.
 Just enter your nodes public address into the script und click save at the top when the option comes up.
 
 
@@ -100,7 +100,7 @@ Tapping the grey AMB-net Info part of the Dashboard on the TouchBar opens the ma
 ### Logging into your node and preparations of the control Dashboard
 
 Now that we have the visuals going, lets get to the control Dashboard.
-As mentioned in the beginning, the top layers in BetterTouchTool are for logging into one or multiple nodes. You gain access to the scripts again with the run apple script button. Just input your user@ip and save.
+As mentioned in the beginning, the top layers in BetterTouchTool are for logging into one or multiple nodes. You gain access to the scripts again with the run apple script button. Just input your user@ip and save. If you use several ssh keys, use the **-i flag** to define the key you want to use.
 
 I recommend running from user instead of root and if you want to have maximum security, install 2FA on your node:
 https://www.linuxbabe.com/ubuntu/two-factor-authentication-ssh-key-ubuntu-18-04
@@ -124,7 +124,7 @@ Terminal Profile Settings with preset "Amb1" having loaded a Backdrop image call
 When you are logged in through the >_ button on the touchbar, BetterTouchTool automatically switches to the Triggers for the Terminal application on your TouchBar. There are two options on the top level. Analysis and Node Control.
 ![alt text](https://github.com/inlak16/AMB-NET-Touchbar-Dashboard/blob/master/tutorial-images/14.png)
 
-Tapping on Analysis on the TouchBar gives all kind of options. But let's set things up first. Run the following command  in Terminal:
+Tapping on Analysis on the TouchBar gives all kind of options. Let's make sure everything is set up first. Run the following command in Terminal:
 
 `docker ps`
 
@@ -174,17 +174,14 @@ sudo nano /etc/fail2ban/jail.local
 This installs fail2ban and copies the configuration file so that you can easily modify the settings to your needs.
 After running the last line the nano texteditor should be opened with the configuration file jail.local.
 Here you go down in the text, until you find the following 3 parameters: Max retry, Findtime, Bantime.
-Erase the # in front of every of those parameters + in front of the next DEFAULT several lines above to activate this whole settings block. Then enter maximum login attempts as max retry, the time a user has to try these number of login attempts  (Findtime) and the time an ip is banned for, if these tresholds are crossed. Note that this rule applies to your login device aswell.
-So if you set 5 retries and 5000m bantime and type your ssh password wrong 5 times, your computers ip is banned for over 83 hours. After setting these variables, quit nano with **Control X** and save the file. Now restart fail2ban and test its status by running:
+Erase the # in front of every one of those parameters + in front of the previous DEFAULT several lines above to activate this whole settings block. Then enter maximum login attempts as max retry, the time a user has to try these number of login attempts  (Findtime) and the time an ip is banned for (Bantime), if these tresholds are crossed. Note that this rule applies to your login device aswell.
+So if you set 5 retries and 5000m bantime and type your ssh password wrong 5 times, your computers ip is banned for over 83 hours. After setting these variables as you like, quit nano with **Control X** and save the file. Now restart fail2ban:
 
 ```
 sudo systemctl restart fail2ban
-sudo systemctl status fail2ban
 ```
+Now use the function **BruteForce Protection** on the TouchBar in the Analysis Group. The status should be returned with a green text showing that the protection is _active_. If it doesn't, check if you erased the # in front of the DEFAULT above the changed parameters in the jail.local text file. After you have it showing _active_, the **TempBannedIP** function returns the content of the ban list that is generated by malicious login attempts. After a few days you should see some ips there already. Every now and then the ban list is reset, so don't worry, if the ban amounts get smaller at some time. 
 
-The status should be returned with a green text showing that the protection is active. Now the **TempBannedIP** function returns the content of the ban list that is generated by malicious login attempts. After a few days you should see some ips there already. Every now and then the ban list is reset, so don't worry, if the ban amounts get smaller at some time. 
-
-The **BruteForce Protection** function simply shows the status of the fail2ban Bruteforce protection and how long it has been running.
 
 With the **Granted Logins** function you can check, who logged into your vps successfully. Quit with **Q** .
 
@@ -198,7 +195,7 @@ And that's it for the Analysis part.
 
 ### Controlling your node on the Dashboard
 
-The Node control part is pretty self explanatory.
+The Node control part of the Terminal controls of the Dashboard are pretty self explanatory.
 From left to right you stop the node, update the node and/or the system and start the node again.
 
 ![alt text](https://github.com/inlak16/AMB-NET-Touchbar-Dashboard/blob/master/tutorial-images/16.png)
