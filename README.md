@@ -2,7 +2,7 @@
 
 ![alt text](https://github.com/inlak16/AMB-NET-Touchbar-Dashboard/blob/master/tutorial-images/Node_Control_Touchbar_sm_.jpg)
 
-Hello fellow AMB-Net node operators. Welcome to this little repository.
+### Hello fellow AMB-Net node operators. Welcome to this little repository.
 
 Here I present a complete setup that may help you monitor and control your ATLAS or APOLLO through a MacBook Touchbar.
 
