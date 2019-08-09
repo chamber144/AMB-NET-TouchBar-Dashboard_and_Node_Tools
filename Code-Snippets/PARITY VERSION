@@ -1,0 +1,6 @@
+-- returns the used parity version on your node.
+
+tell application "Terminal"
+	set currentTab to do script "docker ps --format “{{.Image}}”" in window 1
+	
+end tell
