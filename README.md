@@ -42,7 +42,7 @@ When the file has been loaded it should look like this:
 
 
 
-On the very left you have the programs that have touchbar presets in them. Closer to the center is the area where so called triggers are layered. These are individual setups that contain code snippets and are fully customizable, in the end being the single building blocks of the dashboard. If you click on one of them, you see on the right hand side that the containing parameters are shown. One of the most important is the enabled/visibility parameter to turn on and off single building blocks of the setup.
+On the very left you have the programs that have TouchBar presets in them. Closer to the center is the area where so called triggers are layered. These are individual setups that contain code snippets and are fully customizable, in the end being the single building blocks of the dashboard. If you click on one of them, you see on the right hand side that the containing parameters are shown. One of the most important is the enabled/visibility parameter to turn on and off single building blocks of the setup.
 
 
 
@@ -92,7 +92,7 @@ This triggers commands when pushing the area of the TouchBar where the building 
 
 If you add your nodes public address in here, holding **Shift Command** and pushing on the Online Status of your node on the TouchBar opens the Ambrosus Explorer with your nodes page in Brave. If you dont have the Brave browser installed, you can change the script to any other browser.
 
-Pushing the price ticker on the touchbar opens Ambrosus Reddit, Ambrosus Twitter and Coinmarketcap.
+Pushing the price ticker on the TouchBar opens Ambrosus Reddit, Ambrosus Twitter and Coinmarketcap.
 
 Tapping the grey AMB-net Info part of the Dashboard on the TouchBar opens the main page of the Ambrosus-Explorer.
 
