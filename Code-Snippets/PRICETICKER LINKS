@@ -1,0 +1,7 @@
+tell application "Brave Browser"
+	activate
+	open location "https://coinmarketcap.com/currencies/amber/"
+	open location "https://twitter.com/AmbrosusAMB"
+	open location "https://reddit.com/r/ambrosus"
+	activate
+end tell
