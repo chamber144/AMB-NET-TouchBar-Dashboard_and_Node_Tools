@@ -4,7 +4,7 @@
 
 ### Hello fellow AMB-Net node operators. Welcome to this little repository.
 
-Here I present a complete setup that may help you monitor and control your ATLAS or APOLLO through a MacBook TouchBar.
+Here I present a complete setup that may help you monitor and control your ATLAS or APOLLO through the MacBook TouchBar.
 
 Please note that this is NOT an official tool created by Ambrosus, but a setup that I built to control my own node and found quite useful to share with the whole community. 
 Although I don't expect any dangerous errors to occur, I give no warranty that this is bug-free, so please have a look at the code, before running it. I have been controlling my node with this for several months without major issues now.
