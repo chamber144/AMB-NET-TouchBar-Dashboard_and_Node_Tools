@@ -134,7 +134,7 @@
     "BTTTouchBarVisible" : true,
     "BTTTouchBarUseMonoSpacedFont" : true
   },
-  "BTTPresetUUID" : "5B4C510E-C80F-42A7-9DC0-95C71CF367AB",
+  "BTTPresetUUID" : "97909851-ED0B-4E3F-9D33-CE0730AA59A0",
   "BTTPresetContent" : [
     {
       "BTTAppBundleIdentifier" : "BT.G",
@@ -769,7 +769,7 @@
           "BTTMergeIntoTouchBarGroups" : 0,
           "BTTAdditionalActions" : [
             {
-              "BTTTouchBarButtonName" : "Logs4",
+              "BTTTouchBarButtonName" : "close",
               "BTTTriggerType" : 629,
               "BTTTriggerTypeDescription" : "Touch Bar button",
               "BTTTriggerClass" : "BTTTriggerTypeTouchBar",
@@ -785,7 +785,7 @@
               "BTTMergeIntoTouchBarGroups" : 0,
               "BTTIconData" : "Standard Close Icon",
               "BTTTriggerConfig" : {
-                "BTTTouchBarButtonColor" : "192.659964, 122.940416, 0.000000, 255.000000",
+                "BTTTouchBarButtonColor" : "255.000000, 255.000000, 255.000000, 255.000000",
                 "BTTTBName" : "Close Group",
                 "BTTTouchBarButtonTextAlignment" : 0,
                 "BTTTouchBarButtonFontSize" : 15,
@@ -794,7 +794,7 @@
                 "BTTTouchBarAlwaysShowButton" : false,
                 "BTTTBWidgetWidth" : 400,
                 "BTTTouchBarButtonWidth" : 100,
-                "BTTTouchBarButtonName" : "Logs4",
+                "BTTTouchBarButtonName" : "close",
                 "BTTTouchBarFreeSpaceAfterButton" : 5,
                 "BTTTouchBarOnlyShowIcon" : true,
                 "BTTTouchBarItemIconHeight" : 22,
