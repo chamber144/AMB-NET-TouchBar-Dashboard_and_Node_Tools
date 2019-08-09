@@ -1,0 +1,7 @@
+-- shows all granted logins to your vps.
+
+tell application "Terminal"
+	set currentTab to do script "sudo grep sshd.*Accepted /var/log/auth.log | less" in window 1
+	
+	
+end tell
