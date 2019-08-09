@@ -1,0 +1,9 @@
+-- this shows the status of fail2ban protection. It should show active.
+-- for installation look at the TempBanned IP script
+
+
+tell application "Terminal"
+	set currentTab to do script "sudo systemctl status fail2ban" in window 1
+	
+	
+end tell
