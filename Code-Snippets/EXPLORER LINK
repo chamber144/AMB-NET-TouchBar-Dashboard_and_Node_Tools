@@ -1,0 +1,5 @@
+tell application "Brave Browser"
+	activate
+	open location "https://explorer.ambrosus.com"
+	activate
+end tell
