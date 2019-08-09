@@ -1,0 +1,7 @@
+-- this script should output sheltered bundles on an atlas node at the very end.
+
+
+tell application "Terminal"
+	set currentTab to do script "sudo docker exec -it mongod mongo ambrosus --eval \"db.bundle_metadata.find({'repository.status': 'SHELTERED'}).count()\"" in window 1
+	
+end tell
