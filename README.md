@@ -38,7 +38,7 @@ just open it and import the newest __AMB_Dashboard*.bbtpreset__ file that I have
 ![alt text](https://github.com/inlak16/AMB-NET-Touchbar-Dashboard/blob/master/tutorial-images/01.png)
 
 
-When the file has been loaded it should look something like this:
+When the file has been loaded it should look like this:
 
 ![alt text](https://github.com/inlak16/AMB-NET-Touchbar-Dashboard/blob/master/tutorial-images/02.png)
 
