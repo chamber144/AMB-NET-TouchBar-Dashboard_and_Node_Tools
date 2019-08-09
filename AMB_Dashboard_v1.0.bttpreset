@@ -134,7 +134,7 @@
     "BTTTouchBarVisible" : true,
     "BTTTouchBarUseMonoSpacedFont" : true
   },
-  "BTTPresetUUID" : "97909851-ED0B-4E3F-9D33-CE0730AA59A0",
+  "BTTPresetUUID" : "607E1CE2-503D-4C43-B22B-BC81E193613A",
   "BTTPresetContent" : [
     {
       "BTTAppBundleIdentifier" : "BT.G",
@@ -268,7 +268,7 @@
           "BTTTriggerClass" : "BTTTriggerTypeTouchBar",
           "BTTPredefinedActionType" : 172,
           "BTTPredefinedActionName" : "Run Apple Script (blocking)",
-          "BTTInlineAppleScript" : "tell application \"Brave Browser\"\r\tactivate\r\topen location \"https:\/\/twitter.com\/angelversetti\"\r\topen location \"https:\/\/reddit.com\/r\/ambrosus\"\r\tactivate\rend tell\r",
+          "BTTInlineAppleScript" : "tell application \"Brave Browser\"\r\tactivate\n\topen location \"https:\/\/coinmarketcap.com\/currencies\/amber\/\"\r\topen location \"https:\/\/twitter.com\/AmbrosusAMB\"\r\topen location \"https:\/\/reddit.com\/r\/ambrosus\"\r\tactivate\rend tell",
           "BTTEnabled2" : 0,
           "BTTAlternateModifierKeys" : 0,
           "BTTUUID" : "06A0F426-A859-4EFA-8EFD-B331AAB75694",
@@ -759,7 +759,6 @@
           "BTTPredefinedActionType" : -1,
           "BTTPredefinedActionName" : "No Action",
           "BTTEnabled2" : 0,
-          "BTTAlternateModifierKeys" : 0,
           "BTTUUID" : "D3C960DB-A609-4055-BC4A-EA9D0F503361",
           "BTTNotesInsteadOfDescription" : 0,
           "BTTEnabled" : 1,
@@ -785,7 +784,7 @@
               "BTTMergeIntoTouchBarGroups" : 0,
               "BTTIconData" : "Standard Close Icon",
               "BTTTriggerConfig" : {
-                "BTTTouchBarButtonColor" : "255.000000, 255.000000, 255.000000, 255.000000",
+                "BTTTouchBarButtonColor" : "0.000000, 0.000000, 0.000000, 255.000000",
                 "BTTTBName" : "Close Group",
                 "BTTTouchBarButtonTextAlignment" : 0,
                 "BTTTouchBarButtonFontSize" : 15,
@@ -914,7 +913,7 @@
               }
             },
             {
-              "BTTTouchBarButtonName" : "Logs4\t",
+              "BTTTouchBarButtonName" : "Logs4",
               "BTTTriggerType" : 629,
               "BTTTriggerTypeDescription" : "Touch Bar button",
               "BTTTriggerClass" : "BTTTriggerTypeTouchBar",
@@ -940,7 +939,7 @@
                 "BTTTouchBarButtonWidth" : 100,
                 "BTTTouchBarOnlyShowIcon" : false,
                 "BTTTouchBarFreeSpaceAfterButton" : 5,
-                "BTTTouchBarButtonName" : "Logs4\t",
+                "BTTTouchBarButtonName" : "Logs4",
                 "BTTTouchBarItemIconHeight" : 22,
                 "BTTTouchBarItemPadding" : 0
               }
@@ -1004,12 +1003,13 @@
             "BTTTBWidgetWidth" : 400,
             "BTTTouchBarDefaultPlayer" : 0,
             "BTTTouchBarItemIconWidth" : 22,
+            "BTTTouchBarButtonName" : "Logs 1h (multiple nodes)",
             "BTTTouchBarHideWhenNoPlayer" : false,
             "BTTTouchBarFontColor" : "0.000000, 183.000000, 249.000000, 255.000000",
             "BTTTouchBarButtonFontSize" : 15,
-            "BTTTouchBarOnlyShowIcon" : false,
+            "BTTTouchBarHideCover" : 0,
             "BTTTouchBarFreeSpaceAfterButton" : 5,
-            "BTTTouchBarHideCover" : 0
+            "BTTTouchBarOnlyShowIcon" : false
           }
         },
         {
