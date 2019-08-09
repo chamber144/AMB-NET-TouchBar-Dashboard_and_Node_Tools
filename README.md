@@ -206,7 +206,7 @@ This is the functionality for now.
 
 I'm excited to hear about ideas and useful commands that can be implemented and what you are going to customize out of this set of tools. 
 
-Please feel free to get back to me on Ambrosus slack (user inla). 
+Please feel free to get back to me on Ambrosus slack. 
 I'm planning to keep updating this repository as my time suits it.
 
 If you like this project and find it useful, here is my tip jar that gratefully accepts AMB or ETH:
