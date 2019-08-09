@@ -92,7 +92,7 @@ This triggers commands when pushing the area of the TouchBar where the building 
 
 If you add your nodes public address in here, holding **Shift Command** and pushing on the Online Status of your node on the TouchBar opens the Ambrosus Explorer with your nodes page in Brave. If you dont have the Brave browser installed, you can change the script to any other browser.
 
-Pushing the price ticker on the TouchBar opens Ambrosus Reddit, Ambrosus Twitter and Coinmarketcap.
+Pushing the price ticker on the TouchBar opens Ambrosus Reddit, Ambrosus Twitter, Coinmarketcap and Romans great reward-calculator amb.money.
 
 Tapping the grey AMB-net Info part of the Dashboard on the TouchBar opens the main page of the Ambrosus-Explorer.
 
@@ -175,7 +175,7 @@ This installs fail2ban and copies the configuration file so that you can easily 
 After running the last line the nano texteditor should be opened with the configuration file jail.local.
 Here you go down in the text, until you find the following 3 parameters: Max retry, Findtime, Bantime.
 Erase the # in front of every of those parameters + in front of the next DEFAULT several lines above to activate this whole settings block. Then enter maximum login attempts as max retry, the time a user has to try these number of login attempts  (Findtime) and the time an ip is banned for, if these tresholds are crossed. Note that this rule applies to your login device aswell.
-So if you set 5 retries and 5000m bantime and type your ssh password wrong 5 times, your computers ip is banned for over 83 hours. After setting these variables, quit nano with **control x** and save the file. Now restart fail2ban and test its status by running:
+So if you set 5 retries and 5000m bantime and type your ssh password wrong 5 times, your computers ip is banned for over 83 hours. After setting these variables, quit nano with **Control X** and save the file. Now restart fail2ban and test its status by running:
 
 ```
 sudo systemctl restart fail2ban
@@ -204,14 +204,14 @@ From left to right you stop the node, update the node and/or the system and star
 ![alt text](https://github.com/inlak16/AMB-NET-Touchbar-Dashboard/blob/master/tutorial-images/16.png)
 
 
-This is the functionality for now. 
+This is the functionality for now. Thanks alot to the community for being so responsive and helping me test some things and for the Ambrosus team for crushing it and getting things done.
 
 I'm excited to hear about ideas and useful commands that can be implemented and what you are going to customize out of this set of tools. 
 
 Please feel free to get back to me on Ambrosus slack. 
 I'm planning to keep updating this repository the way I have time.
 
-If you like this project and find it useful, here is my tip jar that gratefully accepts AMB or ETH contributions:
+If you like this project and find it useful, here is my Tip Jar that gratefully accepts AMB or ETH contributions:
 _0xaBA817a774bf3dB1faB3c5cf867a82A683D74D22_
 
 
