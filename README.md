@@ -9,7 +9,7 @@ Here I present a complete setup that may help you monitor and control your ATLAS
 Please note that this is NOT an official tool created by Ambrosus, but a setup that I built to control my own node and found quite useful to share with the whole community. 
 Although I don't expect any dangerous errors to occur, I give no warranty that this is bug-free, so please have a look at the code, before running it. I have been controlling my node with this for several months without major issues now.
 
-Also note that as soon as the AMB-Net-API is altered in any way, the pulled node info might not work as expected anymore and changes to the code may be needed. I'm posting all the code snippets seperately in here in the Code-Snippets subfolder so anybody can see what's going on.
+Also note that as soon as the AMB-Net API is altered in any way, the pulled node info might not work as expected anymore and changes to the code may be needed. I'm posting all the code snippets seperately in here in the Code-Snippets subfolder so anybody can see what's going on.
 _These code snippets can be encapsulated as executable apple scripts with Automator, too. So they may be helpful even without a TouchBar._
 
 In the longer term, there may be a much better way to pull node information like sheltered bundles for Atlas nodes. 
@@ -50,7 +50,7 @@ On the very left you have the programs that have TouchBar presets in them. Close
 
 
 
-As you can see, I tried to keep it as flexible as possible. from top to bottom there is a **login script** (opening terminal with ssh connection), **a group of several login scripts** (In case you plan to run several nodes now that the floodgates to onboarding are open :D ), **two price tickers** (the first in EUR, which needs coinmarketcap api registration and the second in USD, running directly from Ambrosus API), **Apollo Online Status** (Online/Offline/Retired), **Apollo Main Stats** (Balance, Block, Stake), **Atlas Online Status** (Onboarded/Offline), **Atlas Main Stats** (Balance,Sheltered Bundles,Stake) and **AMB-Net Stats** (Daily Bundles, AMB per Bundle).
+As you can see, I tried to keep it as flexible as possible. from top to bottom there is a **login script** (opening terminal with ssh connection), **a group of several login scripts** (In case you plan to run several nodes now that the floodgates to onboarding are open :D ), **two price tickers** (the first in EUR, which needs coinmarketcap api registration and the second in USD, running directly from AMB-Net API), **Apollo Online Status** (Online/Offline/Retired), **Apollo Main Stats** (Balance, Block, Stake), **Atlas Online Status** (Onboarded/Offline), **Atlas Main Stats** (Balance,Sheltered Bundles,Stake) and **AMB-Net Stats** (Daily Bundles, AMB per Bundle).
 
 
 ![alt text](https://github.com/inlak16/AMB-NET-Touchbar-Dashboard/blob/master/tutorial-images/05.png)
