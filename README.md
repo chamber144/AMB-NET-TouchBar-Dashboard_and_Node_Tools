@@ -203,12 +203,9 @@ From left to right you stop the node, update the node and/or the system and star
 
 
 This is the functionality for now. 
-
 Thanks alot to the community for being so responsive and helping me test some things and for the Ambrosus team for crushing it and getting things done.
 
-I'm excited to hear about ideas and useful commands that can be implemented and what you are going to customize out of this set of tools. 
-
-Please feel free to get back to me on Ambrosus slack. 
+I'm excited to hear about ideas and useful commands that can be implemented and what you are going to customize out of this set of tools. Please feel free to get back to me on Ambrosus slack. 
 I'm planning to keep updating this repository the way I have time.
 
 If you like this project and find it useful, here is my Tip Jar that gratefully accepts AMB or ETH contributions:
