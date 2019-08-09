@@ -1,0 +1,7 @@
+--shows all ssh connections that tried to login.
+
+tell application "Terminal"
+	set currentTab to do script "sudo grep sshd.*Did /var/log/auth.log | less" in window 1
+	
+	
+end tell
