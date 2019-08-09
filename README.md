@@ -4,13 +4,13 @@
 
 ### Hello fellow AMB-Net node operators. Welcome to this little repository.
 
-Here I present a complete setup that may help you monitor and control your ATLAS or APOLLO through a MacBook Touchbar.
+Here I present a complete setup that may help you monitor and control your ATLAS or APOLLO through a MacBook TouchBar.
 
 Please note that this is NOT an official tool created by Ambrosus, but a setup that I built to control my own node and found quite useful to share with the whole community. 
 Although I don't expect any dangerous errors to occur, I give no warranty that this is bug-free, so please have a look at the code, before running it. I have been controlling my node with this for several months without major issues now.
 
 Also note that as soon as the Ambrosus-API is altered in any way, the pulled node info might not work as expected anymore and changes to the code may be needed. I'm posting all the code snippets seperately in here in the Code-Snippets subfolder so anybody can see what's going on.
-_These code snippets can be encapsulated as executable apple scripts with Automator, too. So they may be helpful even without a Touch bar._
+_These code snippets can be encapsulated as executable apple scripts with Automator, too. So they may be helpful even without a TouchBar._
 
 In the longer term, there may be a much better way to pull node information like sheltered bundles for Atlas nodes. 
 Right now the scripts are iterating through many pages of transactions to count an atlas nodes challenges, which takes a few seconds to load for the first time.
@@ -25,7 +25,7 @@ https://folivora.ai/buy
 
 https://bettertouchtool.net/releases/BetterTouchTool.zip
 
-For quite some time I have wondered if it was really worth it to get the more expensive MacBook with Touch bar. But now with this setup, it has gotten really useful. In the long run it is saving me alot of time that I would need for typing or searching and copying commands.
+For quite some time I have wondered if it was really worth it to get the more expensive MacBook with TouchBar. But now with this setup, it has gotten really useful. In the long run it is saving me alot of time that I would need for typing or searching and copying commands.
 
 
 ### Overview of BetterTouchTool and Dashboard
@@ -82,7 +82,7 @@ Just enter your nodes public address into the script und click save at the top w
 
 After doing the same with the according Main Stats Layer, the **Shift Command** Dashboard already works.
 Activating the Online-Status-Layer again, now click on the "run apple script" at the top center.
-This triggers commands when pushing the area of the Touch bar where the building block/layer is appearing.
+This triggers commands when pushing the area of the TouchBar where the building block/layer is appearing.
 
 
 
@@ -90,11 +90,11 @@ This triggers commands when pushing the area of the Touch bar where the building
 
 
 
-If you add your nodes public address in here, holding **Shift Command** and pushing on the Online Status of your node on the Touchbar opens the Ambrosus Explorer with your nodes page in Brave. If you dont have the Brave browser installed, you can change the script to any other browser.
+If you add your nodes public address in here, holding **Shift Command** and pushing on the Online Status of your node on the TouchBar opens the Ambrosus Explorer with your nodes page in Brave. If you dont have the Brave browser installed, you can change the script to any other browser.
 
 Pushing the price ticker on the touchbar opens Ambrosus Reddit, Ambrosus Twitter and Coinmarketcap.
 
-Tapping the grey AMB-net Info part of the Dashboard on the Touch bar opens the main page of the Ambrosus-Explorer.
+Tapping the grey AMB-net Info part of the Dashboard on the TouchBar opens the main page of the Ambrosus-Explorer.
 
 
 ### Logging into your node and preparations of the control Dashboard
@@ -119,10 +119,10 @@ Terminal Profile Settings with preset "Amb1" having loaded a Backdrop image call
 ![alt text](https://github.com/inlak16/AMB-NET-Touchbar-Dashboard/blob/master/tutorial-images/11.png)
 
 
-When you are logged in through the >_ button on the touchbar, BetterTouchTool automatically switches to the Triggers for the Terminal application on your Touch bar. There are two options on the top level. Analysis and Node Control.
+When you are logged in through the >_ button on the touchbar, BetterTouchTool automatically switches to the Triggers for the Terminal application on your TouchBar. There are two options on the top level. Analysis and Node Control.
 ![alt text](https://github.com/inlak16/AMB-NET-Touchbar-Dashboard/blob/master/tutorial-images/14.png)
 
-Tapping on Analysis on the Touch bar gives all kind of options. But let's set things up first. Run the following command  in Terminal:
+Tapping on Analysis on the TouchBar gives all kind of options. But let's set things up first. Run the following command  in Terminal:
 
 `docker ps`
 
@@ -138,7 +138,7 @@ To save the log commands for multiple nodes, you can use the hidden group of log
 
 ### Analysis functions on the control Dashboard
 
-From left to right here are the scripts in the Analysis Group that you can scroll through on your Touch bar:
+From left to right here are the scripts in the Analysis Group that you can scroll through on your TouchBar:
 **Atlas Logs 1h - Parity Logs 1h - Sheltered Bundles - TimeServer - TempBannedIP - BruteForce Protection - Granted Logins - Failed Logins - SSH Connections - Parity Version**
 ![alt text](https://github.com/inlak16/AMB-NET-Touchbar-Dashboard/blob/master/tutorial-images/13.png)
 
@@ -147,7 +147,7 @@ Just disable unneeded functions by turning off their Triggers visibility in Bett
 ![alt text](https://github.com/inlak16/AMB-NET-Touchbar-Dashboard/blob/master/tutorial-images/Analysis_Touchbar_sm.jpg)
 
 The **Sheltered Bundles** function gives ATLAS node operators certainty of the Bundles held on their nodes harddrive.
-If you tap this on the Touch Bar, it outputs a text in Terminal with the number of sheltered Bundles in the very last line.
+If you tap this on the TouchBar, it outputs a text in Terminal with the number of sheltered Bundles in the very last line.
 
 **TimeServer** returns the connection to different ntp timeservers and its delay. I have this installed to be sure that my node has the correct time. You can install ntp simply by running the following. The last line is the same as in this function to query connection to timeservers:
 
