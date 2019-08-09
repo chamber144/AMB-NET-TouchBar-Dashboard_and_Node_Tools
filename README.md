@@ -1,7 +1,6 @@
 # AMB-NET-Touchbar-Dashboard
 
 ![alt text](https://github.com/inlak16/AMB-NET-Touchbar-Dashboard/blob/master/tutorial-images/Node_Control_Touchbar_sm_.jpg)
-![alt text](https://github.com/inlak16/AMB-NET-Touchbar-Dashboard/blob/master/tutorial-images/Node_Info_Touchbar_.jpg)
 
 Hello fellow AMB-Net node operators. Welcome to this little repository.
 
@@ -15,6 +14,7 @@ _These code snippets can be encapsulated as executable apple scripts with Automa
 There may be a much better way to pull node information like sheltered bundles for Atlas in the future. 
 Right now the scripts are iterating through many pages of transactions to count an atlas nodes challenges, which takes a few seconds to load for the first time.
 
+![alt text](https://github.com/inlak16/AMB-NET-Touchbar-Dashboard/blob/master/tutorial-images/Node_Info_Touchbar_.jpg)
 
 ### Installing BetterTouchTool
 
