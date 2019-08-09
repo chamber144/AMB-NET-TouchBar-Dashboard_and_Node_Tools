@@ -1,18 +1,18 @@
 -- input your Atlas node Address here:
-set nodeaddress to "0000000000000000000000000000000000000000"
+set nodeaddress to "0x000000000000000000000000000000000000000000"
 
 
 
 -- get info around particular Atlas node
-set mJson to do shell script "curl -s 'https://explorer-api.ambrosus-test.com/atlases'"
+set mJson to do shell script "curl -s 'https://explorer-api.ambrosus.com/atlases'"
 set AppleScript's text item delimiters to {nodeaddress}
 set keyNodeList to (every text item in mJson) as list
 set AppleScript's text item delimiters to ""
 
 set listSize to count of keyNodeList
 set page to 1
+-- iterate through pages of 50 nodes to find the right one
 repeat while listSize = 1
-	-- iterate through pages of 50 nodes to find the right one
 	set AppleScript's text item delimiters to {"\"next\":"}
 	set keyNodeList to (every text item in mJson) as list
 	set AppleScript's text item delimiters to ""
