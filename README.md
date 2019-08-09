@@ -25,8 +25,6 @@ https://folivora.ai/buy
 
 https://bettertouchtool.net/releases/BetterTouchTool.zip
 
-If you ask yourself if this is worth it, I definitely say, yes. The devs regularly update the software and compared to other mac tools, 7 bucks is not too expensive.
-
 For quite some time I have wondered if it was really worth it to get the more expensive MacBook with Touch bar. But now with this setup, it has gotten really useful. In the long run it is saving me alot of time that I would need for typing or searching and copying commands.
 
 
