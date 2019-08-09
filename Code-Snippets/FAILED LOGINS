@@ -1,0 +1,8 @@
+-- shows all failed login attempts
+
+
+tell application "Terminal"
+	set currentTab to do script "sudo grep sshd.*Disconnect /var/log/auth.log | less" in window 1
+	
+	
+end tell
