@@ -26,7 +26,8 @@ https://folivora.ai/buy
 https://bettertouchtool.net/releases/BetterTouchTool.zip
 
 If you ask yourself if this is worth it, I definitely say, yes. The devs regularly update the software and compared to other mac tools, 7 bucks is not too expensive.
-Luckily this is the only thing that needs to be bought if you already own a MacBook with Touch bar. Quite some time I have wondered if it was really worth to get the more expensive MacBook with Touchbar. But now it has gotten really useful for quickly controlling my node on AMB-Net.
+
+Quite some time I have wondered if it was really worth to get the more expensive MacBook with Touchbar. But now it has gotten really useful for quickly controlling my node on AMB-Net.
 
 
 ### Overview of BetterTouchTool and Dashboard
