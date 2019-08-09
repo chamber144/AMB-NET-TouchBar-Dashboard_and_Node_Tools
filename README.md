@@ -19,7 +19,7 @@ Right now the scripts are iterating through many pages of transactions to count 
 
 ### Installing BetterTouchTool
 
-So let's get started. My setup only works with a tool called BetterTouchTool, which you can purchase for around 7 USD for a 2 year license or try for free for 45 days:
+So let's get started. This setup only works with a tool called BetterTouchTool, which you can purchase for around 7 USD for a 2 year license or try for free for 45 days:
 
 https://folivora.ai/buy
 
