@@ -190,9 +190,9 @@ With the **Granted Logins** function you can check, who logged into your vps suc
 
 **Failed Logins** of course returns the opposite. And it's quite astonishing how many bots must be out there to try on all kind of ips all day.
 
-The function **SSH Connections** returns just the attemps that have been done with a ssh connection.
+The function **SSH Connections** returns just the attemps that have been made with ssh connection.
 
-With **Parity Version** you can simply check which version of parity your node is running on to know if an update is needed.
+With **Parity Version** you can simply check which version of parity your node is running to know if an update is needed.
 
 And that's it for the Analysis part.
 
