@@ -151,7 +151,7 @@ Just disable unneeded functions by turning off their Triggers visibility in Bett
 The **Sheltered Bundles** function gives ATLAS node operators certainty of the Bundles held on their nodes harddrive.
 If you tap this on the Touch Bar, it outputs a text in Terminal with the number of sheltered Bundles in the very last line.
 
-**TimeServer** returns the connection to different ntp timeservers and its delay. I have this installed to be sure, my node has the correct time. You can install ntp simply by running the following. The last line is the same as in this function to query connection to timeservers:
+**TimeServer** returns the connection to different ntp timeservers and its delay. I have this installed to be sure that my node has the correct time. You can install ntp simply by running the following. The last line is the same as in this function to query connection to timeservers:
 
 ```
 sudo timedatectl set-ntp off
