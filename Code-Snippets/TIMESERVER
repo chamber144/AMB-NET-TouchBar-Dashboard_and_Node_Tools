@@ -1,0 +1,11 @@
+-- I use ntp to be sure to have the correct time on my node
+-- to install first do the following:
+-- sudo timedatectl set-ntp off
+-- timedatectl status
+-- sudo apt install ntp
+-- now this script is going to show timeserver peers and delays
+
+tell application "Terminal"
+	set currentTab to do script "ntpq -p" in window 1
+	
+end tell
