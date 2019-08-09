@@ -1,0 +1,18 @@
+-- this script shows ips blocked after too many failed login attemps
+-- I use fail2ban as bruteforce protection here. 
+-- To install, run the following:
+-- sudo apt-get install -y fail2ban
+-- sudo systemctl start fail2ban
+-- sudo systemctl enable fail2ban
+-- awk '{ printf "# "; print; }' /etc/fail2ban/jail.conf | sudo tee /etc/fail2ban/jail.local
+-- sudo nano /etc/fail2ban/jail.local
+-- now move down to where it says "max retry", "findtime", "bantime" and DEFAULT above those 3.
+-- erase # in all 4 of those lines and adjust settings to your liking.
+-- CAUTION setting max retry to 5 for example, typing in your ssh key wrong 5 times causes a ban on your used login ip for set bantime.
+-- run to activate your settings: sudo systemctl restart fail2ban
+
+tell application "Terminal"
+	set currentTab to do script "sudo zgrep -h \"Ban \" /var/log/fail2ban.log* | awk '{print $NF}' | sort | uniq -c" in window 1
+	
+	
+end tell
