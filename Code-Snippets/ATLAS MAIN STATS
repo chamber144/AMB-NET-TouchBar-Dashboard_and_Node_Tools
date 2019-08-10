@@ -78,13 +78,6 @@ set theKeyValueBufferList to (every text item in theKeyValuePair) as list
 set AppleScript's text item delimiters to ""
 set stake to item 2 of theKeyValueBufferList
 
--- get status
-set theKeyValuePair to item 13 of keyValueList
-set AppleScript's text item delimiters to {": "}
-set theKeyValueBufferList to (every text item in theKeyValuePair) as list
-set AppleScript's text item delimiters to ""
-set status to item 2 of theKeyValueBufferList
-
 -- get balance
 set firstSet to item 3 of keyNodeList
 set AppleScript's text item delimiters to {","}
@@ -183,7 +176,7 @@ set allbundles to RemoveFromString("\"", allbundles)
 set dailybundles to RemoveFromString("\"", dailybundles)
 set weeklybundles to RemoveFromString("\"", weeklybundles)
 set monthlybundles to RemoveFromString("\"", monthlybundles)
-set status to RemoveFromString("\"", status)
+
 set balance to RemoveFromString("\"", balance)
 
 set stake to returnNumbersInString(stake)
@@ -234,5 +227,3 @@ on returnNumbersInString(inputString)
 	end repeat
 	return numlist
 end returnNumbersInString
-
-
