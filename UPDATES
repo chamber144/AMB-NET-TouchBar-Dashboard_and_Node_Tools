@@ -4,12 +4,13 @@ UPDATES:
 
 Version 1.2 uploaded and code snippets updated
 - Changed the way Apollos pull state, status and blocks to work on any state history length of the node. 
+  Additionally the code was cleaned up.
 - Changed the way Atlases determine Online status. If node is not found in the API,
   it's shown as offline instead of getting cryptic text returns.
 - Added Resync Chain button to the node control.
 - Added more multiple node templates for logging in and showing node logs 
   according to the colored backgrounds I made before (6 + 1 test). 
-  So people with any number of nodes have a good base to start from.   
+  So people with any number of nodes have a good base to start from.     
 
 09.08.19:
 
