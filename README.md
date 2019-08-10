@@ -117,7 +117,8 @@ Layer overview of the Photoshop file:
 ![alt text](https://github.com/inlak16/AMB-NET-Touchbar-Dashboard/blob/master/tutorial-images/15.png)
 
 
-Terminal Profile Settings with preset "Amb1" having loaded a Backdrop image called "Amb_node_1.png":
+Terminal Profile Settings with preset "Amb1" having loaded a Backdrop image called "Amb_node_1.png" 
+I found terminal window size 150x50 to be a good preset:
 ![alt text](https://github.com/inlak16/AMB-NET-Touchbar-Dashboard/blob/master/tutorial-images/11.png)
 
 
@@ -161,7 +162,7 @@ ntpq -p
 ```
 
 **TempBannedIP** is a function that calls a list of ips that have been banned through the BruteForce Protection.
-I'm using fail2Ban to permit bots and hackers from bruteforcing into my node. You can install the software by following these steps:
+I'm using fail2ban to permit bots and hackers from bruteforcing into my node. You can install the software by following these steps:
 
 ```
 sudo apt-get install -y fail2ban
