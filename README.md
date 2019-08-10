@@ -196,7 +196,7 @@ And that's it for the Analysis part.
 
 ### Controlling your node on the Dashboard
 
-The Node control part of the Terminal controls of the Dashboard are pretty self explanatory.
+The Node control part of the Terminal controls of the Dashboard is pretty self explanatory.
 From left to right you stop the node, update the node and/or the system and start the node again.
 
 ![alt text](https://github.com/inlak16/AMB-NET-Touchbar-Dashboard/blob/master/tutorial-images/16.png)
@@ -212,5 +212,7 @@ I'm planning to keep updating this repository the way I have time.
 If you like this project and find it useful, here is my Tip Jar that gratefully accepts AMB or ETH contributions:
 _0xaBA817a774bf3dB1faB3c5cf867a82A683D74D22_
 
+Below is a link to the Updates that have been done so far:
+<script src="https://raw.github.com/inlak16/AMB-NET-Touchbar-Dashboard/blob/master/UPDATE"></script
 
 
