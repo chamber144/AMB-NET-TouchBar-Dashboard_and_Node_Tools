@@ -40,11 +40,16 @@ end repeat
 
 -- get status
 set firstSet to item 2 of keyNodeList
+set AppleScript's text item delimiters to {"status"}
+set keyValueList to (every text item in firstSet) as list
+set AppleScript's text item delimiters to ""
+
+set firstSet to item 2 of keyValueList
 set AppleScript's text item delimiters to {","}
 set keyValueList to (every text item in firstSet) as list
 set AppleScript's text item delimiters to ""
 
-set theKeyValuePair to item 4 of keyValueList
+set theKeyValuePair to item 1 of keyValueList
 set AppleScript's text item delimiters to {": "}
 set theKeyValueBufferList to (every text item in theKeyValuePair) as list
 set AppleScript's text item delimiters to ""
@@ -121,7 +126,7 @@ if status is not equal to "ONLINE" then
 	
 	-- get blocks
 	set firstSet to item 2 of keyNodeList
-	set AppleScript's text item delimiters to {"blocks"}
+	set AppleScript's text item delimiters to {"totalBlocks"}
 	set keyValueList to (every text item in firstSet) as list
 	set AppleScript's text item delimiters to ""
 	
