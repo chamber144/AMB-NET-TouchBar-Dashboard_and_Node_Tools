@@ -201,7 +201,7 @@ From left to right you resync the chain (from scratch), stop the node, update th
 
 ![alt text](https://github.com/inlak16/AMB-NET-Touchbar-Dashboard/blob/master/tutorial-images/16.png)
 
-
+### what's next ?
 
 This is the functionality for now. 
 Thanks alot to the community for being so responsive and helping me test some things and for the Ambrosus team for crushing it and making great progress.
@@ -212,7 +212,8 @@ _0xaBA817a774bf3dB1faB3c5cf867a82A683D74D22_
 
 
 I'm excited to hear about ideas and useful commands that can be implemented and what you are going to customize out of this set of tools. Please feel free to get back to me on Ambrosus slack. 
-I'm planning to keep updating this repository the way I have time.
+I'm planning to keep updating this repository the way I have time. 
+I'm thinking about giving options to show info for multiple nodes of a type in one stats Dashboard in a compressed form with combined balance etc.
 
 Here is a link to the Updates that have been done so far:
 
