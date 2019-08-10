@@ -117,8 +117,8 @@ Layer overview of the Photoshop file:
 ![alt text](https://github.com/inlak16/AMB-NET-Touchbar-Dashboard/blob/master/tutorial-images/15.png)
 
 
-Terminal Profile Settings with preset "Amb1" having loaded a Backdrop image called "Amb_node_1.png" 
-I found terminal window size 150x50 to be a good preset:
+Terminal Profile Settings with preset "Amb1" having loaded a Backdrop image called "Amb_node_1.png"              
+(I found terminal window size 150x50 to be a good preset):
 ![alt text](https://github.com/inlak16/AMB-NET-Touchbar-Dashboard/blob/master/tutorial-images/11.png)
 
 
