@@ -213,6 +213,6 @@ If you like this project and find it useful, here is my Tip Jar that gratefully 
 _0xaBA817a774bf3dB1faB3c5cf867a82A683D74D22_
 
 Below is a link to the Updates that have been done so far:
-<script src="https://github.com/inlak16/AMB-NET-TouchBar-Dashboard/blob/master/UPDATES"></script>
+<script src="https://github.com/inlak16/AMB-NET-TouchBar-Dashboard/blob/cfeff8f7fa5739002da5e02ef110451eb27fe0e2/UPDATES"></script>
 
 
