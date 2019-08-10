@@ -1,0 +1,15 @@
+UPDATES:
+
+09.08.19:
+Genesis 1.0 uploaded
+
+09.08.19:
+
+Version 1.1 uploaded and code snippets updated
+Changed the way Apollos pull validated Blocks 
+as this info could not be pulled on nodes that have more node states 
+(offline, online history on the blockchain).
+
+10.08.19:
+
+Version 1.2 uploaded and code snippets updated
