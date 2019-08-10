@@ -37,21 +37,37 @@ repeat while listSize = 1
 	if listSize is not equal to 1 then exit repeat
 end repeat
 
-
--- get status
+-- get state
 set firstSet to item 2 of keyNodeList
+set AppleScript's text item delimiters to {"state"}
+set keyValueList to (every text item in firstSet) as list
+set AppleScript's text item delimiters to ""
+
+set firstSet to item 2 of keyValueList
 set AppleScript's text item delimiters to {","}
 set keyValueList to (every text item in firstSet) as list
 set AppleScript's text item delimiters to ""
 
-set theKeyValuePair to item 5 of keyValueList
+set theKeyValuePair to item 1 of keyValueList
 set AppleScript's text item delimiters to {": "}
 set theKeyValueBufferList to (every text item in theKeyValuePair) as list
 set AppleScript's text item delimiters to ""
-set retired to item 2 of theKeyValueBufferList
-set retired to RemoveFromString("\"", retired)
+set state to item 2 of theKeyValueBufferList
+set state to RemoveFromString("\"", state)
 
-set theKeyValuePair to item 12 of keyValueList
+
+-- get status
+set firstSet to item 2 of keyNodeList
+set AppleScript's text item delimiters to {"status"}
+set keyValueList to (every text item in firstSet) as list
+set AppleScript's text item delimiters to ""
+
+set firstSet to item 2 of keyValueList
+set AppleScript's text item delimiters to {","}
+set keyValueList to (every text item in firstSet) as list
+set AppleScript's text item delimiters to ""
+
+set theKeyValuePair to item 1 of keyValueList
 set AppleScript's text item delimiters to {": "}
 set theKeyValueBufferList to (every text item in theKeyValuePair) as list
 set AppleScript's text item delimiters to ""
@@ -59,18 +75,10 @@ set status to item 2 of theKeyValueBufferList
 set status to RemoveFromString("\"", status)
 
 
-if status is not equal to "ONLINE" then
-	set theKeyValuePair to item 4 of keyValueList
-	set AppleScript's text item delimiters to {": "}
-	set theKeyValueBufferList to (every text item in theKeyValuePair) as list
-	set AppleScript's text item delimiters to ""
-	set status to item 2 of theKeyValueBufferList
-	set status to RemoveFromString("\"", status)
-end if
-
-if retired is equal to "RETIRED" then
+if state is equal to "RETIRED" then
 	set status to "RETIRED"
 end if
+
 
 set unformatedValue to "APOLLO " & status
 return RemoveFromString("\"", unformatedValue)
