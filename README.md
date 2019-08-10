@@ -213,6 +213,7 @@ I'm excited to hear about ideas and useful commands that can be implemented and 
 I'm planning to keep updating this repository the way I have time.
 
 Here is a link to the Updates that have been done so far:
+
 https://github.com/inlak16/AMB-NET-TouchBar-Dashboard/blob/master/UPDATES
 
 
