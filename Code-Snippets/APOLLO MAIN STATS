@@ -55,47 +55,47 @@ set AppleScript's text item delimiters to ""
 set status to item 2 of theKeyValueBufferList
 set status to RemoveFromString("\"", status)
 
-
+-- get stake
 set firstSet to item 2 of keyNodeList
 set AppleScript's text item delimiters to {"stake"}
 set keyValueList to (every text item in firstSet) as list
 set AppleScript's text item delimiters to ""
-
+	
 set firstSet to item 2 of keyValueList
 set AppleScript's text item delimiters to {","}
 set keyValueList to (every text item in firstSet) as list
 set AppleScript's text item delimiters to ""
-
+	
 set theKeyValuePair to item 2 of keyValueList
 set AppleScript's text item delimiters to {": "}
 set theKeyValueBufferList to (every text item in theKeyValuePair) as list
 set AppleScript's text item delimiters to ""
 set stake to item 2 of theKeyValueBufferList
-
-
+	
+	
 -- get blocks
 set firstSet to item 2 of keyNodeList
 set AppleScript's text item delimiters to {"totalBlocks"}
 set keyValueList to (every text item in firstSet) as list
 set AppleScript's text item delimiters to ""
-
+	
 set firstSet to item 2 of keyValueList
 set AppleScript's text item delimiters to {","}
 set keyValueList to (every text item in firstSet) as list
 set AppleScript's text item delimiters to ""
-
+	
 set theKeyValuePair to item 1 of keyValueList
 set AppleScript's text item delimiters to {": "}
 set theKeyValueBufferList to (every text item in theKeyValuePair) as list
 set AppleScript's text item delimiters to ""
 set blocks to item 2 of theKeyValueBufferList
-
+	
 -- get balance
 set firstSet to item 3 of keyNodeList
 set AppleScript's text item delimiters to {","}
 set keyValueList to (every text item in firstSet) as list
 set AppleScript's text item delimiters to ""
-
+	
 set theKeyValuePair to item 4 of keyValueList
 set AppleScript's text item delimiters to {": "}
 set theKeyValueBufferList to (every text item in theKeyValuePair) as list
