@@ -125,21 +125,9 @@ Terminal Profile Settings with preset "Amb1" having loaded a Backdrop image call
 When you are logged in through the >_ button on the touchbar, BetterTouchTool automatically switches to the Triggers for the Terminal application on your TouchBar. There are two options on the top level. Analysis and Node Control.
 ![alt text](https://github.com/inlak16/AMB-NET-Touchbar-Dashboard/blob/master/tutorial-images/14.png)
 
-Tapping on Analysis on the TouchBar gives all kind of options. Let's make sure everything is set up first. Run the following command in Terminal:
-
-`docker ps`
-
-Depending on wether you are running ATLAS or APOLLO, you insert the resulting IDs in the logs scripts in BetterTouchTool.
-For APOLLO there is only one ID that has to be put in the Parity Logs script. Click Terminal on the left in BetterTouchTool and then double click the Analysis group, go to Parity Logs 1h and click run apple script to access the script.
-
-![alt text](https://github.com/inlak16/AMB-NET-Touchbar-Dashboard/blob/master/tutorial-images/12.png)
-
-For Atlas there are several IDs that docker ps outputs.
-Atlas worker is the ID für the Atlas Logs scripts and Parity is for the Parity Log script. The Atlas log shows challenges and Parity logs shows the Blockchain connection through its Peercount (should be higher than 15 in my experience) and Blockheight (if node is showing offline, compare the Blockheight with the Ambrosus Explorer and see if the node is still syncing).
-
-To save the log commands for multiple nodes, you can use the hidden group of log scripts a level higher outside the Analysis Group in BetterTouchTool.
-
 ### Analysis functions on the control Dashboard
+
+Tapping on Analysis on the TouchBar gives all kind of options. 
 
 From left to right here are the scripts in the Analysis Group that you can scroll through on your TouchBar:
 **Atlas Logs 1h - Parity Logs 1h - Sheltered Bundles - TimeServer - TempBannedIP - BruteForce Protection - Granted Logins - Failed Logins - SSH Connections - Parity Version**
@@ -148,6 +136,8 @@ From left to right here are the scripts in the Analysis Group that you can scrol
 Just disable unneeded functions by turning off their Triggers visibility in BetterTouchTool.
 
 ![alt text](https://github.com/inlak16/AMB-NET-Touchbar-Dashboard/blob/master/tutorial-images/Analysis_Touchbar_sm.jpg)
+
+**The Atlas Logs 1h** shows challenges for Atlas nodes and **Parity Logs 1h** shows the Blockchain connection through its Peercount (should be higher than 15 in my experience) and Blockheight (if node is showing offline, compare the Blockheight with the Ambrosus Explorer and see if the node is still syncing).
 
 The **Sheltered Bundles** function gives ATLAS node operators certainty of the Bundles held on their nodes harddrive.
 If you tap this on the TouchBar, it outputs a text in Terminal with the number of sheltered Bundles in the very last line.
