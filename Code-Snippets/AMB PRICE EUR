@@ -22,6 +22,7 @@ set change to item 2 of theKeyValueBufferList
 set usdPrice to RemoveFromString("\"", usdPrice)
 set usdPrice to RoundImperialNumberToThreeDecimals(usdPrice)
 set change to RemoveFromString("\"", change)
+set usdPrice to RoundImperialNumberToOneDecimals(change)
 
 set arrow to " ▲"
 
@@ -52,4 +53,16 @@ on RoundImperialNumberToThreeDecimals(txt)
 	set theNumber to text item 1 of txt & "." & decimals
 	set AppleScript's text item delimiters to ""
 	return theNumber
-end RoundImperialNumberToTwoDecimals
+end RoundImperialNumberToThreeDecimals
+
+on RoundImperialNumberToOneDecimals(txt)
+	set AppleScript's text item delimiters to "."
+	set decimals to text item 2 of txt
+	if (count decimals) < 1 then
+		set decimals to decimals & "0"
+	end if
+	set decimals to (text 1 thru 1 of decimals)
+	set theNumber to text item 1 of txt & "." & decimals
+	set AppleScript's text item delimiters to ""
+	return theNumber
+end RoundImperialNumberToOneDecimals
