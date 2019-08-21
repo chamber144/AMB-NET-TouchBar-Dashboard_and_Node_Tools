@@ -7,7 +7,7 @@ Version 1.3 uploaded and code snippets updated
 - Added Atlas Payout button to node control dashboard.
 - If Apollo node is not found in the API it is showing as OFFLINE.
 - Added corrected description for Apollo Main Stats.
-- Corrected EUR AMB ticker to 1 number after comma in the change variable, same as USD ticker.
+- Corrected EUR AMB ticker to 1 decimal after comma in the change variable, same as USD ticker.
 
 10.08.19:
 
