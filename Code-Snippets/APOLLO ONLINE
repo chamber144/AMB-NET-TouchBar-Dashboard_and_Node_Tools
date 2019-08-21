@@ -9,6 +9,8 @@ set AppleScript's text item delimiters to {nodeaddress}
 set keyNodeList to (every text item in mJson) as list
 set AppleScript's text item delimiters to ""
 
+set nodefound to "yes"
+
 set listSize to count of keyNodeList
 set page to 1
 -- iterate through pages of 50 nodes to find the right one
@@ -16,6 +18,8 @@ repeat while listSize = 1
 	set AppleScript's text item delimiters to {"\"next\":"}
 	set keyNodeList to (every text item in mJson) as list
 	set AppleScript's text item delimiters to ""
+	if (count of keyNodeList) is 1 then set nodefound to "no"
+	if (count of keyNodeList) is 1 then exit repeat
 	set pageEnd to item 2 of keyNodeList
 	
 	set AppleScript's text item delimiters to {","}
@@ -37,48 +41,50 @@ repeat while listSize = 1
 	if listSize is not equal to 1 then exit repeat
 end repeat
 
--- get state
-set firstSet to item 2 of keyNodeList
-set AppleScript's text item delimiters to {"state"}
-set keyValueList to (every text item in firstSet) as list
-set AppleScript's text item delimiters to ""
-
-set firstSet to item 2 of keyValueList
-set AppleScript's text item delimiters to {","}
-set keyValueList to (every text item in firstSet) as list
-set AppleScript's text item delimiters to ""
-
-set theKeyValuePair to item 1 of keyValueList
-set AppleScript's text item delimiters to {": "}
-set theKeyValueBufferList to (every text item in theKeyValuePair) as list
-set AppleScript's text item delimiters to ""
-set state to item 2 of theKeyValueBufferList
-set state to RemoveFromString("\"", state)
-
-
--- get status
-set firstSet to item 2 of keyNodeList
-set AppleScript's text item delimiters to {"status"}
-set keyValueList to (every text item in firstSet) as list
-set AppleScript's text item delimiters to ""
-
-set firstSet to item 2 of keyValueList
-set AppleScript's text item delimiters to {","}
-set keyValueList to (every text item in firstSet) as list
-set AppleScript's text item delimiters to ""
-
-set theKeyValuePair to item 1 of keyValueList
-set AppleScript's text item delimiters to {": "}
-set theKeyValueBufferList to (every text item in theKeyValuePair) as list
-set AppleScript's text item delimiters to ""
-set status to item 2 of theKeyValueBufferList
-set status to RemoveFromString("\"", status)
-
-
-if state is equal to "RETIRED" then
-	set status to "RETIRED"
+if nodefound is equal to "yes" then
+	-- get state
+	set firstSet to item 2 of keyNodeList
+	set AppleScript's text item delimiters to {"state"}
+	set keyValueList to (every text item in firstSet) as list
+	set AppleScript's text item delimiters to ""
+	
+	set firstSet to item 2 of keyValueList
+	set AppleScript's text item delimiters to {","}
+	set keyValueList to (every text item in firstSet) as list
+	set AppleScript's text item delimiters to ""
+	
+	set theKeyValuePair to item 1 of keyValueList
+	set AppleScript's text item delimiters to {": "}
+	set theKeyValueBufferList to (every text item in theKeyValuePair) as list
+	set AppleScript's text item delimiters to ""
+	set state to item 2 of theKeyValueBufferList
+	set state to RemoveFromString("\"", state)
+	
+	
+	-- get status
+	set firstSet to item 2 of keyNodeList
+	set AppleScript's text item delimiters to {"status"}
+	set keyValueList to (every text item in firstSet) as list
+	set AppleScript's text item delimiters to ""
+	
+	set firstSet to item 2 of keyValueList
+	set AppleScript's text item delimiters to {","}
+	set keyValueList to (every text item in firstSet) as list
+	set AppleScript's text item delimiters to ""
+	
+	set theKeyValuePair to item 1 of keyValueList
+	set AppleScript's text item delimiters to {": "}
+	set theKeyValueBufferList to (every text item in theKeyValuePair) as list
+	set AppleScript's text item delimiters to ""
+	set status to item 2 of theKeyValueBufferList
+	set status to RemoveFromString("\"", status)
+	
+	if state is equal to "RETIRED" then
+		set status to "RETIRED"
+	end if
+	
 end if
-
+if nodefound is equal to "no" then set status to "OFFLINE"
 
 set unformatedValue to "APOLLO " & status
 return RemoveFromString("\"", unformatedValue)
