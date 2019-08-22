@@ -22,7 +22,7 @@ set change to item 2 of theKeyValueBufferList
 set usdPrice to RemoveFromString("\"", usdPrice)
 set usdPrice to RoundImperialNumberToThreeDecimals(usdPrice)
 set change to RemoveFromString("\"", change)
-set usdPrice to RoundImperialNumberToOneDecimals(change)
+set change to RoundImperialNumberToOneDecimals(change)
 
 set arrow to " ▲"
 
