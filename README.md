@@ -85,7 +85,7 @@ Just enter your nodes public address into the script und click save at the top w
 
 After doing the same with the according Main Stats Layer, the **Shift Command** Dashboard already works.
 
-A Multiple Main stats Layer needs you to set the **nodeactive** variables in the script below the nodeaddresses to define which node slots of the 6 given to pull data from. Set either 1 or 0.
+A **Multiple Main stats** Layer needs you to set the **nodeactive** _variables in the script below the nodeaddresses_ to define which node slots of the 6 given to pull data from. Set either 1 to activate or 0 to deactivate.
 
 Activating the Online-Status-Layer again, now click on the "run apple script" at the top center.
 This triggers commands when pushing the area of the TouchBar where the building block/layer is appearing.
@@ -97,7 +97,7 @@ This triggers commands when pushing the area of the TouchBar where the building 
 
 
 If you add your nodes public address in here, holding **Shift Command** and pushing on the Online Status of your node on the TouchBar opens the Ambrosus Explorer with your nodes page in Brave. If you dont have the Brave browser installed, you can change the script to any other browser.
-For a setup with multiple nodes you need to repeat this for every visible Online-status-Layer and its corresponding nodeaddress to be able to access all your nodes explorer page by tapping the status dots on the TouchBar. 
+For a setup with multiple nodes you need to repeat this for every visible Online-status-Layer and its corresponding nodeaddress to be able to access all your nodes explorer pages by tapping the status dots on the TouchBar. 
 
 Pushing the price ticker on the TouchBar opens Ambrosus Reddit, Ambrosus Twitter, Coinmarketcap and Romans great reward-calculator amb.money.
 
