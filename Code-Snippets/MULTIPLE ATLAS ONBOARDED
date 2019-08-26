@@ -64,6 +64,8 @@ if nodefound is equal to "no" then set state to "OFFLINE"
 
 if state is not equal to "ONBOARDED" then set state to "OFFLINE"
 
+--➋➁➌➂➍➃➎➄➏➅
+
 if state is equal to "ONBOARDED" then set stat to "➊"
 if state is not equal to "ONBOARDED" then set stat to "➀"
 
