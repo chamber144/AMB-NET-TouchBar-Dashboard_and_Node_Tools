@@ -878,7 +878,7 @@ set balance to number_to_string(balance)
 set balance to RoundImperialNumberToTwoDecimals(balance)
 
 
-set unformatedValue to "| " & balance & " AMB | Sheltered Bundles " & bundles & " | " & stake & " Stake |"
+set unformatedValue to "| " & balance & " AMB | " & bundles & " Sheltered Bundles | " & stake & " Stake |"
 
 return RemoveFromString("\"", unformatedValue)
 
