@@ -4,7 +4,7 @@ UPDATES:
 
 26.08.19
 
-Version 1.5 (major update) uploaded and code snippets updated
+Version 1.5 (bigger update) uploaded and code snippets updated
 - Added new Stats Dashboard options for multiple Atlas and Apollo setups with numbered dots showing online status in 
   green/red and metrics adding up nodes balances, stakes and sheltered bundles into a comfortable overview.
 - Updated Github repository README accordingly to make setup easier.
