@@ -54,7 +54,7 @@ As you can see, I tried to keep it as flexible as possible. from top to bottom t
 
 
 ![alt text](https://github.com/inlak16/AMB-NET-Touchbar-Dashboard/blob/master/tutorial-images/06b.png | width=250)
-![](https://github.com/inlak16/AMB-NET-Touchbar-Dashboard/blob/master/tutorial-images/06b.png | width=300)
+<img width="200" alt="portfolio_view" src="https://github.com/inlak16/AMB-NET-Touchbar-Dashboard/blob/master/tutorial-images/06b.png">
 
 To give a better overview, here are 4 setups with different triggers activated and its resulting Dashboard that is activated by holding **Shift Command** on the keyboard.
 
