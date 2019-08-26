@@ -84,6 +84,7 @@ Just enter your nodes public address into the script und click save at the top w
 
 
 After doing the same with the according Main Stats Layer, the **Shift Command** Dashboard already works.
+
 A Multiple Main stats Layer needs you to set the **nodeactive** variables in the script below the nodeaddresses to define which node slots of the 6 given to pull data from. Set either 1 or 0.
 
 Activating the Online-Status-Layer again, now click on the "run apple script" at the top center.
