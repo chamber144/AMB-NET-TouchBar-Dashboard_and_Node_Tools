@@ -1,6 +1,6 @@
 
 -- input your Apollo node Address here:
-set nodeaddress to "0x162BA761Fc75f5873197A340F9e7fb926bA7517D"
+set nodeaddress to "0x0000000000000000000000000000000000000000"
 
 -- input address aswell into the run apple script on the left for a direkt browser link to the nodes explorer page when tapping on the touchbar. 
 
@@ -88,6 +88,8 @@ if nodefound is equal to "yes" then
 	
 end if
 if nodefound is equal to "no" then set status to "OFFLINE"
+
+--➋➁➌➂➍➃➎➄➏➅
 
 if status is equal to "ONLINE" then set stat to "➊"
 if status is not equal to "ONLINE" then set stat to "➀"
