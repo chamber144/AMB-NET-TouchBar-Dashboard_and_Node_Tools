@@ -61,13 +61,13 @@ To give a better overview, here are 4 setups with different triggers activated a
 **AMB USD - Atlas Online Status - Atlas Main Stats - AMB-Net Stats**:
 ![alt text](https://github.com/inlak16/AMB-NET-Touchbar-Dashboard/blob/master/tutorial-images/08.png)
 
-**AMB USD - Multiple Atlas Online Status (1-6 with 5 showing offline) - Multiple Atlas Main Stats (6 activated) - AMB-Net Stats**:
+**AMB USD - Multiple Atlas Online Status (1-6, Nr.5 being offline) - Multiple Atlas Main Stats (6 active) - AMB-Net Stats**:
 ![alt text](https://github.com/inlak16/AMB-NET-Touchbar-Dashboard/blob/master/tutorial-images/08b.png)
 
 **AMB USD - Apollo Online Status - Apollo Main Stats - AMB-Net Stats**:
 ![alt text](https://github.com/inlak16/AMB-NET-Touchbar-Dashboard/blob/master/tutorial-images/09.png)
 
-**AMB USD - Multiple Apollo Online Status (1-3) - Multiple Apollo Main Stats (3 activated) - AMB-Net Stats**:
+**AMB USD - Multiple Apollo Online Status (1-3) - Multiple Apollo Main Stats (3 active) - AMB-Net Stats**:
 ![alt text](https://github.com/inlak16/AMB-NET-Touchbar-Dashboard/blob/master/tutorial-images/09b.png)
 
 ### Setting up your node in the Dashboard
