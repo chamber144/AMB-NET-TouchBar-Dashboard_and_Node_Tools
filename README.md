@@ -36,7 +36,7 @@ just open it and import the _newest_ __AMB_Dashboard*.bbtpreset__ file (after un
 ![alt text](https://github.com/inlak16/AMB-NET-Touchbar-Dashboard/blob/master/tutorial-images/01.png)
 
 
-When the file has been loaded it should look like this:
+When the file has been loaded it should look like this (the new version has more layers than in this screenshot, more about that later in the guide):
 
 ![alt text](https://github.com/inlak16/AMB-NET-Touchbar-Dashboard/blob/master/tutorial-images/02.png)
 
