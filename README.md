@@ -104,7 +104,7 @@ Pushing the price ticker on the TouchBar opens Ambrosus Reddit, Ambrosus Twitter
 Tapping the grey AMB-net Info part of the Dashboard on the TouchBar opens the main page of the Ambrosus-Explorer.
 
 
-### Logging into your node and preparations of the control Dashboard
+### Logging into your node and setup of the Terminal Background for aesthetics and orientation
 
 Now that we have the visuals going, lets get to the control Dashboard.
 As mentioned in the beginning, the top layers in BetterTouchTool are for logging into one or multiple nodes. You gain access to the scripts again with the run apple script button. Just input your user@ip and save. If you use several ssh keys, use the **-i flag** to define the key you want to use.
