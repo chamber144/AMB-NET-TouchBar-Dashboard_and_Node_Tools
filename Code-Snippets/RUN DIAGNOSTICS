@@ -1,0 +1,4 @@
+tell application "Terminal"
+	set currentTab to do script "source <(sudo curl -s https://nop.ambrosus.com/check.sh)" in window 1
+	
+end tell
