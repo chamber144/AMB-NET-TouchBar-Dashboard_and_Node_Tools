@@ -194,7 +194,7 @@ And that's it for the Analysis part.
 ### Controlling your node on the Dashboard
 
 The Node control part of the Terminal controls of the Dashboard is pretty self explanatory.
-From left to right you can run the Atlas Payout command in yarn, resync the chain (careful ! from scratch), stop the node, update the node and/or the system and start the node again.
+From left to right you can run the Atlas Payout command in yarn, stop the node, update the node and/or the system, start the node again, resync the chain (using a blockchain image file to speed up the process) and run diagnostics.
 
 ![alt text](https://github.com/inlak16/AMB-NET-Touchbar-Dashboard/blob/master/tutorial-images/16.png)
 
