@@ -1,6 +1,15 @@
 UPDATES:
 
 
+22.09.19
+
+Version 1.6 uploaded and code snippets updated
+- changed update-nop command to "sudo ./update.sh" instead of "sudo sh /update.sh"
+- adjusted explorer links to explorer-new.ambrosus.com
+- changed resync command to pull blockchain image for faster resync.
+- adjusted coinmarketcap priceticker to give correct results (api output changed 1 line)
+- added run diagnostics button (permanently exits on correctly running node) and added code snippet.
+- added ~/ in front of ambrosus-nop in all scripts to have the scripts work from all folders.
 
 26.08.19
 
