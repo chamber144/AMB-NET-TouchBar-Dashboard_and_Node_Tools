@@ -1,5 +1,5 @@
 tell application "Terminal"
-	set currentTab to do script "cd ambrosus-nop" in window 1
+	set currentTab to do script "cd ~/ambrosus-nop" in window 1
 	set currentTab to do script "sudo yarn start" in window 1
 	tell application "System Events"
 	key code 125
