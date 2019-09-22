@@ -6,7 +6,7 @@ set AppleScript's text item delimiters to {","}
 set keyValueList to (every text item in mJson) as list
 set AppleScript's text item delimiters to ""
 
-set theKeyValuePair to item 23 of keyValueList
+set theKeyValuePair to item 24 of keyValueList
 set AppleScript's text item delimiters to {": "}
 set theKeyValueBufferList to (every text item in theKeyValuePair) as list
 set AppleScript's text item delimiters to ""
