@@ -1,0 +1,6 @@
+tell application "Terminal"
+	set currentTab to do script "cd ~/ambrosus-nop" in window 1
+	set currentTab to do script "cd ./output" in window 1
+	set currentTab to do script "docker-compose stop" in window 1
+	
+end tell
