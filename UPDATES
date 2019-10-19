@@ -1,6 +1,15 @@
 UPDATES:
 
 
+19.10.19
+
+Version 2.0 uploaded and code snippets updated
+- Corrected API Readings to new Explorer settings.
+- Adjusted Explorer links back to explorer.ambrosus.com.
+- Added Reward Estimation that is able to combine Node rewards even for different Node types and added code snippets.
+- Added Link to Amb.Money when tapping on the Reward section. Thanks Roman for helping me out on reward calculation.
+- Updated README with new Text and images according to the new features.
+
 22.09.19
 
 Version 1.6 uploaded and code snippets updated
@@ -8,7 +17,7 @@ Version 1.6 uploaded and code snippets updated
 - Adjusted explorer links to explorer-new.ambrosus.com
 - Changed resync command to pull blockchain image for faster resync.
 - Adjusted coinmarketcap priceticker to give correct results (api output changed 1 line)
-- Added run diagnostics button (permanently exits on correctly running node) and added code snippet.
+- Added run diagnostics button (not working from user) and added code snippet.
 - Added ~/ in front of ambrosus-nop in all scripts to have the scripts work from all folders.
 
 26.08.19
