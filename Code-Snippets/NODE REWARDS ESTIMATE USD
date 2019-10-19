@@ -1,6 +1,6 @@
 -- please enter your overall stake for Apollos and number of Apollos and or Atlas and taxrate here:
 
-set taxrate to 0.40
+set taxrate to 0.4
 set ApolloStake to 250000
 set NumberApollos to 0
 set NumberZeta to 0
@@ -102,6 +102,8 @@ set zetas to returnNumbersInString(zetas)
 set dailybundles to RemoveFromString("\"", dailybundles)
 set bundlecost to returnNumbersInString(bundlecost)
 
+-- REWARD FORMULAS ATLAS: -------------------
+
 set ZetaWeight to 1
 set SigmaWeight to 4
 set OmegaWeight to 12
@@ -119,6 +121,8 @@ set ZetaReward to AllZetaRewards / zetas
 
 set OwnAtlasReward to NumberOmega * OmegaReward + NumberSigma * SigmaReward + NumberZeta * ZetaReward as text
 
+---------------------------------------------
+
 set OwnAtlasReward to RoundImperialNumberToTwoDecimals(OwnAtlasReward)
 set totalSupply to changetocomma(totalSupply)
 set usdPrice to RemoveFromString("\"", usdPrice)
@@ -130,7 +134,7 @@ set dailybundles to RemoveFromString("\"", dailybundles)
 set apollos to RemoveFromString("\"", apollos)
 
 
--- BLOCK REWARD FORMULAS APOLLO: -------------------
+-- REWARD FORMULAS APOLLO: -------------------
 
 set ApolloDailyBundleReward to 0.3 * bundlecost * dailybundles / apollos * NumberApollos as text
 set ApolloDailyBlockReward to 0.02 * totalSupply / 365 * (ApolloStake / AllApolloStake)
