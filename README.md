@@ -10,10 +10,7 @@ Please note that _this is NOT an official tool created by Ambrosus_, but a setup
 Although I don't expect any dangerous errors to occur, _I give no warranty that this is bug-free_, so please have a look at the code, before running it. I have been controlling my node with this for several months without major issues now.
 
 Also note that as soon as the AMB-Net API is altered in any way, the pulled node info might not work as expected anymore and changes to the code may be needed. Please get back to me on any edge cases you find. I'm posting all the code snippets seperately in here in the Code-Snippets subfolder so anybody can see what's going on.
-_These code snippets can be encapsulated as executable apple scripts with Automator, too. So they may be useful even without a TouchBar._
-
-In the longer term, there may be a much better way to pull node information like sheltered bundles for Atlas nodes. 
-Right now the scripts are iterating through many pages of transactions to count an atlas nodes challenges, which takes a few seconds to load for the first time. 
+_These code snippets can be encapsulated as executable apple scripts with Automator, too. So they may be useful even on a Mac without TouchBar._
 
 ![alt text](https://github.com/inlak16/AMB-NET-Touchbar-Dashboard/blob/master/tutorial-images/Node_Info_Touchbar_2.jpg)
 
