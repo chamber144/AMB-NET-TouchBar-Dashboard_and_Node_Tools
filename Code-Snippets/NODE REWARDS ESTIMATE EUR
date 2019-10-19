@@ -1,4 +1,4 @@
--- please enter your overall stake for Apollos and number of Apollos and or Atlas and Taxrate (example 0.25 for 25%) here:
+-- please enter number of each Atlas and or Apollo Stake + number of Apollos and Taxrate (example 0.25 for 25%) if useful, here:
 
 set taxrate to 0.0
 set ApolloStake to 250000
