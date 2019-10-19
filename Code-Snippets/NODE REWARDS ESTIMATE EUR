@@ -1,0 +1,255 @@
+-- please enter your overall stake for Apollos and number of Apollos and or Atlas and taxrate here:
+
+set taxrate to 0.4
+set ApolloStake to 250000
+set NumberApollos to 0
+set NumberZeta to 0
+set NumberSigma to 0
+set NumberOmega to 1
+
+-- show Block and Bundle rewards for Apollo
+set DetailedApolloRewardView to 0
+
+
+-- You need to signup an api account at https://pro.coinmarketcap.com/migrate/ to get EUR or other Currency than USD. its free for basic use
+
+
+set mJson to do shell script "curl -s 'https://pro-api.coinmarketcap.com/v1/cryptocurrency/quotes/latest?id=2081&convert=EUR&CMC_PRO_API_KEY=PUTYOURAPIKEYHERE'"
+set AppleScript's text item delimiters to {","}
+set keyValueList to (every text item in mJson) as list
+set AppleScript's text item delimiters to ""
+
+set theKeyValuePair to item 24 of keyValueList
+set AppleScript's text item delimiters to {": "}
+set theKeyValueBufferList to (every text item in theKeyValuePair) as list
+set AppleScript's text item delimiters to ""
+set usdPrice to item 4 of theKeyValueBufferList
+
+
+-- get AMB-NET stats info
+set mJson to do shell script "curl -s 'https://explorer-api.ambrosus.com/info'"
+set AppleScript's text item delimiters to {","}
+set keyValueList to (every text item in mJson) as list
+set AppleScript's text item delimiters to ""
+
+set theKeyValuePair to item 14 of keyValueList
+set AppleScript's text item delimiters to {": "}
+set theKeyValueBufferList to (every text item in theKeyValuePair) as list
+set AppleScript's text item delimiters to ""
+set apollos to item 2 of theKeyValueBufferList
+
+-- get network bundles
+set theKeyValuePair to item 35 of keyValueList
+set AppleScript's text item delimiters to {": "}
+set theKeyValueBufferList to (every text item in theKeyValuePair) as list
+set AppleScript's text item delimiters to ""
+set dailybundles to item 2 of theKeyValueBufferList
+
+-- get bundlecost
+set theKeyValuePair to item 23 of keyValueList
+set AppleScript's text item delimiters to {": "}
+set theKeyValueBufferList to (every text item in theKeyValuePair) as list
+set AppleScript's text item delimiters to ""
+set bundlecost to item 2 of theKeyValueBufferList
+
+-- get AllApolloStake
+set theKeyValuePair to item 10 of keyValueList
+set AppleScript's text item delimiters to {": "}
+set theKeyValueBufferList to (every text item in theKeyValuePair) as list
+set AppleScript's text item delimiters to ""
+set AllApolloStake to item 2 of theKeyValueBufferList
+
+set mJson to do shell script "curl -s 'https://token.ambrosus.com/'"
+set AppleScript's text item delimiters to {","}
+set keyValueList to (every text item in mJson) as list
+set AppleScript's text item delimiters to ""
+
+-- get totalsupply
+set theKeyValuePair to item 7 of keyValueList
+set AppleScript's text item delimiters to {": "}
+set theKeyValueBufferList to (every text item in theKeyValuePair) as list
+set AppleScript's text item delimiters to ""
+set totalSupply to item 2 of theKeyValueBufferList
+
+-- get Atlas node counts
+set shortmonth to text 1 thru 3 of (month of (current date) as text)
+set dd to text -2 thru -1 of ("00" & (day of (current date)))
+set searchstring to dd & " " & shortmonth
+
+set mJson to do shell script "curl -s 'https://amb.money/data.php'"
+set AppleScript's text item delimiters to {searchstring}
+set keyValueList to (every text item in mJson) as list
+set AppleScript's text item delimiters to ""
+
+set theKeyValuePair to item 2 of keyValueList
+set AppleScript's text item delimiters to {":"}
+set theKeyValueBufferList to (every text item in theKeyValuePair) as list
+set AppleScript's text item delimiters to ""
+set omegas to item 13 of theKeyValueBufferList
+
+set theKeyValuePair to item 2 of keyValueList
+set AppleScript's text item delimiters to {":"}
+set theKeyValueBufferList to (every text item in theKeyValuePair) as list
+set AppleScript's text item delimiters to ""
+set sigmas to item 14 of theKeyValueBufferList
+
+set theKeyValuePair to item 2 of keyValueList
+set AppleScript's text item delimiters to {":"}
+set theKeyValueBufferList to (every text item in theKeyValuePair) as list
+set AppleScript's text item delimiters to ""
+set zetas to item 15 of theKeyValueBufferList
+
+set omegas to returnNumbersInString(omegas)
+set sigmas to returnNumbersInString(sigmas)
+set zetas to returnNumbersInString(zetas)
+
+set dailybundles to RemoveFromString("\"", dailybundles)
+set bundlecost to returnNumbersInString(bundlecost)
+
+set ZetaWeight to 1
+set SigmaWeight to 4
+set OmegaWeight to 12
+set AllAtlasBundleRewards to 0.7 * bundlecost * dailybundles
+set AllAtlasWeight to omegas * OmegaWeight + sigmas * SigmaWeight + zetas * ZetaWeight
+
+set AllOmegaRewards to AllAtlasBundleRewards * (omegas * OmegaWeight / AllAtlasWeight)
+set OmegaReward to AllOmegaRewards / omegas
+
+set AllSigmaRewards to AllAtlasBundleRewards * (sigmas * SigmaWeight / AllAtlasWeight)
+set SigmaReward to AllSigmaRewards / sigmas
+
+set AllZetaRewards to AllAtlasBundleRewards * (zetas * ZetaWeight / AllAtlasWeight)
+set ZetaReward to AllZetaRewards / zetas
+
+set OwnAtlasReward to NumberOmega * OmegaReward + NumberSigma * SigmaReward + NumberZeta * ZetaReward as text
+
+set OwnAtlasReward to RoundImperialNumberToTwoDecimals(OwnAtlasReward)
+set totalSupply to changetocomma(totalSupply)
+set usdPrice to RemoveFromString("\"", usdPrice)
+set usdPrice to changetocomma(usdPrice)
+set usdPrice to RoundImperialNumberToTwoDecimals(usdPrice)
+set AllApolloStake to RemoveFromString("}", AllApolloStake)
+set AllApolloStake to changetocomma(AllApolloStake)
+set dailybundles to RemoveFromString("\"", dailybundles)
+set apollos to RemoveFromString("\"", apollos)
+
+
+-- BLOCK REWARD FORMULAS APOLLO: -------------------
+
+set ApolloDailyBundleReward to 0.3 * bundlecost * dailybundles / apollos * NumberApollos as text
+set ApolloDailyBlockReward to 0.02 * totalSupply / 365 * (ApolloStake / AllApolloStake)
+if NumberApollos is 0 then set ApolloDailyBlockReward to 0
+
+---------------------------------------------
+
+set DailyBundleReward to ApolloDailyBundleReward + OwnAtlasReward as text
+set DailyBundleReward to RoundImperialNumberToTwoDecimals(DailyBundleReward)
+set ApolloDailyBlockReward to number_to_string(ApolloDailyBlockReward)
+set ApolloDailyBlockReward to RoundImperialNumberToTwoDecimals(ApolloDailyBlockReward)
+set DailyReward to DailyBundleReward + ApolloDailyBlockReward
+
+
+
+set daily to DailyReward * usdPrice * (1 - taxrate) as text
+set daily to RoundImperialNumberToTwoDecimals(daily)
+set monthly to DailyReward * usdPrice * 30 * (1 - taxrate) as text
+set monthly to RoundImperialNumberToTwoDecimals(monthly)
+set yearly to DailyReward * usdPrice * 365 * (1 - taxrate) as text
+set yearly to RoundImperialNumberToTwoDecimals(yearly)
+
+if DetailedApolloRewardView = 1 then
+	set unformatedValue to "Rewards ~" & DailyReward & " AMB = Bu " & DailyBundleReward & " AMB + Bl " & ApolloDailyBlockReward & " AMB | " & daily & " € perDay | " & monthly & " € perMonth | " & yearly & " € perYear |"
+	return RemoveFromString("\"", unformatedValue)
+end if
+
+if DetailedApolloRewardView = 0 then
+	set unformatedValue to "Rewards ~" & DailyReward & " AMB | " & daily & " € perDay | " & monthly & " € perMonth | " & yearly & " € perYear |"
+	return RemoveFromString("\"", unformatedValue)
+end if
+
+
+
+
+------- functions below -----------------------
+
+-- remove character or string from given string
+on RemoveFromString(CharOrString, txt)
+	set AppleScript's text item delimiters to CharOrString
+	set temp to txt's text items
+	set AppleScript's text item delimiters to ""
+	return temp as text
+end RemoveFromString
+
+-- convert string to numbers
+on returnNumbersInString(inputString)
+	set s to quoted form of inputString
+	do shell script "sed s/[a-zA-Z\\']//g <<< " & s
+	set dx to the result
+	set numlist to {}
+	repeat with i from 1 to count of words in dx
+		set this_item to word i of dx
+		try
+			set this_item to this_item as number
+			set the end of numlist to this_item
+		end try
+	end repeat
+	return numlist
+end returnNumbersInString
+
+-- round balance to two decimals
+on RoundImperialNumberToTwoDecimals(txt)
+	set AppleScript's text item delimiters to ","
+	if (count of text item of txt) is 2 then
+		set decimals to text item 2 of txt
+		if (count decimals) < 2 then
+			set decimals to decimals & "0"
+		end if
+		set decimals to (text 1 thru 2 of decimals)
+		set theNumber to text item 1 of txt & "," & decimals
+		set AppleScript's text item delimiters to ""
+		return theNumber
+	end if
+	if (count of text item of txt) is 1 then
+		return txt
+	end if
+end RoundImperialNumberToTwoDecimals
+
+
+-- change to comma
+on changetocomma(txt)
+	set AppleScript's text item delimiters to "."
+	set commaseperation to (every text item in txt) as list
+	set AppleScript's text item delimiters to ""
+	set theNumber to text item 1 of commaseperation & "," & text item 2 of commaseperation
+	return theNumber
+end changetocomma
+
+-- convert long number
+on number_to_string(this_number)
+	set this_number to this_number as string
+	if this_number contains "E+" then
+		set x to the offset of "," in this_number
+		set y to the offset of "+" in this_number
+		set z to the offset of "E" in this_number
+		set the decimal_adjust to characters (y - (length of this_number)) thru ¬
+			-1 of this_number as string as number
+		if x is not 0 then
+			set the first_part to characters 1 thru (x - 1) of this_number as string
+		else
+			set the first_part to ""
+		end if
+		set the second_part to characters (x + 1) thru (z - 1) of this_number as string
+		set the converted_number to the first_part
+		repeat with i from 1 to the decimal_adjust
+			try
+				set the converted_number to ¬
+					the converted_number & character i of the second_part
+			on error
+				set the converted_number to the converted_number & "0"
+			end try
+		end repeat
+		return the converted_number
+	else
+		return this_number
+	end if
+end number_to_string
