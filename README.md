@@ -4,7 +4,7 @@
 
 ### Hello fellow AMB-Net node operators. Welcome to this little repository.
 
-Here I present a complete setup that may help you monitor and control your ATLAS or APOLLO node(s) through the MacBook TouchBar _(New Stats Dashboard options with combined information for multiple nodes introduced in version 1.5)_.
+Here I present a complete setup that may help you monitor and control your ATLAS or APOLLO node(s) through the MacBook TouchBar _(New Reward Estimation introduced in version 2.0)_.
 
 Please note that _this is NOT an official tool created by Ambrosus_, but a setup that I built to control my own node and found quite useful to share with the whole community. 
 Although I don't expect any dangerous errors to occur, _I give no warranty that this is bug-free_, so please have a look at the code, before running it. I have been controlling my node with this for several months without major issues now.
@@ -50,23 +50,23 @@ On the very left you have the programs that have TouchBar presets in them. Close
 
 
 
-As you can see below, I tried to keep it as flexible as possible. From top to bottom there is a **login script** (opening terminal with ssh connection), **a group of several login scripts** (In case you plan to run several nodes now that the floodgates to onboarding are open :D ), **two price tickers** (the first in EUR or any desired currency, which needs coinmarketcap api registration and the second in USD, running directly from AMB-Net API), **Apollo Online Status** (Online/Offline/Retired), **Apollo Main Stats** (Balance, Block, Stake), **Multiple Apollo Online Status 1-6** (little dots with a number indicating the nodes status in Green or Red), **Multiple Apollo Main Stats** (combined Balance and Stake of all nodes activated in script), **Atlas Online Status** (Onboarded/Offline), **Atlas Main Stats** (Balance,Sheltered Bundles (Challenges in Explorer),Stake), **Multiple Atlas Online Status 1-6** (little dots with a number indicating the nodes Status in Green or Red), **Multiple Atlas Main Stats** (combined Balance, Sheltered Bundles (Challenges in Explorer) and Stake of all nodes activated in script) and **AMB-Net Stats** (Daily Bundles, AMB per Bundle).
+As you can see below, I tried to keep it as flexible as possible. From top to bottom there is a **login script** (opening terminal with ssh connection), **a group of several login scripts** (In case you plan to run several nodes now that the floodgates to onboarding are open :D ), **two price tickers** (the first in EUR or any desired currency, which needs coinmarketcap api registration and the second in USD, running directly from AMB-Net API), **Apollo Online Status** (Online/Offline/Retired), **Apollo Main Stats** (Balance, Block, Stake), **Multiple Apollo Online Status 1-6** (little dots with a number indicating the nodes status in Green or Red), **Multiple Apollo Main Stats** (combined Balance and Stake of all nodes activated in script), **Atlas Online Status** (Onboarded/Offline), **Atlas Main Stats** (Balance,Sheltered Bundles (Challenges in Explorer),Stake), **Multiple Atlas Online Status 1-6** (little dots with a number indicating the nodes Status in Green or Red), **Multiple Atlas Main Stats** (combined Balance, Sheltered Bundles (Challenges in Explorer) and Stake of all nodes activated in script),**two reward calculators** (the first in EUR or any desired currency, which needs coinmarketcap api registration and the second in USD, running directly from AMB-Net API.) and **AMB-Net Stats** (Daily Bundles, AMB per Bundle).
 
 
 <img width="600" alt="portfolio_view" src="https://github.com/inlak16/AMB-NET-Touchbar-Dashboard/blob/master/tutorial-images/06b.png">
 
 To give a better overview, here are 4 setups with different triggers activated and its resulting Dashboard that is activated by holding **Shift Command** on the keyboard.
 
-**AMB USD - Atlas Online Status - Atlas Main Stats - AMB-Net Stats**:
+**AMB USD - Atlas Online Status - Atlas Main Stats - NODE REWARDS ESTIMATE USD - AMB-Net Stats**:
 ![alt text](https://github.com/inlak16/AMB-NET-Touchbar-Dashboard/blob/master/tutorial-images/08.png)
 
-**AMB USD - Multiple Atlas Online Status (1-6, Nr.5 being offline) - Multiple Atlas Main Stats - AMB-Net Stats**:
+**AMB USD - Multiple Atlas Online Status (1-6, Nr.5 being offline) - Multiple Atlas Main Stats - NODE REWARDS ESTIMATE USD - AMB-Net Stats**:
 ![alt text](https://github.com/inlak16/AMB-NET-Touchbar-Dashboard/blob/master/tutorial-images/08b.png)
 
-**AMB USD - Apollo Online Status - Apollo Main Stats - AMB-Net Stats**:
+**AMB USD - Apollo Online Status - Apollo Main Stats - NODE REWARDS ESTIMATE USD - AMB-Net Stats**:
 ![alt text](https://github.com/inlak16/AMB-NET-Touchbar-Dashboard/blob/master/tutorial-images/09.png)
 
-**AMB USD - Multiple Apollo Online Status (1-3) - Multiple Apollo Main Stats - AMB-Net Stats**:
+**AMB USD - Multiple Apollo Online Status (1-3) - Multiple Apollo Main Stats - NODE REWARDS ESTIMATE USD - AMB-Net Stats**:
 ![alt text](https://github.com/inlak16/AMB-NET-Touchbar-Dashboard/blob/master/tutorial-images/09b.png)
 
 ### Setting up your node in the Dashboard
@@ -102,6 +102,8 @@ For a setup with multiple nodes you need to repeat this for every visible Online
 Pushing the price ticker on the TouchBar opens Ambrosus Reddit, Ambrosus Twitter, Coinmarketcap and Romans great reward-calculator amb.money.
 
 Tapping the grey AMB-net Info part of the Dashboard on the TouchBar opens the main page of the Ambrosus-Explorer.
+
+For the correct estimate of rewards tzo be calculated, be sure to set the first lines in the **NODE REWARDS ESTIMATE USD/EUR** script according to the nodes/stakes you are running. You have the option to deduct taxes from the results and show Bundle- and Blockrewards seperately for Apollo.
 
 
 ### Logging into your node and setup of the Terminal Background for aesthetics and orientation
