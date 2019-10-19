@@ -3,6 +3,7 @@ set nodeaddress to "0x0000000000000000000000000000000000000000"
 
 
 
+
 -- get info around particular Atlas node
 set mJson to do shell script "curl -s 'https://explorer-api.ambrosus.com/atlases'"
 set AppleScript's text item delimiters to {nodeaddress}
@@ -44,35 +45,14 @@ set AppleScript's text item delimiters to {","}
 set keyValueList to (every text item in firstSet) as list
 set AppleScript's text item delimiters to ""
 
-set theKeyValuePair to item 3 of keyValueList
-set AppleScript's text item delimiters to {": "}
-set theKeyValueBufferList to (every text item in theKeyValuePair) as list
-set AppleScript's text item delimiters to ""
-set allbundles to item 5 of theKeyValueBufferList
-
--- get daily bundles
-set theKeyValuePair to item 5 of keyValueList
-set AppleScript's text item delimiters to {": "}
-set theKeyValueBufferList to (every text item in theKeyValuePair) as list
-set AppleScript's text item delimiters to ""
-set dailybundles to item 3 of theKeyValueBufferList
-
--- get monthly bundles
-set theKeyValuePair to item 7 of keyValueList
-set AppleScript's text item delimiters to {": "}
-set theKeyValueBufferList to (every text item in theKeyValuePair) as list
-set AppleScript's text item delimiters to ""
-set monthlybundles to item 3 of theKeyValueBufferList
-
--- get weekly bundles
 set theKeyValuePair to item 9 of keyValueList
 set AppleScript's text item delimiters to {": "}
 set theKeyValueBufferList to (every text item in theKeyValuePair) as list
 set AppleScript's text item delimiters to ""
-set weeklybundles to item 3 of theKeyValueBufferList
+set allbundles to item 2 of theKeyValueBufferList
 
 -- get stake
-set theKeyValuePair to item 12 of keyValueList
+set theKeyValuePair to item 7 of keyValueList
 set AppleScript's text item delimiters to {": "}
 set theKeyValueBufferList to (every text item in theKeyValuePair) as list
 set AppleScript's text item delimiters to ""
@@ -84,98 +64,14 @@ set AppleScript's text item delimiters to {","}
 set keyValueList to (every text item in firstSet) as list
 set AppleScript's text item delimiters to ""
 
-set theKeyValuePair to item 4 of keyValueList
+set theKeyValuePair to item 3 of keyValueList
 set AppleScript's text item delimiters to {": "}
 set theKeyValueBufferList to (every text item in theKeyValuePair) as list
 set AppleScript's text item delimiters to ""
 set balance to item 2 of theKeyValueBufferList
 
 
-
--- get number of each atlas type -- this was just a test so far
-set AppleScript's text item delimiters to {"rewards"}
-set keyNodeList to (every text item in mJson) as list
-set AppleScript's text item delimiters to ""
-
-set zeta to 0
-set sigma to 0
-set omega to 0
-
-
-(* 
-repeat with var in keyNodeList
-	--return var
-	set firstSet to var
-	set AppleScript's text item delimiters to {","}
-	set keyValueList to (every text item in firstSet) as list
-	set AppleScript's text item delimiters to ""
-	set theKeyValuePair to item 10 of keyValueList
-	set AppleScript's text item delimiters to {" "}
-	set theKeyValueBufferList to (every text item in theKeyValuePair) as list
-	set AppleScript's text item delimiters to ""
-	set stakenode to item 2 of theKeyValueBufferList
-	set show to item 3 of theKeyValueBufferList
-	--return show
-	set stakenode to returnNumbersInString(stakenode) as number
-	
-	if stakenode is equal to 75000 then
-		set omega to omega + 1
-	else if stakenode is equal to 30000 then
-		set sigma to sigma + 1
-	else if stakenode is equal to 10000 then
-		set zeta to zeta + 1
-		
-	end if
-end repeat
-*)
-
--- get info around particular Atlas nodes challenges
-set link to "https://explorer-api.ambrosus.com/accounts/" & nodeaddress & "/transactions?limit=200"
-set mJson to do shell script "curl -s " & link
-set AppleScript's text item delimiters to {"challenge"}
-set keyNodeList to (every text item in mJson) as list
-set AppleScript's text item delimiters to ""
-set bundles to count items in keyNodeList
-set bundles to bundles - 1
-
-set nextpageidold to 0
-set listSize to count of keyNodeList
-set page to 1
--- iterate through pages of transations to find the challenges
-repeat while listSize = 51
-	set AppleScript's text item delimiters to {"\"next\":"}
-	set keyNodeList to (every text item in mJson) as list
-	set AppleScript's text item delimiters to ""
-	set pageEnd to item 2 of keyNodeList
-	
-	set AppleScript's text item delimiters to {","}
-	set nextPageIdList to (every text item in pageEnd) as list
-	set AppleScript's text item delimiters to ""
-	set nextpageid to item 1 of nextPageIdList
-	
-	set nextpageid to RemoveFromString("\"", nextpageid)
-	set nextpageid to RemoveFromString(" ", nextpageid)
-	if nextpageid is equal to nextpageidold then exit repeat
-	set newlink to "https://explorer-api.ambrosus.com/accounts/" & nodeaddress & "/transactions?next=" & nextpageid
-	set page to page + 1
-	set nextpageidold to nextpageid
-	set mJson to do shell script "curl -s " & newlink
-	set AppleScript's text item delimiters to {"challenge"}
-	set keyNodeList to (every text item in mJson) as list
-	set AppleScript's text item delimiters to ""
-	set bunbers to count items in keyNodeList
-	set bundles to bundles + bunbers - 1
-	if (count of keyNodeList) is equal to 1 then exit repeat
-end repeat
-
-
-
-
-
 set allbundles to RemoveFromString("\"", allbundles)
-set dailybundles to RemoveFromString("\"", dailybundles)
-set weeklybundles to RemoveFromString("\"", weeklybundles)
-set monthlybundles to RemoveFromString("\"", monthlybundles)
 
 set balance to RemoveFromString("\"", balance)
 
@@ -183,7 +79,7 @@ set stake to returnNumbersInString(stake)
 
 set balance to RoundImperialNumberToTwoDecimals(balance)
 
-set unformatedValue to "| " & balance & " AMB | " & bundles & " Sheltered Bundles | " & stake & " Stake |"
+set unformatedValue to "| " & balance & " AMB | " & allbundles & " Bundles | " & stake & " Stake |"
 
 
 return RemoveFromString("\"", unformatedValue)
