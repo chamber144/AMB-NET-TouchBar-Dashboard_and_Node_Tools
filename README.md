@@ -103,7 +103,7 @@ Pushing the price ticker on the TouchBar opens Ambrosus Reddit, Ambrosus Twitter
 
 Tapping the grey AMB-net Info part of the Dashboard on the TouchBar opens the main page of the Ambrosus-Explorer.
 
-For the correct estimate of rewards tzo be calculated, be sure to set the first lines in the **NODE REWARDS ESTIMATE USD/EUR** script according to the nodes/stakes you are running. You have the option to deduct taxes from the results and show Bundle- and Blockrewards seperately for Apollo.
+For an accurate estimate of rewards to be calculated, be sure to set the first lines in the **NODE REWARDS ESTIMATE USD/EUR** script according to the nodes/stakes you are running. You have the option to deduct taxes from the results and show Bundle- and Blockrewards seperately for Apollo. Tapping on this reward section on the TouchBar opens Amb.money.
 
 
 ### Logging into your node and setup of the Terminal Background for aesthetics and orientation
