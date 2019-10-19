@@ -43,6 +43,13 @@ set balance4 to 0.0
 set balance5 to 0.0
 set balance6 to 0.0
 
+set allbundles1 to 0
+set allbundles2 to 0
+set allbundles3 to 0
+set allbundles4 to 0
+set allbundles5 to 0
+set allbundles6 to 0
+
 if nodeactive1 is equal to 1 then
 	-- get info around particular Atlas node 1
 	set mJson to do shell script "curl -s 'https://explorer-api.ambrosus.com/atlases'"
