@@ -57,16 +57,16 @@ As you can see below, I tried to keep it as flexible as possible. From top to bo
 
 To give a better overview, here are 4 setups with different triggers activated and its resulting Dashboard that is activated by holding **Shift Command** on the keyboard.
 
-**AMB USD - Atlas Online Status - Atlas Main Stats - NODE REWARDS ESTIMATE USD - AMB-Net Stats**:
+**AMB USD - Atlas Online Status - Atlas Main Stats - Node Rewards Estimate - AMB-Net Stats**:
 ![alt text](https://github.com/inlak16/AMB-NET-Touchbar-Dashboard/blob/master/tutorial-images/08.png)
 
-**AMB USD - Multiple Atlas Online Status (1-6, Nr.5 being offline) - Multiple Atlas Main Stats - NODE REWARDS ESTIMATE USD - AMB-Net Stats**:
-![alt text](https://github.com/inlak16/AMB-NET-Touchbar-Dashboard/blob/master/tutorial-images/08b.png)
+**AMB USD - Multiple Atlas Online Status (1-6, Nr.5 being offline) - Multiple Atlas Main Stats - Node Rewards Estimate - AMB-Net Stats**:
+![alt text](https://github.com/inlak16/AMB-NET-Touchbar-Dashboard/blob/master/tutorial-images/08c.png)
 
-**AMB USD - Apollo Online Status - Apollo Main Stats - NODE REWARDS ESTIMATE USD - AMB-Net Stats**:
+**AMB USD - Apollo Online Status - Apollo Main Stats - Node Rewards Estimate - AMB-Net Stats**:
 ![alt text](https://github.com/inlak16/AMB-NET-Touchbar-Dashboard/blob/master/tutorial-images/09.png)
 
-**AMB USD - Multiple Apollo Online Status (1-3) - Multiple Apollo Main Stats - NODE REWARDS ESTIMATE USD - AMB-Net Stats**:
+**AMB USD - Multiple Apollo Online Status (1-3) - Multiple Apollo Main Stats - Node Rewards Estimate - AMB-Net Stats**:
 ![alt text](https://github.com/inlak16/AMB-NET-Touchbar-Dashboard/blob/master/tutorial-images/09b.png)
 
 ### Setting up your node in the Dashboard
