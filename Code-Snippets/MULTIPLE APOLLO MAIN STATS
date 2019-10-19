@@ -27,7 +27,7 @@ set nodeactive3 to 1
 set nodeactive4 to 0
 set nodeactive5 to 0
 set nodeactive6 to 0
-
+-----------------------------------------
 
 set stake1 to 0
 set stake2 to 0
@@ -116,7 +116,7 @@ if nodeactive1 is equal to 1 then
 		set keyValueList to (every text item in firstSet) as list
 		set AppleScript's text item delimiters to ""
 		
-		set theKeyValuePair to item 4 of keyValueList
+		set theKeyValuePair to item 3 of keyValueList
 		set AppleScript's text item delimiters to {": "}
 		set theKeyValueBufferList to (every text item in theKeyValuePair) as list
 		set AppleScript's text item delimiters to ""
@@ -147,7 +147,7 @@ if nodeactive1 is equal to 1 then
 		set keyValueList to (every text item in firstSet) as list
 		set AppleScript's text item delimiters to ""
 		
-		set theKeyValuePair to item 4 of keyValueList
+		set theKeyValuePair to item 3 of keyValueList
 		set AppleScript's text item delimiters to {": "}
 		set theKeyValueBufferList to (every text item in theKeyValuePair) as list
 		set AppleScript's text item delimiters to ""
@@ -237,7 +237,7 @@ if nodeactive2 is equal to 1 then
 		set keyValueList to (every text item in firstSet) as list
 		set AppleScript's text item delimiters to ""
 		
-		set theKeyValuePair to item 4 of keyValueList
+		set theKeyValuePair to item 3 of keyValueList
 		set AppleScript's text item delimiters to {": "}
 		set theKeyValueBufferList to (every text item in theKeyValuePair) as list
 		set AppleScript's text item delimiters to ""
@@ -268,7 +268,7 @@ if nodeactive2 is equal to 1 then
 		set keyValueList to (every text item in firstSet) as list
 		set AppleScript's text item delimiters to ""
 		
-		set theKeyValuePair to item 4 of keyValueList
+		set theKeyValuePair to item 3 of keyValueList
 		set AppleScript's text item delimiters to {": "}
 		set theKeyValueBufferList to (every text item in theKeyValuePair) as list
 		set AppleScript's text item delimiters to ""
@@ -357,7 +357,7 @@ if nodeactive3 is equal to 1 then
 		set keyValueList to (every text item in firstSet) as list
 		set AppleScript's text item delimiters to ""
 		
-		set theKeyValuePair to item 4 of keyValueList
+		set theKeyValuePair to item 3 of keyValueList
 		set AppleScript's text item delimiters to {": "}
 		set theKeyValueBufferList to (every text item in theKeyValuePair) as list
 		set AppleScript's text item delimiters to ""
@@ -388,7 +388,7 @@ if nodeactive3 is equal to 1 then
 		set keyValueList to (every text item in firstSet) as list
 		set AppleScript's text item delimiters to ""
 		
-		set theKeyValuePair to item 4 of keyValueList
+		set theKeyValuePair to item 3 of keyValueList
 		set AppleScript's text item delimiters to {": "}
 		set theKeyValueBufferList to (every text item in theKeyValuePair) as list
 		set AppleScript's text item delimiters to ""
@@ -477,7 +477,7 @@ if nodeactive4 is equal to 1 then
 		set keyValueList to (every text item in firstSet) as list
 		set AppleScript's text item delimiters to ""
 		
-		set theKeyValuePair to item 4 of keyValueList
+		set theKeyValuePair to item 3 of keyValueList
 		set AppleScript's text item delimiters to {": "}
 		set theKeyValueBufferList to (every text item in theKeyValuePair) as list
 		set AppleScript's text item delimiters to ""
@@ -508,7 +508,7 @@ if nodeactive4 is equal to 1 then
 		set keyValueList to (every text item in firstSet) as list
 		set AppleScript's text item delimiters to ""
 		
-		set theKeyValuePair to item 4 of keyValueList
+		set theKeyValuePair to item 3 of keyValueList
 		set AppleScript's text item delimiters to {": "}
 		set theKeyValueBufferList to (every text item in theKeyValuePair) as list
 		set AppleScript's text item delimiters to ""
@@ -598,7 +598,7 @@ if nodeactive5 is equal to 1 then
 		set keyValueList to (every text item in firstSet) as list
 		set AppleScript's text item delimiters to ""
 		
-		set theKeyValuePair to item 4 of keyValueList
+		set theKeyValuePair to item 3 of keyValueList
 		set AppleScript's text item delimiters to {": "}
 		set theKeyValueBufferList to (every text item in theKeyValuePair) as list
 		set AppleScript's text item delimiters to ""
@@ -629,7 +629,7 @@ if nodeactive5 is equal to 1 then
 		set keyValueList to (every text item in firstSet) as list
 		set AppleScript's text item delimiters to ""
 		
-		set theKeyValuePair to item 4 of keyValueList
+		set theKeyValuePair to item 3 of keyValueList
 		set AppleScript's text item delimiters to {": "}
 		set theKeyValueBufferList to (every text item in theKeyValuePair) as list
 		set AppleScript's text item delimiters to ""
@@ -718,7 +718,7 @@ if nodeactive6 is equal to 1 then
 		set keyValueList to (every text item in firstSet) as list
 		set AppleScript's text item delimiters to ""
 		
-		set theKeyValuePair to item 4 of keyValueList
+		set theKeyValuePair to item 3 of keyValueList
 		set AppleScript's text item delimiters to {": "}
 		set theKeyValueBufferList to (every text item in theKeyValuePair) as list
 		set AppleScript's text item delimiters to ""
@@ -749,7 +749,7 @@ if nodeactive6 is equal to 1 then
 		set keyValueList to (every text item in firstSet) as list
 		set AppleScript's text item delimiters to ""
 		
-		set theKeyValuePair to item 4 of keyValueList
+		set theKeyValuePair to item 3 of keyValueList
 		set AppleScript's text item delimiters to {": "}
 		set theKeyValueBufferList to (every text item in theKeyValuePair) as list
 		set AppleScript's text item delimiters to ""
