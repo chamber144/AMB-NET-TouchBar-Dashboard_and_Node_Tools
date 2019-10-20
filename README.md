@@ -22,7 +22,7 @@ https://folivora.ai/buy
 
 https://bettertouchtool.net/releases/BetterTouchTool.zip
 
-For quite some time I have wondered if it was really worth it to get the more expensive MacBook with TouchBar. But now with this setup, it has gotten really useful. In the long run it is saving me alot of time that I would need for typing or searching and copying commands.
+For quite some time I have wondered if it was really worth it to get the more expensive MacBook with TouchBar. But now with this setup, it has gotten really useful. In the long run it is saving me alot of time that I would need for typing or searching and copying commands and the status overview is really useful.
 
 
 ### Overview of BetterTouchTool and Dashboard
