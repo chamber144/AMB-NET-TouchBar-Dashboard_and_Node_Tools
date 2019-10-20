@@ -4,7 +4,7 @@
 
 ### Hello fellow AMB-Net node operators. Welcome to this little repository.
 
-Here I present a complete setup that may help you monitor and control your ATLAS or APOLLO node(s) through the MacBook TouchBar _(Node Reward Estimation introduced in version 2.0)_.
+Here I present a complete setup that may help you monitor and control your ATLAS or APOLLO node(s) through the MacBook TouchBar _( [Click here for latest Updates](https://github.com/inlak16/AMB-NET-TouchBar-Dashboard/blob/master/UPDATES))_.
 
 Please note that _this is NOT an official tool created by Ambrosus_, but a setup that I built to control my own node and found quite useful to share with the whole community. 
 Although I don't expect any dangerous errors to occur, _I give no warranty that this is bug-free_, so please have a look at the code, before running it. I have been controlling my node with this for several months without major issues now.
