@@ -57,7 +57,7 @@ To give a better overview, here are 4 setups with different triggers activated a
 **AMB USD - Atlas Online Status - Atlas Main Stats - Rewards USD - AMB-Net Stats**:
 ![alt text](https://github.com/inlak16/AMB-NET-Touchbar-Dashboard/blob/master/tutorial-images/08.png)
 
-**AMB USD - Multiple Atlas Online Status (1-6,No5 off) - Multiple Atlas Main Stats - Rewards USD - AMB-Net Stats**:
+**AMB USD - Multiple Atlas Online Status (1-6,No5 offl) - Multiple Atlas Main Stats - Rewards USD - AMB-Net Stats**:
 ![alt text](https://github.com/inlak16/AMB-NET-Touchbar-Dashboard/blob/master/tutorial-images/08b.png)
 
 **AMB USD - Apollo Online Status - Apollo Main Stats - Rewards USD - AMB-Net Stats**:
