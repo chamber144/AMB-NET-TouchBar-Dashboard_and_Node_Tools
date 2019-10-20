@@ -104,7 +104,7 @@ For an accurate estimate of rewards to be calculated, be sure to set the first l
 
 ![alt text](https://github.com/inlak16/AMB-NET-Touchbar-Dashboard/blob/master/tutorial-images/reward.png)
 
-Note that Atlas Node Rewards are distributed over the timeframe of 13 month to incentivise keeping bundles available for the network. Similarly Apollo Bundle Rewards are not equally distributed every day, but over a longer time period through an algorithm that I guess is in the process of finetuning. See Payout-Scheme for Atlas Nodes below:
+Note that Atlas Node Rewards are distributed over the timeframe of 1 year to incentivise keeping bundles available for the network. Similarly Apollo Bundle Rewards are not equally distributed every day, but over a longer time period through an algorithm. See Payout-Scheme for Atlas Nodes below:
 
 ![alt text](https://github.com/inlak16/AMB-NET-Touchbar-Dashboard/blob/master/tutorial-images/paouts-infographics.jpg)
 
