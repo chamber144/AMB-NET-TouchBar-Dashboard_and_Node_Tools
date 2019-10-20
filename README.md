@@ -111,10 +111,7 @@ Note that Atlas Node Rewards are distributed over the timeframe of 1 year to inc
 ### Logging into your node and setup of the Terminal Background for aesthetics and orientation
 
 Now that we have the visuals going, lets get to the control Dashboard.
-As mentioned in the beginning, the top layers in BetterTouchTool are for logging into one or multiple nodes. You gain access to the scripts again with the run apple script button. Just input your user@ip and save. If you use several ssh keys, use the **-i flag** to define the key you want to use.
-
-I recommend running from user instead of root and if you want to have maximum security, install 2FA on your node:
-https://www.linuxbabe.com/ubuntu/two-factor-authentication-ssh-key-ubuntu-18-04
+As mentioned in the beginning, the top layers in BetterTouchTool are for logging into one or multiple nodes. You gain access to the scripts again with the run apple script button. Just input your user@ip and save. If you use several ssh keys, use the **-i flag** to define the key you want to use. 
 
 ![alt text](https://github.com/inlak16/AMB-NET-Touchbar-Dashboard/blob/master/tutorial-images/10.png)
 
