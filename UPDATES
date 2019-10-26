@@ -1,6 +1,16 @@
 UPDATES:
 
 
+26.10.19
+
+DailyReward-to-csv-Calendar-Automation Tool 
+- added as zipped Automator file that can be converted to a Mac Calender event, where you can set time and daily automatic execution.
+- Until we have access to detailed reward data of nodes on AMB-net from the past, 
+- this script appends your node(s) daily rewards (balance today - balance yesterday) to a csv file from the second day you run it. 
+- It checks, if data for the day has already been written to the file and doesnt do it a second time. 
+- If there are no rewards that day, nothing is written to the csv.
+- Always check the results, as API or other variables may change. This is NOT an official Ambrosus AMB-net tool, use at your own risk! 
+
 19.10.19
 
 Version 2.0 uploaded and code snippets updated
