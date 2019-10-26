@@ -4,7 +4,7 @@ UPDATES:
 26.10.19
 
 Reward_to_csv_Calendar-Automation Tool 
-- added as zipped Automator file that can be converted to a Mac Calender event, where you can set time and daily automatic execution. 
+- added as zipped Automator file that can be converted to a Mac Calendar event, where you can set time and daily automatic execution. 
 - (Once the Calendar message pops up on your mac, the script executes)
 - Until we have access to detailed reward data of nodes on AMB-net from the past, 
 - this script appends your node(s) daily rewards (balance today - balance yesterday) to a csv file from the second day you run it. 
