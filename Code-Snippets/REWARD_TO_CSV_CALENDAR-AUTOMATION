@@ -8,7 +8,7 @@
 -- Adding it to iCal already executes the script. First day it just saves the compare values and on the second day it starts working accordingly.
 -- If there are no rewards that day, nothing is written to the csv.
 -- CAUTION !!! Always check the results, as API or other variables may change. This is NOT an official Ambrosus AMB-net tool, use at your own risk! 
-
+ 
 
 -- input your Atlas node Address here:
 set nodeaddress1 to "0x0000000000000000000000000000000000000000"
