@@ -201,8 +201,7 @@ From left to right you can run the Atlas Payout command in yarn, stop the node, 
 
 ### Writing your Noderewards to a CSV-File through a Calendar Automation
 
-Download and unzip __AMB_Reward_to_csv_Calendar-Automation.workflow__.
-This is just a rough tool to write your Noderewards down automatically, until we have access to detailed AMB-net data from the past. Open this in Automator, convert it to -> Calendar Event, then save to have it in iCal, where you can set time and daily automatic execution. Adding it to iCal already executes the script. First day it just saves the compare values and on the second day it starts working accordingly. If there are no rewards that day, nothing is written to the csv.
+This is just a temporary rough tool to write your Noderewards down automatically, until we have access to detailed AMB-net data from the past. Download and unzip __AMB_Reward_to_csv_Calendar-Automation.workflow__. Open this in Automator, convert it to -> Calendar Event, then save to have it in iCal, where you can set time and daily automatic execution. Adding it to iCal already executes the script. First day it just saves the compare values and on the second day it starts working accordingly. If there are no rewards that day, nothing is written to the csv.
 Always check the results, as API or other variables may change. But normally the script throws an error.
 
 ### What's next ?
