@@ -47,7 +47,7 @@ On the very left you have the programs that have TouchBar presets in them. Close
 
 
 
-As you can see below, I tried to keep it as flexible as possible. From top to bottom there is a **login script** (opening terminal with ssh connection), **a group of several login scripts** (In case you plan to run several nodes now that the floodgates to onboarding are open :D ), **two price tickers** (the first in EUR or any desired currency, which needs coinmarketcap api registration and the second in USD, running directly from AMB-Net API), **Apollo Online Status** (Online/Offline/Retired), **Apollo Main Stats** (Balance, Block, Stake), **Multiple Apollo Online Status 1-6** (little dots with a number indicating the nodes status in Green or Red), **Multiple Apollo Main Stats** (combined Balance and Stake of all nodes activated in script), **Atlas Online Status** (Onboarded/Offline), **Atlas Main Stats** (Balance,Sheltered Bundles (Challenges in Explorer),Stake), **Multiple Atlas Online Status 1-6** (little dots with a number indicating the nodes Status in Green or Red), **Multiple Atlas Main Stats** (combined Balance, Sheltered Bundles (Challenges in Explorer) and Stake of all nodes activated in script),**two reward estimators** (the first in EUR or any desired currency, which needs coinmarketcap api registration and the second in USD, running directly from AMB-Net API.) and **AMB-Net Stats** (Daily Bundles, AMB per Bundle).
+As you can see below, I tried to keep it as flexible as possible. From top to bottom there is a **login script** (opening terminal with ssh connection), **a group of several login scripts** (In case you plan to run several nodes now that the floodgates to onboarding are open :D ), **two price tickers** (the first in EUR or any desired currency, which needs coinmarketcap api registration and the second in USD, running directly from AMB-Net API), **Apollo Online Status** (Online/Offline/Retired), **Apollo Main Stats** (Balance, Block, Stake), **Multiple Apollo Online Status 1-6** (little dots with a number indicating the nodes status in Green or Red), **Multiple Apollo Main Stats** (combined Balance and Stake of all nodes activated in script), **Atlas Online Status** (Onboarded/Offline), **Atlas Main Stats** (Balance,Sheltered Bundles, Stake), **Multiple Atlas Online Status 1-6** (little dots with a number indicating the nodes Status in Green or Red), **Multiple Atlas Main Stats** (combined Balance, Sheltered Bundles and Stake of all nodes activated in script),**two reward estimators** (the first in EUR or any desired currency, which needs coinmarketcap api registration and the second in USD, running directly from AMB-Net API.) and **AMB-Net Stats** (Daily Bundles, AMB per Bundle).
 
 
 <img width="600" alt="portfolio_view" src="https://github.com/inlak16/AMB-NET-Touchbar-Dashboard/blob/master/tutorial-images/06b.png">
@@ -198,6 +198,12 @@ The Node control part of the Terminal controls of the Dashboard is pretty self e
 From left to right you can run the Atlas Payout command in yarn, stop the node, update the node and/or the system, start the node again, resync the chain (using a blockchain image file to speed up the process) and run diagnostics (only works, if you run your node from root).
 
 ![alt text](https://github.com/inlak16/AMB-NET-Touchbar-Dashboard/blob/master/tutorial-images/16.png)
+
+### Writing your Noderewards to a CSV-File through a Calendar Automation
+
+Download and unzip __AMB_Reward_to_csv_Calendar-Automation.workflow__.
+This is just a rough tool to write your Noderewards down automatically, until we have access to detailed AMB-net data from the past. Open this in Automator, convert it to -> Calendar Event, then save to have it in iCal, where you can set time and daily automatic execution. Adding it to iCal already executes the script. First day it just saves the compare values and on the second day it starts working accordingly. If there are no rewards that day, nothing is written to the csv.
+Always check the results, as API or other variables may change. But normally the script throws an error.
 
 ### What's next ?
 
