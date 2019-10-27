@@ -10,7 +10,7 @@ Reward_to_csv_Calendar-Automation Tool
 - this script appends your node(s) daily rewards (balance today - balance yesterday) to a csv file from the second day you run it. 
 - It checks, if data for the day has already been written to the file and doesnt do it a second time. 
 - If there are no rewards that day, nothing is written to the csv.
-- Always check the results, as API or other variables may change. This is NOT an official Ambrosus AMB-net tool, use at your own risk! 
+- Always check the results, as API or other variables may change. But normally the script throws an error.
 
 19.10.19
 
