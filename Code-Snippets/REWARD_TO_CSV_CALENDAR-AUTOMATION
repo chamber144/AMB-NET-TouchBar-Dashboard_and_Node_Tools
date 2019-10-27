@@ -1,12 +1,12 @@
 -- Until we have access to detailed reward data of nodes on AMB-net from the past, 
 -- this script appends your node(s) daily rewards (balance today - balance yesterday) to a csv file from the second day you run it. 
+-- If there are no rewards that day, nothing is written to the csv.
 -- It checks, if data for the day has already been written to the file and doesnt do it a second time. 
 -- Standard path to mining.csv and compare.txt (buffer from day before) is the Desktop.
 -- Input your node Address(es), leave unused slots like they are and turn used on by setting to 1 below address input in the nodeactive variables.
 -- Open this in Automator, convert it to -> Calendar Event, then save to have it in iCal, 
 -- where you can set time and daily automatic execution. 
 -- Adding it to iCal already executes the script. First day it just saves the compare values and on the second day it starts working accordingly.
--- If there are no rewards that day, nothing is written to the csv.
 -- Always check the results, as API or other variables may change. But normally the script throws an error. This is NOT an official Ambrosus AMB-net tool, use at your own risk! 
  
 
