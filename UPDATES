@@ -3,7 +3,7 @@ UPDATES:
 
 29.10.19
 Reward_to_csv-Automation Tool Bugfix
-- In the last Version the old Blance in the Buffer file was not overwritten. 
+- In the last Version the old balance in the buffer file was not overwritten. 
   This has been fixed now and should work as expected.
 
 26.10.19
