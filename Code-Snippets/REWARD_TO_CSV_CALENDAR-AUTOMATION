@@ -131,7 +131,7 @@ else
 	end tell
 end if
 
---- read yesterdays data, subtract from todays and append to csv file (only work once a day)
+--- read yesterdays data, subtract from todays, write old balance to compare file and append result to csv file (only work once a day)
 
 set compareFileContents to (read file compareFile)
 set AppleScript's text item delimiters to ";"
