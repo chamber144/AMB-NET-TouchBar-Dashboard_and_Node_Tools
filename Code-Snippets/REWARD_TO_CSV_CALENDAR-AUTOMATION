@@ -64,20 +64,20 @@ set balance_5 to ""
 set balance_6 to ""
 
 --- pull ATLAS balance from API
-set balance1 to pullAPIdataATLAS(nodeactive1, nodeaddress1, balance1)
-set balance2 to pullAPIdataATLAS(nodeactive2, nodeaddress2, balance2)
-set balance3 to pullAPIdataATLAS(nodeactive3, nodeaddress3, balance3)
-set balance4 to pullAPIdataATLAS(nodeactive4, nodeaddress4, balance4)
-set balance5 to pullAPIdataATLAS(nodeactive5, nodeaddress5, balance5)
-set balance6 to pullAPIdataATLAS(nodeactive6, nodeaddress6, balance6)
+set balance1 to pullAPIdataATLAS(nodeaddress1)
+set balance2 to pullAPIdataATLAS(nodeaddress2)
+set balance3 to pullAPIdataATLAS(nodeaddress3)
+set balance4 to pullAPIdataATLAS(nodeaddress4)
+set balance5 to pullAPIdataATLAS(nodeaddress5)
+set balance6 to pullAPIdataATLAS(nodeaddress6)
 
 --- pull APOLLO balance from API
-set balance_1 to pullAPIdataAPOLLO(nodeactive_1, nodeaddress_1, balance_1)
-set balance_2 to pullAPIdataAPOLLO(nodeactive_2, nodeaddress_2, balance_2)
-set balance_3 to pullAPIdataAPOLLO(nodeactive_3, nodeaddress_3, balance_3)
-set balance_4 to pullAPIdataAPOLLO(nodeactive_4, nodeaddress_4, balance_4)
-set balance_5 to pullAPIdataAPOLLO(nodeactive_5, nodeaddress_5, balance_5)
-set balance_6 to pullAPIdataAPOLLO(nodeactive_6, nodeaddress_6, balance_6)
+set balance_1 to pullAPIdataAPOLLO(nodeaddress_1)
+set balance_2 to pullAPIdataAPOLLO(nodeaddress_2)
+set balance_3 to pullAPIdataAPOLLO(nodeaddress_3)
+set balance_4 to pullAPIdataAPOLLO(nodeaddress_4)
+set balance_5 to pullAPIdataAPOLLO(nodeaddress_5)
+set balance_6 to pullAPIdataAPOLLO(nodeaddress_6)
 
 
 -- get date and time
@@ -306,9 +306,8 @@ on write_to_file(target_file, append_data, balance, todaysDate, todaysTime, node
 end write_to_file
 
 ---- pull api data ATLAS
-on pullAPIdataATLAS(nodeactive, nodeAddress, balance)
-	if nodeactive is equal to 1 then
-		-- get info around particular Atlas node 1
+on pullAPIdataATLAS(nodeAddress)
+		-- get info around particular Atlas node
 		set mJson to do shell script "curl -s 'https://explorer-api.ambrosus.com/atlases'"
 		set AppleScript's text item delimiters to {nodeAddress}
 		set keyNodeList to (every text item in mJson) as list
@@ -366,13 +365,11 @@ on pullAPIdataATLAS(nodeactive, nodeAddress, balance)
 		set balance to theNumber
 		
 		return balance
-	end if
 end pullAPIdataATLAS
 
 ---- pull api data APOLLO
-on pullAPIdataAPOLLO(nodeactive, nodeAddress, balance)
-	if nodeactive is equal to 1 then
-		-- get info around particular Apollo node 1
+on pullAPIdataAPOLLO(nodeAddress)
+		-- get info around particular Apollo node
 		set mJson to do shell script "curl -s 'https://explorer-api.ambrosus.com/apollos'"
 		set AppleScript's text item delimiters to {nodeAddress}
 		set keyNodeList to (every text item in mJson) as list
@@ -405,7 +402,6 @@ on pullAPIdataAPOLLO(nodeactive, nodeAddress, balance)
 			--display dialog ((count of keyNodeList) as string)
 			if listSize is not equal to 1 then exit repeat
 		end repeat
-		
 		
 		-- get status
 		set firstSet to item 2 of keyNodeList
@@ -464,7 +460,7 @@ on pullAPIdataAPOLLO(nodeactive, nodeAddress, balance)
 		set theNumber to text item 1 of commaseperation & "," & text item 2 of commaseperation
 		set balance to theNumber
 		
-	end if
+		return balance
 end pullAPIdataAPOLLO
 
 
