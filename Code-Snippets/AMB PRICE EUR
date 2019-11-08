@@ -1,7 +1,7 @@
 -- You need to signup an api account at https://pro.coinmarketcap.com/migrate/ to get EUR or other Currency than USD. Its free for basic use. Input your key into the string below.
 
 
--- pull data from API
+-- get price data
 set mJson to do shell script "curl -s 'https://pro-api.coinmarketcap.com/v1/cryptocurrency/quotes/latest?id=2081&convert=EUR&CMC_PRO_API_KEY=PUTYOURAPIKEYHERE'"
 set AppleScript's text item delimiters to {","}
 set keyValueList to (every text item in mJson) as list
