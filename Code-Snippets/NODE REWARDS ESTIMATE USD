@@ -1,8 +1,8 @@
--- please enter number of each Atlas and or Apollo Stake + number of Apollos and Taxrate (example 0.25 for 25%) if useful, here:
+-- please enter number of each Atlas and or Apollo Stake + number of Apollo and Taxrate (example 0.25 for 25% if useful), here:
 
 set taxrate to 0.0
 set ApolloStake to 250000
-set NumberApollos to 0
+set NumberApollo to 0
 set NumberZeta to 0
 set NumberSigma to 0
 set NumberOmega to 1
