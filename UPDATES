@@ -1,5 +1,6 @@
 UPDATES:
 
+
 08.11.19
 
 Reuploaded Version 2.0 and Reward_to_csv_Calendar-Automation Tool with much cleaner code (no functional update)
@@ -8,6 +9,7 @@ Reuploaded Version 2.0 and Reward_to_csv_Calendar-Automation Tool with much clea
 - The old Version of the Dashboard with the longer code is still downloadable in the Old-Versions folder.
 
 29.10.19
+
 Reward_to_csv_Calendar-Automation Tool Bugfix
 - In the first Version the old balance in the buffer file was not overwritten. 
   This has been fixed now and should work as expected.
