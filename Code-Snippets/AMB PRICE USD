@@ -1,4 +1,4 @@
-
+-- pull data from API
 set mJson to do shell script "curl -s 'https://token.ambrosus.com/'"
 set AppleScript's text item delimiters to {","}
 set keyValueList to (every text item in mJson) as list
@@ -32,6 +32,8 @@ set unformatedValue to " $ " & usdPrice & " " & arrow & " " & change & "%"
 
 return RemoveFromString("\"", unformatedValue)
 
+
+---------- functions below
 
 -- remove character or string from given string
 on RemoveFromString(CharOrString, txt)
