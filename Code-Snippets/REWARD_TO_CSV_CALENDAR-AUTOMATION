@@ -10,7 +10,7 @@
 -- Adding it to iCal already executes the script. First day it just saves the compare values and on the second day it starts working accordingly.
 -- Always check the results, as API or other variables may change. 
 -- But normally the script throws an error. This is NOT an official Ambrosus AMB-net tool, use at your own risk! 
- 
+
 
 
 -- input your Atlas node Address here:
@@ -64,21 +64,54 @@ set balance_5 to ""
 set balance_6 to ""
 
 --- pull ATLAS balance from API
-set balance1 to pullAPIdataATLAS(nodeaddress1)
-set balance2 to pullAPIdataATLAS(nodeaddress2)
-set balance3 to pullAPIdataATLAS(nodeaddress3)
-set balance4 to pullAPIdataATLAS(nodeaddress4)
-set balance5 to pullAPIdataATLAS(nodeaddress5)
-set balance6 to pullAPIdataATLAS(nodeaddress6)
+if nodeactive1 is equal to 1 then
+	set balance1 to pullAPIdataATLAS(nodeaddress1)
+end if
+
+if nodeactive2 is equal to 1 then
+	set balance2 to pullAPIdataATLAS(nodeaddress2)
+end if
+
+if nodeactive3 is equal to 1 then
+	set balance3 to pullAPIdataATLAS(nodeaddress3)
+end if
+
+if nodeactive4 is equal to 1 then
+	set balance4 to pullAPIdataATLAS(nodeaddress4)
+end if
+
+if nodeactive5 is equal to 1 then
+	set balance5 to pullAPIdataATLAS(nodeaddress5)
+end if
+
+if nodeactive6 is equal to 1 then
+	set balance6 to pullAPIdataATLAS(nodeaddress6)
+end if
 
 --- pull APOLLO balance from API
-set balance_1 to pullAPIdataAPOLLO(nodeaddress_1)
-set balance_2 to pullAPIdataAPOLLO(nodeaddress_2)
-set balance_3 to pullAPIdataAPOLLO(nodeaddress_3)
-set balance_4 to pullAPIdataAPOLLO(nodeaddress_4)
-set balance_5 to pullAPIdataAPOLLO(nodeaddress_5)
-set balance_6 to pullAPIdataAPOLLO(nodeaddress_6)
+if nodeactive_1 is equal to 1 then
+	set balance_1 to pullAPIdataAPOLLO(nodeaddress_1)
+end if
 
+if nodeactive_2 is equal to 1 then
+	set balance_2 to pullAPIdataAPOLLO(nodeaddress_2)
+end if
+
+if nodeactive_3 is equal to 1 then
+	set balance_3 to pullAPIdataAPOLLO(nodeaddress_3)
+end if
+
+if nodeactive_4 is equal to 1 then
+	set balance_4 to pullAPIdataAPOLLO(nodeaddress_4)
+end if
+
+if nodeactive_5 is equal to 1 then
+	set balance_5 to pullAPIdataAPOLLO(nodeaddress_5)
+end if
+
+if nodeactive_6 is equal to 1 then
+	set balance_6 to pullAPIdataAPOLLO(nodeaddress_6)
+end if
 
 -- get date and time
 set ShortDate to short date string of (current date)
@@ -307,40 +340,116 @@ end write_to_file
 
 ---- pull api data ATLAS
 on pullAPIdataATLAS(nodeAddress)
-		-- get info around particular Atlas node
-		set mJson to do shell script "curl -s 'https://explorer-api.ambrosus.com/atlases'"
+	-- get info around particular Atlas node
+	set mJson to do shell script "curl -s 'https://explorer-api.ambrosus.com/atlases'"
+	set AppleScript's text item delimiters to {nodeAddress}
+	set keyNodeList to (every text item in mJson) as list
+	set AppleScript's text item delimiters to ""
+	
+	set listSize to count of keyNodeList
+	set page to 1
+	-- iterate through pages of 50 nodes to find the right one
+	repeat while listSize = 1
+		set AppleScript's text item delimiters to {"\"next\":"}
+		set keyNodeList to (every text item in mJson) as list
+		set AppleScript's text item delimiters to ""
+		set pageEnd to item 2 of keyNodeList
+		
+		set AppleScript's text item delimiters to {","}
+		set nextPageIdList to (every text item in pageEnd) as list
+		set AppleScript's text item delimiters to ""
+		set nextpageid to item 1 of nextPageIdList
+		
+		set nextpageid to RemoveFromString("\"", nextpageid)
+		set nextpageid to RemoveFromString(" ", nextpageid)
+		set newlink to "https://explorer-api.ambrosus.com/atlases?next=" & nextpageid
+		set page to page + 1
+		set mJson to do shell script "curl -s " & newlink
 		set AppleScript's text item delimiters to {nodeAddress}
 		set keyNodeList to (every text item in mJson) as list
 		set AppleScript's text item delimiters to ""
 		
 		set listSize to count of keyNodeList
-		set page to 1
-		-- iterate through pages of 50 nodes to find the right one
-		repeat while listSize = 1
-			set AppleScript's text item delimiters to {"\"next\":"}
-			set keyNodeList to (every text item in mJson) as list
-			set AppleScript's text item delimiters to ""
-			set pageEnd to item 2 of keyNodeList
-			
-			set AppleScript's text item delimiters to {","}
-			set nextPageIdList to (every text item in pageEnd) as list
-			set AppleScript's text item delimiters to ""
-			set nextpageid to item 1 of nextPageIdList
-			
-			set nextpageid to RemoveFromString("\"", nextpageid)
-			set nextpageid to RemoveFromString(" ", nextpageid)
-			set newlink to "https://explorer-api.ambrosus.com/atlases?next=" & nextpageid
-			set page to page + 1
-			set mJson to do shell script "curl -s " & newlink
-			set AppleScript's text item delimiters to {nodeAddress}
-			set keyNodeList to (every text item in mJson) as list
-			set AppleScript's text item delimiters to ""
-			
-			set listSize to count of keyNodeList
-			--display dialog ((count of keyNodeList) as string)
-			if listSize is not equal to 1 then exit repeat
-		end repeat
+		--display dialog ((count of keyNodeList) as string)
+		if listSize is not equal to 1 then exit repeat
+	end repeat
+	
+	-- get balance
+	set firstSet to item 3 of keyNodeList
+	set AppleScript's text item delimiters to {","}
+	set keyValueList to (every text item in firstSet) as list
+	set AppleScript's text item delimiters to ""
+	
+	set theKeyValuePair to item 3 of keyValueList
+	set AppleScript's text item delimiters to {": "}
+	set theKeyValueBufferList to (every text item in theKeyValuePair) as list
+	set AppleScript's text item delimiters to ""
+	set balance to item 2 of theKeyValueBufferList
+	
+	set AppleScript's text item delimiters to "}"
+	set temp to balance's text items
+	set AppleScript's text item delimiters to ""
+	set balance to temp as text
+	
+	set AppleScript's text item delimiters to "."
+	set commaseperation to (every text item in balance) as list
+	set AppleScript's text item delimiters to ""
+	set theNumber to text item 1 of commaseperation & "," & text item 2 of commaseperation
+	set balance to theNumber
+	
+	return balance
+end pullAPIdataATLAS
+
+---- pull api data APOLLO
+on pullAPIdataAPOLLO(nodeAddress)
+	-- get info around particular Apollo node
+	set mJson to do shell script "curl -s 'https://explorer-api.ambrosus.com/apollos'"
+	set AppleScript's text item delimiters to {nodeAddress}
+	set keyNodeList to (every text item in mJson) as list
+	set AppleScript's text item delimiters to ""
+	
+	set listSize to count of keyNodeList
+	set page to 1
+	-- iterate through pages of 50 nodes to find the right one
+	repeat while listSize = 1
+		set AppleScript's text item delimiters to {"\"next\":"}
+		set keyNodeList to (every text item in mJson) as list
+		set AppleScript's text item delimiters to ""
+		set pageEnd to item 2 of keyNodeList
 		
+		set AppleScript's text item delimiters to {","}
+		set nextPageIdList to (every text item in pageEnd) as list
+		set AppleScript's text item delimiters to ""
+		set nextpageid to item 1 of nextPageIdList
+		
+		set nextpageid to RemoveFromString("\"", nextpageid)
+		set nextpageid to RemoveFromString(" ", nextpageid)
+		set newlink to "https://explorer-api.ambrosus.com/apollos?next=" & nextpageid
+		set page to page + 1
+		set mJson to do shell script "curl -s " & newlink
+		set AppleScript's text item delimiters to {nodeAddress}
+		set keyNodeList to (every text item in mJson) as list
+		set AppleScript's text item delimiters to ""
+		
+		set listSize to count of keyNodeList
+		--display dialog ((count of keyNodeList) as string)
+		if listSize is not equal to 1 then exit repeat
+	end repeat
+	
+	-- get status
+	set firstSet to item 2 of keyNodeList
+	set AppleScript's text item delimiters to {","}
+	set keyValueList to (every text item in firstSet) as list
+	set AppleScript's text item delimiters to ""
+	
+	set theKeyValuePair to item 4 of keyValueList
+	set AppleScript's text item delimiters to {": "}
+	set theKeyValueBufferList to (every text item in theKeyValuePair) as list
+	set AppleScript's text item delimiters to ""
+	set status to item 2 of theKeyValueBufferList
+	set status to RemoveFromString("\"", status)
+	
+	if status is equal to "ONLINE" then
 		-- get balance
 		set firstSet to item 3 of keyNodeList
 		set AppleScript's text item delimiters to {","}
@@ -352,115 +461,39 @@ on pullAPIdataATLAS(nodeAddress)
 		set theKeyValueBufferList to (every text item in theKeyValuePair) as list
 		set AppleScript's text item delimiters to ""
 		set balance to item 2 of theKeyValueBufferList
-		
-		set AppleScript's text item delimiters to "}"
-		set temp to balance's text items
-		set AppleScript's text item delimiters to ""
-		set balance to temp as text
-		
-		set AppleScript's text item delimiters to "."
-		set commaseperation to (every text item in balance) as list
-		set AppleScript's text item delimiters to ""
-		set theNumber to text item 1 of commaseperation & "," & text item 2 of commaseperation
-		set balance to theNumber
-		
-		return balance
-end pullAPIdataATLAS
-
----- pull api data APOLLO
-on pullAPIdataAPOLLO(nodeAddress)
-		-- get info around particular Apollo node
-		set mJson to do shell script "curl -s 'https://explorer-api.ambrosus.com/apollos'"
-		set AppleScript's text item delimiters to {nodeAddress}
-		set keyNodeList to (every text item in mJson) as list
-		set AppleScript's text item delimiters to ""
-		
-		set listSize to count of keyNodeList
-		set page to 1
-		-- iterate through pages of 50 nodes to find the right one
-		repeat while listSize = 1
-			set AppleScript's text item delimiters to {"\"next\":"}
-			set keyNodeList to (every text item in mJson) as list
-			set AppleScript's text item delimiters to ""
-			set pageEnd to item 2 of keyNodeList
-			
-			set AppleScript's text item delimiters to {","}
-			set nextPageIdList to (every text item in pageEnd) as list
-			set AppleScript's text item delimiters to ""
-			set nextpageid to item 1 of nextPageIdList
-			
-			set nextpageid to RemoveFromString("\"", nextpageid)
-			set nextpageid to RemoveFromString(" ", nextpageid)
-			set newlink to "https://explorer-api.ambrosus.com/apollos?next=" & nextpageid
-			set page to page + 1
-			set mJson to do shell script "curl -s " & newlink
-			set AppleScript's text item delimiters to {nodeAddress}
-			set keyNodeList to (every text item in mJson) as list
-			set AppleScript's text item delimiters to ""
-			
-			set listSize to count of keyNodeList
-			--display dialog ((count of keyNodeList) as string)
-			if listSize is not equal to 1 then exit repeat
-		end repeat
-		
-		-- get status
-		set firstSet to item 2 of keyNodeList
+	end if
+	
+	if status is not equal to "ONLINE" then
+		-- get balance
+		set firstSet to item 3 of keyNodeList
 		set AppleScript's text item delimiters to {","}
 		set keyValueList to (every text item in firstSet) as list
 		set AppleScript's text item delimiters to ""
 		
-		set theKeyValuePair to item 4 of keyValueList
+		set theKeyValuePair to item 3 of keyValueList
 		set AppleScript's text item delimiters to {": "}
 		set theKeyValueBufferList to (every text item in theKeyValuePair) as list
 		set AppleScript's text item delimiters to ""
-		set status to item 2 of theKeyValueBufferList
-		set status to RemoveFromString("\"", status)
-		
-		if status is equal to "ONLINE" then
-			-- get balance
-			set firstSet to item 3 of keyNodeList
-			set AppleScript's text item delimiters to {","}
-			set keyValueList to (every text item in firstSet) as list
-			set AppleScript's text item delimiters to ""
-			
-			set theKeyValuePair to item 3 of keyValueList
-			set AppleScript's text item delimiters to {": "}
-			set theKeyValueBufferList to (every text item in theKeyValuePair) as list
-			set AppleScript's text item delimiters to ""
-			set balance to item 2 of theKeyValueBufferList
-		end if
-		
-		if status is not equal to "ONLINE" then
-			-- get balance
-			set firstSet to item 3 of keyNodeList
-			set AppleScript's text item delimiters to {","}
-			set keyValueList to (every text item in firstSet) as list
-			set AppleScript's text item delimiters to ""
-			
-			set theKeyValuePair to item 3 of keyValueList
-			set AppleScript's text item delimiters to {": "}
-			set theKeyValueBufferList to (every text item in theKeyValuePair) as list
-			set AppleScript's text item delimiters to ""
-			set balance to item 2 of theKeyValueBufferList
-		end if
-		
-		set AppleScript's text item delimiters to "\""
-		set temp to balance's text items
-		set AppleScript's text item delimiters to ""
-		set balance to temp as text
-		
-		set AppleScript's text item delimiters to "}"
-		set temp to balance's text items
-		set AppleScript's text item delimiters to ""
-		set balance to temp as text
-		
-		set AppleScript's text item delimiters to "."
-		set commaseperation to (every text item in balance) as list
-		set AppleScript's text item delimiters to ""
-		set theNumber to text item 1 of commaseperation & "," & text item 2 of commaseperation
-		set balance to theNumber
-		
-		return balance
+		set balance to item 2 of theKeyValueBufferList
+	end if
+	
+	set AppleScript's text item delimiters to "\""
+	set temp to balance's text items
+	set AppleScript's text item delimiters to ""
+	set balance to temp as text
+	
+	set AppleScript's text item delimiters to "}"
+	set temp to balance's text items
+	set AppleScript's text item delimiters to ""
+	set balance to temp as text
+	
+	set AppleScript's text item delimiters to "."
+	set commaseperation to (every text item in balance) as list
+	set AppleScript's text item delimiters to ""
+	set theNumber to text item 1 of commaseperation & "," & text item 2 of commaseperation
+	set balance to theNumber
+	
+	return balance
 end pullAPIdataAPOLLO
 
 
