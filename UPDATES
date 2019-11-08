@@ -1,5 +1,11 @@
 UPDATES:
 
+08.11.19
+
+Reuploaded Version 2.0 and Reward_to_csv_Calendar-Automation Tool with much cleaner code (no functional update)
+- Made noticeable code simplifications mainly to Multiple Atlas, Multiple Apollo and Reward_to_csv_Calendar-Automation. 
+- Updated the much shorter code to the Code-Snippets aswell. This should provide better readability and overview.
+- The old Version of the Dashboard with the longer code is still downloadable in the Old-Versions folder.
 
 29.10.19
 Reward_to_csv_Calendar-Automation Tool Bugfix
