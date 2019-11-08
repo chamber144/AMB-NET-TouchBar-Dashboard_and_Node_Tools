@@ -1,32 +1,32 @@
 --input your node Addresses, leave unused slots like they are and turn unused off by setting to 0 below address input in the nodeactive variables. 
 
 -- input your Atlas node Address here:
-set nodeaddress1 to "0x0d68a2D14423AE008c42889D4d64d3ac9603647D"
+set nodeaddress1 to "0x0000000000000000000000000000000000000000"
 
 -- input your Atlas node Address here:
-set nodeaddress2 to "0x311dEa8E740Ad313a2F8fC4Ba3aB3142061bf080"
+set nodeaddress2 to "0x0000000000000000000000000000000000000000"
 
 -- input your Atlas node Address here:
-set nodeaddress3 to "0x51BF7699f5d342e1728f8293253B17c541cC548E"
+set nodeaddress3 to "0x0000000000000000000000000000000000000000"
 
 -- input your Atlas node Address here:
-set nodeaddress4 to "0x1D61C380e95ACF2D268c0237dF50c3CAAFCD14A7"
+set nodeaddress4 to "0x0000000000000000000000000000000000000000"
 
 -- input your Atlas node Address here:
-set nodeaddress5 to "0xA0C8fe49bA7cb29807A5E81e18581cA69B50e1D2"
+set nodeaddress5 to "0x0000000000000000000000000000000000000000"
 
 -- input your Atlas node Address here:
-set nodeaddress6 to "0x075EC7187501D58A001D643f201bbC48B327a6Fd"
+set nodeaddress6 to "0x0000000000000000000000000000000000000000"
 
 
 -- set nodes to process information from here:
 
 set nodeactive1 to 1
-set nodeactive2 to 1
-set nodeactive3 to 1
-set nodeactive4 to 1
-set nodeactive5 to 1
-set nodeactive6 to 1
+set nodeactive2 to 0
+set nodeactive3 to 0
+set nodeactive4 to 0
+set nodeactive5 to 0
+set nodeactive6 to 0
 ----------------------
 
 set stake1 to 0
