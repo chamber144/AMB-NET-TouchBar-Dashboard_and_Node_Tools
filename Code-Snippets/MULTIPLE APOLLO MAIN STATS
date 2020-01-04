@@ -18,115 +18,50 @@ set nodeaddress5 to "0x0000000000000000000000000000000000000000"
 -- input your Apollo node Address here:
 set nodeaddress6 to "0x0000000000000000000000000000000000000000"
 
--- set nodes to process information from here:
+-- set nodes to process information from !:
 
-set nodeactive1 to 1
+set nodeactive1 to 0
 set nodeactive2 to 0
 set nodeactive3 to 0
 set nodeactive4 to 0
 set nodeactive5 to 0
 set nodeactive6 to 0
+
 -----------------------------------------
 
-set stake1 to 0
-set stake2 to 0
-set stake3 to 0
-set stake4 to 0
-set stake5 to 0
-set stake6 to 0
+set nodes to {nodeaddress1, nodeaddress2, nodeaddress3, nodeaddress4, nodeaddress5, nodeaddress6}
 
-set balance1 to 0.0
-set balance2 to 0.0
-set balance3 to 0.0
-set balance4 to 0.0
-set balance5 to 0.0
-set balance6 to 0.0
+set nodeactive to nodeactive1 + nodeactive2 + nodeactive3 + nodeactive4 + nodeactive5 + nodeactive6
+set nodeactivearr to {nodeactive1, nodeactive2, nodeactive3, nodeactive4, nodeactive5, nodeactive6}
 
-if nodeactive1 is equal to 1 then
-	set returnValues to pullAPIdataAPOLLO(nodeaddress1)
+set stake to {"0", "0", "0", "0", "0", "0"}
+set balance to {"0", "0", "0", "0", "0", "0"}
+
+repeat with n from 1 to nodeactive
 	
-	set balance1 to item 1 of returnValues
-	set stake1 to item 2 of returnValues
-	set stake1 to RemoveFromString("\"", stake1)
-	set stake1 to returnNumbersInString(stake1)
-	set balance1 to RemoveFromString("\"", balance1)
-	set balance1 to RemoveFromString("}", balance1)
-	set balance1 to changetocomma(balance1)
-end if
-
-if nodeactive2 is equal to 1 then
-	set returnValues to pullAPIdataAPOLLO(nodeaddress2)
-	
-	set balance2 to item 1 of returnValues
-	set stake2 to item 2 of returnValues
-	set stake2 to RemoveFromString("\"", stake2)
-	set stake2 to returnNumbersInString(stake2)
-	set balance2 to RemoveFromString("\"", balance2)
-	set balance2 to RemoveFromString("}", balance2)
-	set balance2 to changetocomma(balance2)
-end if
-
-if nodeactive3 is equal to 1 then
-	set returnValues to pullAPIdataAPOLLO(nodeaddress3)
-	
-	set balance3 to item 1 of returnValues
-	set stake3 to item 2 of returnValues
-	set stake3 to RemoveFromString("\"", stake3)
-	set stake3 to returnNumbersInString(stake3)
-	set balance3 to RemoveFromString("\"", balance3)
-	set balance3 to RemoveFromString("}", balance3)
-	set balance3 to changetocomma(balance3)
-end if
-
-if nodeactive4 is equal to 1 then
-	set returnValues to pullAPIdataAPOLLO(nodeaddress4)
-	
-	set balance4 to item 1 of returnValues
-	set stake4 to item 2 of returnValues
-	set stake4 to RemoveFromString("\"", stake4)
-	set stake4 to returnNumbersInString(stake4)
-	set balance4 to RemoveFromString("\"", balance4)
-	set balance4 to RemoveFromString("}", balance4)
-	set balance4 to changetocomma(balance4)
-end if
-
-if nodeactive5 is equal to 1 then
-	set returnValues to pullAPIdataAPOLLO(nodeaddress5)
-	
-	set balance5 to item 1 of returnValues
-	set stake5 to item 2 of returnValues
-	set stake5 to RemoveFromString("\"", stake5)
-	set stake5 to returnNumbersInString(stake5)
-	set balance5 to RemoveFromString("\"", balance5)
-	set balance5 to RemoveFromString("}", balance5)
-	set balance5 to changetocomma(balance5)
-end if
-
-if nodeactive6 is equal to 1 then
-	set returnValues to pullAPIdataAPOLLO(nodeaddress6)
-	
-	set balance6 to item 1 of returnValues
-	set stake6 to item 2 of returnValues
-	set stake6 to RemoveFromString("\"", stake6)
-	set stake6 to returnNumbersInString(stake6)
-	set balance6 to RemoveFromString("\"", balance6)
-	set balance6 to RemoveFromString("}", balance6)
-	set balance6 to changetocomma(balance6)
-end if
-
+	if item n of nodeactivearr is equal to 1 then
+		set returnValues to pullAPIdataAPOLLO(item n of nodes)
+		
+		set item n of balance to item 1 of returnValues
+		set item n of stake to item 2 of returnValues
+		set item n of stake to RemoveFromString("\"", item n of stake)
+		set item n of stake to returnNumbersInString(item n of stake)
+		set item n of balance to RemoveFromString("\"", item n of balance)
+		set item n of balance to RemoveFromString("}", item n of balance)
+		set item n of balance to changetocomma(item n of balance)
+	end if
+end repeat
 
 --------------------
 
-set stake to stake1 + stake2 + stake3 + stake4 + stake5 + stake6
+set stakeall to (item 1 of stake) + (item 2 of stake) + (item 3 of stake) + (item 4 of stake) + (item 5 of stake) + (item 6 of stake)
 
-set balance to balance1 + balance2 + balance3 + balance4 + balance5 + balance6
-
-
-set balance to number_to_string(balance)
-set balance to RoundImperialNumberToTwoDecimals(balance)
+set balanceall to (item 1 of balance) + (item 2 of balance) + (item 3 of balance) + (item 4 of balance) + (item 5 of balance) + (item 6 of balance)
+set balanceall to number_to_string(balanceall)
+set balanceall to RoundImperialNumberToTwoDecimals(balanceall)
 
 
-set unformatedValue to "| " & balance & " AMB | " & stake & " Stake |"
+set unformatedValue to "| " & balanceall & " AMB | " & stakeall & " Stake |"
 
 return RemoveFromString("\"", unformatedValue)
 
