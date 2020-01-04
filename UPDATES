@@ -1,6 +1,12 @@
 UPDATES:
 
 
+04.01.20
+
+Version 2.1 (again no functional update, just code cleanup)
+- Cleaned up the code of the Multiple Atlas and Multiple Apollo Main Stats a little more 
+  for readability and maybe processing speed.
+
 08.11.19
 
 Reuploaded Version 2.0 and Reward_to_csv_Calendar-Automation Tool with much cleaner code (no functional update)
