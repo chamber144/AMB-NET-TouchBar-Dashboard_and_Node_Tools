@@ -19,104 +19,52 @@ set nodeaddress5 to "0x0000000000000000000000000000000000000000"
 set nodeaddress6 to "0x0000000000000000000000000000000000000000"
 
 
--- set nodes to process information from here:
+-- set nodes to process information from here !:
 
-set nodeactive1 to 1
+set nodeactive1 to 0
 set nodeactive2 to 0
 set nodeactive3 to 0
 set nodeactive4 to 0
 set nodeactive5 to 0
 set nodeactive6 to 0
-----------------------
 
-set stake1 to 0
-set stake2 to 0
-set stake3 to 0
-set stake4 to 0
-set stake5 to 0
-set stake6 to 0
 
-set balance1 to 0.0
-set balance2 to 0.0
-set balance3 to 0.0
-set balance4 to 0.0
-set balance5 to 0.0
-set balance6 to 0.0
+--------------------------------------------
 
-set allbundles1 to 0
-set allbundles2 to 0
-set allbundles3 to 0
-set allbundles4 to 0
-set allbundles5 to 0
-set allbundles6 to 0
+set nodes to {nodeaddress1, nodeaddress2, nodeaddress3, nodeaddress4, nodeaddress5, nodeaddress6}
 
-if nodeactive1 is equal to 1 then
-	set returnValues to pullAPIdataATLAS(nodeaddress1)
+set nodeactive to nodeactive1 + nodeactive2 + nodeactive3 + nodeactive4 + nodeactive5 + nodeactive6
+set nodeactivearr to {nodeactive1, nodeactive2, nodeactive3, nodeactive4, nodeactive5, nodeactive6}
+
+set stake to {"0", "0", "0", "0", "0", "0"}
+set balance to {"0", "0", "0", "0", "0", "0"}
+set allbundles to {"0", "0", "0", "0", "0", "0"}
+
+repeat with n from 1 to nodeactive
 	
-	set balance1 to item 1 of returnValues
-	set stake1 to item 2 of returnValues
-	set stake1 to RemoveFromString("}", stake1)
-	set allbundles1 to item 3 of returnValues
-end if
-
-if nodeactive2 is equal to 1 then
-	set returnValues to pullAPIdataATLAS(nodeaddress2)
-	
-	set balance2 to item 1 of returnValues
-	set stake2 to item 2 of returnValues
-	set stake2 to RemoveFromString("}", stake2)
-	set allbundles2 to item 3 of returnValues
-end if
-
-if nodeactive3 is equal to 1 then
-	set returnValues to pullAPIdataATLAS(nodeaddress3)
-	
-	set balance3 to item 1 of returnValues
-	set stake3 to item 2 of returnValues
-	set stake3 to RemoveFromString("}", stake3)
-	set allbundles3 to item 3 of returnValues
-end if
-
-if nodeactive4 is equal to 1 then
-	set returnValues to pullAPIdataATLAS(nodeaddress4)
-	
-	set balance4 to item 1 of returnValues
-	set stake4 to item 2 of returnValues
-	set stake4 to RemoveFromString("}", stake4)
-	set allbundles4 to item 3 of returnValues
-end if
-
-if nodeactive5 is equal to 1 then
-	set returnValues to pullAPIdataATLAS(nodeaddress5)
-	
-	set balance5 to item 1 of returnValues
-	set stake5 to item 2 of returnValues
-	set stake5 to RemoveFromString("}", stake5)
-	set allbundles5 to item 3 of returnValues
-end if
-
-if nodeactive6 is equal to 1 then
-	set returnValues to pullAPIdataATLAS(nodeaddress6)
-	
-	set balance6 to item 1 of returnValues
-	set stake6 to item 2 of returnValues
-	set stake6 to RemoveFromString("}", stake6)
-	set allbundles6 to item 3 of returnValues
-end if
+	if item n of nodeactivearr is equal to 1 then
+		set returnValues to pullAPIdataATLAS(item n of nodes)
+		
+		set item n of balance to item 1 of returnValues
+		set item n of stake to item 2 of returnValues
+		set item n of stake to RemoveFromString("}", item n of stake)
+		set item n of allbundles to item 3 of returnValues
+	end if
+end repeat
 
 ----------------
 
 
-set stake to stake1 + stake2 + stake3 + stake4 + stake5 + stake6
+set stakeall to (item 1 of stake) + (item 2 of stake) + (item 3 of stake) + (item 4 of stake) + (item 5 of stake) + (item 6 of stake)
 
-set allbundles to allbundles1 + allbundles2 + allbundles3 + allbundles4 + allbundles5 + allbundles6
+set bundlesall to (item 1 of allbundles) + (item 2 of allbundles) + (item 3 of allbundles) + (item 4 of allbundles) + (item 5 of allbundles) + (item 6 of allbundles)
 
-set balance to balance1 + balance2 + balance3 + balance4 + balance5 + balance6
-set balance to number_to_string(balance)
-set balance to RoundImperialNumberToTwoDecimals(balance)
+set balanceall to (item 1 of balance) + (item 2 of balance) + (item 3 of balance) + (item 4 of balance) + (item 5 of balance) + (item 6 of balance)
+set balanceall to number_to_string(balanceall)
+set balanceall to RoundImperialNumberToTwoDecimals(balanceall)
 
 
-set unformatedValue to "| " & balance & " AMB | " & allbundles & " Bundles | " & stake & " Stake |"
+set unformatedValue to "| " & balanceall & " AMB | " & bundlesall & " Bundles | " & stakeall & " Stake |"
 
 return RemoveFromString("\"", unformatedValue)
 
@@ -284,4 +232,3 @@ on number_to_string(this_number)
 		return this_number
 	end if
 end number_to_string
-
