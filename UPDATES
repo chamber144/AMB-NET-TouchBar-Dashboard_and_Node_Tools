@@ -4,9 +4,9 @@ UPDATES:
 
 12.04.20
 
-Version 2.2 corrected reward estimation 
+Version 2.2 reward estimation corrected and code snippets updated
 - as price has been calculated only for 2 decimals after comma resulting in 0 at the moment, this now is fixed.
-- a tiny variable bug for atlas reward estimation (in apollo section) has been fixed aswell.
+- a tiny variable bug for reward estimation has been fixed aswell.
 - link to amb-net Stats page has been added when you tap on the price ticker.
 
 04.01.20
