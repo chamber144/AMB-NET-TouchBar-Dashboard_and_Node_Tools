@@ -131,7 +131,7 @@ set OwnAtlasReward to RoundImperialNumberToTwoDecimals(OwnAtlasReward)
 set totalSupply to changetocomma(totalSupply)
 set usdPrice to RemoveFromString("\"", usdPrice)
 set usdPrice to changetocomma(usdPrice)
-set usdPrice to RoundImperialNumberToTwoDecimals(usdPrice)
+set usdPrice to RoundImperialNumberToThreeDecimals(usdPrice)
 set AllApolloStake to RemoveFromString("}", AllApolloStake)
 set AllApolloStake to changetocomma(AllApolloStake)
 set dailybundles to RemoveFromString("\"", dailybundles)
@@ -140,9 +140,11 @@ set apollos to RemoveFromString("\"", apollos)
 
 -- REWARD FORMULAS APOLLO: -------------------
 
-set ApolloDailyBundleReward to 0.3 * bundlecost * dailybundles / apollos * NumberApollos as text
+set ApolloDailyBundleReward to 0.3 * bundlecost * dailybundles / apollos * NumberApollo as text
 set ApolloDailyBlockReward to 0.02 * totalSupply / 365 * (ApolloStake / AllApolloStake)
-if NumberApollos is 0 then set ApolloDailyBlockReward to 0
+
+if NumberApollo is 0 then set ApolloDailyBlockReward to 0
+
 
 ---------------------------------------------
 
@@ -218,6 +220,17 @@ on RoundImperialNumberToTwoDecimals(txt)
 	end if
 end RoundImperialNumberToTwoDecimals
 
+on RoundImperialNumberToThreeDecimals(txt)
+	set AppleScript's text item delimiters to ","
+	set decimals to text item 2 of txt
+	if (count decimals) < 3 then
+		set decimals to decimals & "0"
+	end if
+	set decimals to (text 1 thru 3 of decimals)
+	set theNumber to text item 1 of txt & "," & decimals
+	set AppleScript's text item delimiters to ""
+	return theNumber
+end RoundImperialNumberToThreeDecimals
 
 -- change to comma
 on changetocomma(txt)
