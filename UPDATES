@@ -1,6 +1,10 @@
 UPDATES:
 
+24.04.20
 
+Version 2.3 uploaded with Coinmarketcap API Data handling corrected and code snippets updated
+- The Coinmarketcap API has changed, this update just affects setups that don't use Ambrosus API pulled USD Data.
+- Adjustments happened in EUR Price ticker and EUR Reward estimation
 
 12.04.20
 
