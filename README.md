@@ -7,7 +7,7 @@
 Here I present a complete setup that may help you monitor and control your ATLAS or APOLLO node(s) through the MacBook TouchBar _([Click here for an overview of Updates](https://github.com/inlak16/AMB-NET-TouchBar-Dashboard/blob/master/UPDATES))_.
 
 Please note that _this is NOT an official tool created by Ambrosus_, but a setup that I built to control my own node and found quite useful to share with the whole community. 
-Although I don't expect any dangerous errors to occur, _I give no warranty that this is bug-free_, so please have a look at the code, before running it. I have been controlling my node with this for several months without major issues now.
+Although I don't expect any dangerous errors to occur, _I give no warranty that this is bug-free_, so please have a look at the code, before running it. I have been controlling my node with this for over a year without major issues now.
 
 Also note that as soon as the AMB-Net API is altered in any way, the pulled node info might not work as expected anymore and changes to the code may be needed. Please get back to me on any edge cases you find. I'm posting all the code snippets seperately in here in the Code-Snippets subfolder so anybody can see what's going on.
 _These code snippets can be encapsulated as executable apple scripts with Automator, too. So they may be useful even on a Mac without TouchBar._
