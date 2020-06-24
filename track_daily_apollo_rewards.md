@@ -16,7 +16,7 @@ So let's get started. Log into your node and type (avoid using sudo for file acc
 nano get_rewards_apollo.py
 ```
 
-copy and paste the following script into the nano editor:
+copy and paste the following script from this page or from the [scriptfile](https://github.com/inlak16/AMB-NET-TouchBar-Dashboard/blob/master/UPDATES) into the nano editor:
 
 ```
 import requests
