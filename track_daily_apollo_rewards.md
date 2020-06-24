@@ -260,7 +260,7 @@ _0xaBA817a774bf3dB1faB3c5cf867a82A683D74D22_
 Please feel free to get back to me on Ambrosus slack. 
 I'm planning to keep updating this repository the way I have time. 
 
-[Here is a link to the over Updates to these scripts that have been done so far](https://github.com/inlak16/AMB-NET-TouchBar-Dashboard/blob/master/UPDATES)
+[Here is a link to the overall Updates to these scripts that have been done so far](https://github.com/inlak16/AMB-NET-TouchBar-Dashboard/blob/master/UPDATES)
 
 
 
