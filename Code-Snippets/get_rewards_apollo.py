@@ -47,7 +47,6 @@ count = 0
 state = ["a","b","c","d","e","f"]
 status = ["a","b","c","d","e","f"]
 balance = ["a","b","c","d","e","f"]
-S = ["3","3","3","3","3","3","3"]
 for each in nodes:
     print(each)
     response = requests.get(api_url_base)
@@ -93,10 +92,6 @@ for each in nodes:
     
     if state[count] == "RETIRED":
         status[count] = "OFFLINE"
-    if status[count] == "ONLINE":
-        S[count] = "1"
-    else:
-        S[count] = "0"
     print(status[count])
     count = count + 1
 
