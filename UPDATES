@@ -1,5 +1,11 @@
 UPDATES:
 
+26.06.20
+
+Added "get_rewards_python.py" script and installation tutorial named "track_daily_apollo_rewards.md".
+This allows apollo node operators to automatically track their daily node rewards for up to 6 nodes through a cronjob on their node into a rewards.csv file.
+I wrote this because I wanted to go on vacation without having to take my laptop and execute a calendar event everyday to track noderewards.
+
 24.04.20
 
 Version 2.3 uploaded with Coinmarketcap API Data handling corrected and code snippets updated
