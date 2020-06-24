@@ -4,7 +4,8 @@ UPDATES:
 
 Added "get_rewards_python.py" script and installation tutorial in the wiki named "track_daily_apollo_rewards".
 This allows apollo node operators to automatically track their daily node rewards for up to 6 nodes through a cronjob on their node into a rewards.csv file.
-I wrote this because I wanted to go on vacation without having to take my laptop and execute a calendar event everyday to track noderewards.
+I wrote this in the first place, because I wanted to go on vacation without having to take my laptop and execute a calendar event everyday to track noderewards.
+Then added 5 nodeslots to make it universally usable.
 
 24.04.20
 
