@@ -25,6 +25,7 @@ import csv
 from time import gmtime, strftime
 
 os.system('ls')
+
 #enter your home directory with you username
 home = "/home/yourUserName/"
 
@@ -199,9 +200,9 @@ if node6active == 1:
 csvfile.close()
 ```
 At the top of the script adjust the username in the link according to your setup.
-Input you Apollo Node Adress(es) and activate needed slots below the Adresses with the active-variables
+Input your Apollo Node Adress(es) and activate needed slots below the Adresses with the active-variables.
 
-Be sure that in nano editor the very first text is "import request", otherwise the script will throw an error.
+Be sure that in nano editor the very first text really is "import requests", otherwise the script will throw an error.
 
 Exit nano and save the file with "control+X" confirming changes with "y".
 
@@ -211,16 +212,16 @@ nano buffer.txt
 ```
 
 For every Apollo node you want to track type a 0 and press enter.
-This is the buffer file that hold one value per line. It needs to be edited only the first time to contain number of lines according to number of nodes to track.
+This is the buffer file that holds one value per line. It needs to be edited only the first time to contain the number of lines according to the number of nodes to track.
 
-Exit nano and save the file with "control+X" confirming changes with "y".
+Exit nano and save the file with "control+x" confirming changes with "y".
 
 You can test the script now by running:
 ```
 python3 get_rewards_apollo.py
 ```
 
-It should return each Nodeaddress and it's status ONLINE.
+It should return the Nodeaddress and it's status ONLINE.
 When there is no error shown, you can setup a cron job to automatically run the script once a day.
 Type:
 
@@ -232,18 +233,18 @@ and enter the following line below the text:
 ```
 0 22 * * * python3 /home/yourUserName/get_rewards_apollo.py
 ```
-Change your username-directory accordingly. 
+Change your username-directory accordingly as in the scriptfile before. 
 "22" represents the hour the script is being executed. For this to happen at midnight in my timezone, I need to set it to 22.
 
-Exit nano and save the file with "control+X" confirming changes with "y".
+Exit nano and save the file with "control+x" confirming changes with "y".
 
-Thats it. On the second day of execution this should result in a nice csv file even containing usd-AMB-price at the time of script execution.
+That's it. On the second day of execution this should result in a nice csv file even containing usd-AMB-price at the time of script execution.
 
 Check the tracking anytime with this command:
 ```
 nano rewards.csv
 ```
-This can be directly brought into excel.
+This data can be directly brought into Excel to make life easier.
 
 
 
