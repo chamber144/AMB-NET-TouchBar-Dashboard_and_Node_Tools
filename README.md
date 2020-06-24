@@ -204,7 +204,7 @@ From left to right you can run the Atlas Payout command in yarn, stop the node, 
 
 Here is a solution to track daily apollo noderewards automatically directly on the node through python for up to 6 nodes.
 
-[Track daily Apollo rewards](https://github.com/inlak16/AMB-NET-TouchBar-Dashboard/edit/master/track_daily_apollo_rewards.md)
+[Track daily Apollo rewards through Python](https://github.com/inlak16/AMB-NET-TouchBar-Dashboard/edit/master/track_daily_apollo_rewards.md)
 
 Here is a MacOSX calendar script to write your daily noderewards down automatically. Download the zipped __AMB_Reward_to_csv_Calendar-Automation.workflow__. After unzipping, open this in Automator, set up your node in the script and convert it to -> Calendar Event, then save to have it in iCal, where you can set time and daily automatic execution (Once the Calendar message pops up on your Mac, the script executes). 
 Adding it to iCal already executes the script. On the first day it just saves the compare values and on the second day it starts working accordingly. If there are no rewards that day, nothing is written to the csv.
