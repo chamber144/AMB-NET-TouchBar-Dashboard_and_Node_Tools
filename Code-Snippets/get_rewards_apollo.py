@@ -169,6 +169,6 @@ if node5active == 1:
     csv4 = ("\"Staking\",\""+str(baldif4)+"\",\"AMB\",\"\",\"\",\"\",\"\",\"\",\"\",\"Apollo Node5\",\""+datewrite+"\",\""+priceusd+"\"\n")
     csvfile.writelines(csv4)
 if node6active == 1:
-    csv5 = ("\"Staking\",\""+str(baldif4)+"\",\"AMB\",\"\",\"\",\"\",\"\",\"\",\"\",\"Apollo Node6\",\""+datewrite+"\",\""+priceusd+"\"\n")
+    csv5 = ("\"Staking\",\""+str(baldif5)+"\",\"AMB\",\"\",\"\",\"\",\"\",\"\",\"\",\"Apollo Node6\",\""+datewrite+"\",\""+priceusd+"\"\n")
     csvfile.writelines(csv5)
 csvfile.close()
