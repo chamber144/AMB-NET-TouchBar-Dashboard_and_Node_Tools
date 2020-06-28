@@ -5,7 +5,7 @@ from time import gmtime, strftime
 
 os.system('ls')
 
-#enter your home directory with you username
+#enter your home directory with your username
 home = "/home/yourUserName/"
 
 #enter your node(s) and set active slots below to 1! Slot 1 is always active!
