@@ -4,7 +4,7 @@ UPDATES:
 01.07.20
 
 Version 2.4 uploaded with Coinmarketcap API Data handling corrected, new Ambernomics included into reward estimates,
-Atlas detailed data pull error from amb.money for rewards estimates api fixed and code snippets updated.
+Atlas detailed data pull error from amb.money for rewards estimates fixed and code snippets updated.
 - Adjustments happened in EUR Price ticker and EUR Reward estimation to work again for Coinmarketcap setup.
 - The new Ambernomics of 50% of bundlereward going in a 70/30% split to Atlas and Apollo and 50% of Blockreward of 10% inflation going to Apollo has been added.
 - Numbers of each Atlas type, which are pulled from amb.money have not been read out 100% correctly before.
