@@ -206,7 +206,7 @@ Here is a solution to track daily apollo noderewards automatically into a csv fi
 
 [Track daily Apollo rewards through Python](https://github.com/inlak16/AMB-NET-TouchBar-Dashboard/wiki/Track-daily-Apollo-rewards)
 
-Alternatively if you don't want to track your rewards directly on the node for watever reasons, here is a MacOSX calendar script to write your daily noderewards down into a csv, that works whenever the calendar event is executed on a running mac. Download the zipped __AMB_Reward_to_csv_Calendar-Automation.workflow__. After unzipping, open this in Automator, set up your node in the script and convert it to -> Calendar Event, then save to have it in iCal, where you can set time and daily automatic execution (Once the Calendar message pops up on your Mac, the script executes). 
+Alternatively if you don't want to track your rewards directly on the node for whatever reasons, here is a MacOSX calendar script to write your daily noderewards down into a csv, that works whenever the calendar event is executed on a running mac. Download the zipped __AMB_Reward_to_csv_Calendar-Automation.workflow__. After unzipping, open this in Automator, set up your node in the script and convert it to -> Calendar Event, then save to have it in iCal, where you can set time and daily automatic execution (Once the Calendar message pops up on your Mac, the script executes). 
 Adding it to iCal already executes the script. On the first day it just saves the compare values and on the second day it starts working accordingly. If there are no rewards that day, nothing is written to the csv.
 Always check the results, as API or other variables may change. But normally the script throws an error.
 
