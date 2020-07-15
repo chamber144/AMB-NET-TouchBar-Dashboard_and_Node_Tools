@@ -1,6 +1,11 @@
 UPDATES:
 
 
+15.07.20
+
+Version 2.5 only a little fix for the Coinmarketcap API Data handling for EUR or other currency price ticker.
+- I'm getting really annoyed how often Coinmarketcap they changes their API these days. Thinking about switching to coingecko ...
+
 01.07.20
 
 Version 2.4 uploaded with Coinmarketcap API Data handling corrected, new Ambernomics included into reward estimates,
