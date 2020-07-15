@@ -3,8 +3,9 @@ UPDATES:
 
 15.07.20
 
-Version 2.5 only a little fix for the Coinmarketcap API Data handling for EUR or other currency price ticker.
+Version 2.5 AMB API change and a little fix for the Coinmarketcap API Data handling for EUR or other currency price ticker.
 - I'm getting really annoyed how often Coinmarketcap they changes their API these days. Thinking about switching to coingecko ...
+- There has been some change in the AMB API that I need to figure out ...
 
 01.07.20
 
