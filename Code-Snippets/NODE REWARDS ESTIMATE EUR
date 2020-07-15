@@ -19,7 +19,7 @@ set AppleScript's text item delimiters to {","}
 set keyValueList to (every text item in mJson) as list
 set AppleScript's text item delimiters to ""
 
-set theKeyValuePair to item 28 of keyValueList
+set theKeyValuePair to item 24 of keyValueList
 set AppleScript's text item delimiters to {":"}
 set theKeyValueBufferList to (every text item in theKeyValuePair) as list
 set AppleScript's text item delimiters to ""
@@ -133,14 +133,14 @@ set OwnAtlasReward to NumberOmega * OmegaReward + NumberSigma * SigmaReward + Nu
 ---------------------------------------------
 
 set OwnAtlasReward to RoundImperialNumberToTwoDecimals(OwnAtlasReward)
-set totalSupply to changetocomma(totalSupply)
-set usdPrice to RemoveFromString("\"", usdPrice)
+
 set usdPrice to changetocomma(usdPrice)
 set usdPrice to RoundImperialNumberToThreeDecimals(usdPrice)
+
 set AllApolloStake to RemoveFromString("}", AllApolloStake)
 set AllApolloStake to changetocomma(AllApolloStake)
-set dailybundles to RemoveFromString("\"", dailybundles)
 set apollos to RemoveFromString("\"", apollos)
+
 
 
 -- REWARD FORMULAS APOLLO: -------------------
