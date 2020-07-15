@@ -3,9 +3,10 @@ UPDATES:
 
 15.07.20
 
-Version 2.5 AMB API change and a little fix for the Coinmarketcap API Data handling for EUR or other currency price ticker.
-- I'm getting really annoyed how often Coinmarketcap they changes their API these days. Thinking about switching to coingecko ...
-- There has been some change in the AMB API that I need to figure out ...
+Version 2.5 AMB API change and a little fix for the Coinmarketcap API Data handling for EUR or other currency price ticker has been added and 
+updated in Reward-Estimate Code snippets and EUR Price ticker.
+- I'm getting really annoyed how often Coinmarketcap changes their API these days. Thinking about switching to coingecko ...
+- There has been some change in the AMB API/how Values like Supply are given. Reward estimate scripts have been fixed accordingly.
 
 01.07.20
 
