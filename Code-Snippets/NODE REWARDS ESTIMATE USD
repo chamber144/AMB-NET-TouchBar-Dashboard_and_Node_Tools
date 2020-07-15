@@ -132,13 +132,12 @@ set OwnAtlasReward to NumberOmega * OmegaReward + NumberSigma * SigmaReward + Nu
 ---------------------------------------------
 
 set OwnAtlasReward to RoundImperialNumberToTwoDecimals(OwnAtlasReward)
-set totalSupply to changetocomma(totalSupply)
-set usdPrice to RemoveFromString("\"", usdPrice)
+
 set usdPrice to changetocomma(usdPrice)
 set usdPrice to RoundImperialNumberToThreeDecimals(usdPrice)
+
 set AllApolloStake to RemoveFromString("}", AllApolloStake)
 set AllApolloStake to changetocomma(AllApolloStake)
-set dailybundles to RemoveFromString("\"", dailybundles)
 set apollos to RemoveFromString("\"", apollos)
 
 
