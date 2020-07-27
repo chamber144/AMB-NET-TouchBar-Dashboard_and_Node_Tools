@@ -1,6 +1,13 @@
 UPDATES:
 
 
+27.07.20
+
+Version 2.6 uploaded and code snippets updated.
+- EUR Price ticker and EUR reward estimation are pulling their data from the free Coingecko API from now on.
+- Additionally this API is much more user friendly than CMC and 
+- you can simply exchange EUR with your currency in the API link (see updated code) instead of having to register an account.
+
 15.07.20
 
 Version 2.5 AMB API change and a little fix for the Coinmarketcap API Data handling for EUR or other currency price ticker has been added and 
