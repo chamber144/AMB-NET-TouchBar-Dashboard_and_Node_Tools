@@ -11,19 +11,19 @@ set NumberOmega to 1
 set DetailedApolloRewardView to 0
 
 
--- You need to signup an api account at https://pro.coinmarketcap.com/migrate/ to get EUR or other Currency than USD. its free for basic use
+-- You can change to any other currency aside from EUR in the link below:
 
 
-set mJson to do shell script "curl -s 'https://pro-api.coinmarketcap.com/v1/cryptocurrency/quotes/latest?id=2081&convert=EUR&CMC_PRO_API_KEY=PUTYOURAPIKEYHERE'"
+set mJson to do shell script "curl -s 'https://api.coingecko.com/api/v3/simple/price?ids=amber&vs_currencies=EUR&include_24hr_vol=true&include_24hr_change=true'"
 set AppleScript's text item delimiters to {","}
 set keyValueList to (every text item in mJson) as list
 set AppleScript's text item delimiters to ""
 
-set theKeyValuePair to item 24 of keyValueList
+set theKeyValuePair to item 1 of keyValueList
 set AppleScript's text item delimiters to {":"}
 set theKeyValueBufferList to (every text item in theKeyValuePair) as list
 set AppleScript's text item delimiters to ""
-set usdPrice to item 4 of theKeyValueBufferList
+set usdPrice to item 3 of theKeyValueBufferList
 
 
 -- get AMB-NET stats info
