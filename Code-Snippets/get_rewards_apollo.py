@@ -75,8 +75,8 @@ for each in nodes:
     closerBalance = (closeBalance[2].split(': '))
     evenCloserBalance = (closerBalance[1].replace("\"", ""))
     evenCloserBalance = (evenCloserBalance.replace("}", ""))
-    balanceRealClose = (evenCloserBalance.split('.'))
-    balance[count] = balanceRealClose[0]
+    #balanceRealClose = (evenCloserBalance.split('.'))
+    balance[count] = evenCloserBalance
 
     closerState = (found[1].split('state'))
     evenCloserState = (closerState[1].split(','))
@@ -96,7 +96,9 @@ for each in nodes:
     count = count + 1
 
 
-api_url_info = 'https://token.ambrosus.com/'
+#change currency to track amb-price in at the very end of the link (for example: USD,EUR,CNY,JPY,CHF,CAD,AUD,GBP,INR,NOK,PLN):
+
+api_url_info = 'https://api.coingecko.com/api/v3/simple/price?ids=amber&vs_currencies=USD'
 response = requests.get(api_url_info)
 data = str(response.json())
 closePrice = (data.split(','))
@@ -134,22 +136,22 @@ bufffile = open(home+"buffer.txt","r")
 buff = bufffile.readlines()
 bufffile.close()
 buff[0] = (buff[0].replace("\n", ""))
-baldif0 = int(balance[0]) - int(buff[0])
+baldif0 = float(balance[0]) - float(buff[0])
 if node2active == 1:
     buff[1] = (buff[1].replace("\n", ""))
-    baldif1 = int(balance[1]) - int(buff[1])
+    baldif1 = float(balance[1]) - float(buff[1])
 if node3active == 1:
     buff[2] = (buff[2].replace("\n", ""))
-    baldif2 = int(balance[2]) - int(buff[2])
+    baldif2 = float(balance[2]) - float(buff[2])
 if node4active == 1:
     buff[3] = (buff[3].replace("\n", ""))
-    baldif3 = int(balance[3]) - int(buff[3])
+    baldif3 = float(balance[3]) - float(buff[3])
 if node5active == 1:
     buff[4] = (buff[4].replace("\n", ""))
-    baldif4 = int(balance[4]) - int(buff[4])
+    baldif4 = float(balance[4]) - float(buff[4])
 if node6active == 1:
     buff[4] = (buff[5].replace("\n", ""))
-    baldif5 = int(balance[5]) - int(buff[5])
+    baldif5 = float(balance[5]) - float(buff[5])
 bufffil = open(home+"buffer.txt","w")
 bufffil.writelines(buffer)
 bufffil.close()
