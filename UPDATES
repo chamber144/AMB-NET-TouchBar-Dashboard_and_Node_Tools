@@ -6,7 +6,7 @@ UPDATES:
 The Python script for Apollo Reward tracking has been updated, from now on rewards are not tracked as full-number-integers, but as more detailed floats.
 The AMB price is now pulled from Coingecko which makes it easy to choose any currency that rewards should be tracked in.
 The code and description has been updated in the code-snippets and the Wiki install tutorial. 
-To update, you simply overwrite the content of your get_apollo_rewards.py and change your user folder and apollo nodes-settings as in your old version.
+To update, you simply overwrite the content of your get_apollo_rewards.py and change your user folder and apollo node-settings as in your old version.
 
 27.07.20
 
