@@ -101,8 +101,8 @@ for each in nodes:
 api_url_info = 'https://api.coingecko.com/api/v3/simple/price?ids=amber&vs_currencies=USD'
 response = requests.get(api_url_info)
 data = str(response.json())
-closePrice = (data.split(','))
-closerPrice = (closePrice[12].split(':'))
+closePrice = (data.split(':'))
+closerPrice = (closePrice[2].replace("}",""))
 priceusd = (closerPrice[1].replace(" ", ""))
 
 
