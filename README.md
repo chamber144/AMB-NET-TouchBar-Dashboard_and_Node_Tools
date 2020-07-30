@@ -202,7 +202,7 @@ From left to right you can run the Atlas Payout command in yarn, stop the node, 
 
 ### Automatically tracking Noderewards to a CSV-File through python on the node
 
-Here is a solution to track daily apollo noderewards automatically into a csv file directly on the node through python for up to 6 nodes.
+Here is a solution and guide to track daily apollo noderewards automatically into a csv file directly on the node through python for up to 6 nodes.
 
 [Track daily Apollo rewards through Python](https://github.com/inlak16/AMB-NET-TouchBar-Dashboard/wiki/Track-daily-Apollo-rewards)
 
