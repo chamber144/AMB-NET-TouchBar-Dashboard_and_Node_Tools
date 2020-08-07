@@ -8,7 +8,7 @@ The AMB price is now pulled from Coingecko which makes it easy to choose any cur
 The code and description has been updated in the code-snippets and the Wiki install tutorial. 
 To update, you simply overwrite the content of your get_apollo_rewards.py and change your user folder and apollo node-settings as in your old version.
 
-The Reward to calendar mac tracking tool is no longer maintained, as its not as useful as the other solution.
+The Reward to calendar mac tracking tool is no longer maintained, as its not as useful as the python solution.
 
 27.07.20
 
