@@ -7,6 +7,7 @@ Version 2.7 uploaded and code snippets for EUR and USD reward estimation updated
 - The estimate for yearly rewards has given some weird result which displaces the position where the fractional part of the number begins 
   when Apple script internally shortens a very detailed number. 
   This has been fixed and big numbers result in whole numbers with no fractional part now in both reward estimation scripts. 
+- Standard setting for Apollos in reward estimation has been set to 1000000 AMB.  
 
 29.07.20
 
