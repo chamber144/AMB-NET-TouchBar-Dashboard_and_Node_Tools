@@ -71,7 +71,10 @@ To give a better overview, here are 4 setups with different triggers activated a
 
 The addresses set for demonstration purposes are just the longest running nodes I could find and are likely run by Ambrosus.
 Now lets add your node in there.
-Set visibility of layers according to your nodetype ATLAS or/and APOLLO (each single or multiple) and click on it's according online status layer. For multiple repeat this step for each node you want to monitor.
+Set visibility of layers according to your nodetype ATLAS or/and APOLLO (each single or multiple) and click on it's according online status layer. For multiple repeat this step for each node you want to monitor. 
+If you run both Atlas and Apollo nodes, I suggest you activate the needed layers and change the keyboard shortcut for all building blocks of either Atlas or Apollo to something else than the standard setting of Shift Command.
+This gives you two quickly readable dashboards of both your Atlas and Apollo nodes.
+
 On the right side there is the option to switch between common, which is mainly UI settings and widget-specific, which contains the whole Applescript to pull a nodes online status into the dashboard.
 Just enter your nodes public address into the script und click save at the top when the option comes up.
 
