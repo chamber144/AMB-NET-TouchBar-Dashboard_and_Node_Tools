@@ -1,7 +1,8 @@
--- please enter number of each Atlas and or Apollo Stake (summarized stake if multiple) + number of Apollo and Taxrate (example 0.25 for 25% if useful), here:
+-- please enter number of each Atlas and or Apollo Stake + number of Apollos, monthly VPS costs and Taxrate (example 0.25 for 25%) if useful, here:
 
+set overallvpscosts to 0.0
 set taxrate to 0.0
-set ApolloStake to 1000000
+set ApolloStake to 250000
 set NumberApollo to 0
 set NumberZeta to 0
 set NumberSigma to 0
@@ -159,11 +160,11 @@ set DailyReward to DailyBundleReward + ApolloDailyBlockReward
 
 
 
-set daily to DailyReward * usdPrice * (1 - taxrate) as text
+set daily to (DailyReward * usdPrice - overallvpscosts/30) * (1 - taxrate) as text
 set daily to RoundImperialNumberToTwoDecimals(daily)
-set monthly to DailyReward * usdPrice * 30 * (1 - taxrate) as text
+set monthly to (DailyReward * usdPrice * 30 - overallvpscosts) * (1 - taxrate) as text
 set monthly to RoundImperialNumberToTwoDecimals(monthly)
-set yearly to DailyReward * usdPrice * 365 * (1 - taxrate) as text
+set yearly to (DailyReward * usdPrice * 365 - overallvpscosts*12) * (1 - taxrate) as text
 set yearly to number_to_string(yearly)
 set yearly to RoundImperialNumberToTwoDecimals(yearly)
 
