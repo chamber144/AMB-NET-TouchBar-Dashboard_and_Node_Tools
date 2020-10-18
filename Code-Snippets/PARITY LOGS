@@ -1,6 +1,6 @@
 
  
  tell application "Terminal"
-	set currentTab to do script "docker logs parity --since 1h" in window 1
+	set currentTab to do script "docker logs parity --tail 50" in window 1
 	
 end tell
