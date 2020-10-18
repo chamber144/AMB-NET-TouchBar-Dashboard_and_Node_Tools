@@ -1,6 +1,13 @@
 UPDATES:
 
 
+19.10.20
+
+Version 3.0 uploaded and code snippets for SystemUpdate, Parity Logs, AtlasWorker Logs, AtlasMainStats and MultipleAtlasMainStats updated.
+- Logs have been shortened to load faster showing the last 50 lines.
+- The System Update command has been changed to apt-get update and apt-get dist-upgrade instead of apt update and apt dist-upgrade.
+- AtlasMainStats and MultipleAtlasMainStats now show AMB available in Payout(s).
+
 11.10.20
 
 Version 2.8 uploaded and code snippets for EUR and USD reward estimation updated.
