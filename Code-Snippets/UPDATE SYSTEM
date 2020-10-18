@@ -1,4 +1,4 @@
 tell application "Terminal"
-	set currentTab to do script "sudo apt update && sudo apt dist-upgrade" in window 1
+	set currentTab to do script "sudo apt-get update && sudo apt-get dist-upgrade" in window 1
 	
 end tell
