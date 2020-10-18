@@ -70,6 +70,18 @@ set theKeyValueBufferList to (every text item in theKeyValuePair) as list
 set AppleScript's text item delimiters to ""
 set balance to item 2 of theKeyValueBufferList
 
+-- get payout
+set firstSet to item 2 of keyNodeList
+set AppleScript's text item delimiters to {","}
+set keyValueList to (every text item in firstSet) as list
+set AppleScript's text item delimiters to ""
+set theKeyValuePair to item 17 of keyValueList
+set AppleScript's text item delimiters to {": "}
+set theKeyValueBufferList to (every text item in theKeyValuePair) as list
+set AppleScript's text item delimiters to ""
+set payout to item 2 of theKeyValueBufferList
+
+set payout to RoundImperialNumberToTwoDecimals(payout)
 
 set allbundles to RemoveFromString("\"", allbundles)
 
@@ -79,7 +91,7 @@ set stake to returnNumbersInString(stake)
 
 set balance to RoundImperialNumberToTwoDecimals(balance)
 
-set unformatedValue to "| " & balance & " AMB | " & allbundles & " Bundles | " & stake & " Stake |"
+set unformatedValue to "| " & balance & " AMB | " & payout & " AMB inPayout | " & allbundles & " Bundles | " & stake & " Stake |"
 
 
 return RemoveFromString("\"", unformatedValue)
