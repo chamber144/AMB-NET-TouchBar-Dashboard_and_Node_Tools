@@ -39,6 +39,7 @@ set nodeactivearr to {nodeactive1, nodeactive2, nodeactive3, nodeactive4, nodeac
 set stake to {"0", "0", "0", "0", "0", "0"}
 set balance to {"0", "0", "0", "0", "0", "0"}
 set allbundles to {"0", "0", "0", "0", "0", "0"}
+set payout to {"0", "0", "0", "0", "0", "0"}
 
 repeat with n from 1 to nodeactive
 	
@@ -49,6 +50,7 @@ repeat with n from 1 to nodeactive
 		set item n of stake to item 2 of returnValues
 		set item n of stake to RemoveFromString("}", item n of stake)
 		set item n of allbundles to item 3 of returnValues
+		set item n of payout to item 4 of returnValues
 	end if
 end repeat
 
@@ -63,8 +65,11 @@ set balanceall to (item 1 of balance) + (item 2 of balance) + (item 3 of balance
 set balanceall to number_to_string(balanceall)
 set balanceall to RoundImperialNumberToTwoDecimals(balanceall)
 
+set payoutall to (item 1 of payout) + (item 2 of payout) + (item 3 of payout) + (item 4 of payout) + (item 5 of payout) + (item 6 of payout)
+set payoutall to number_to_string(payoutall)
+set payoutall to RoundImperialNumberToTwoDecimals(payoutall)
 
-set unformatedValue to "| " & balanceall & " AMB | " & bundlesall & " Bundles | " & stakeall & " Stake |"
+set unformatedValue to "| " & balanceall & " AMB | " & payoutall & " AMB inPayouts | " & bundlesall & " Bundles | " & stakeall & " Stake |"
 
 return RemoveFromString("\"", unformatedValue)
 
@@ -72,10 +77,10 @@ return RemoveFromString("\"", unformatedValue)
 ------- functions below -----------------------
 
 ---- pull api data ATLAS
-on pullAPIdataATLAS(nodeAddress)
+on pullAPIdataATLAS(nodeaddress)
 	-- get info around particular Atlas node
 	set mJson to do shell script "curl -s 'https://explorer-api.ambrosus.com/atlases'"
-	set AppleScript's text item delimiters to {nodeAddress}
+	set AppleScript's text item delimiters to {nodeaddress}
 	set keyNodeList to (every text item in mJson) as list
 	set AppleScript's text item delimiters to ""
 	
@@ -98,7 +103,7 @@ on pullAPIdataATLAS(nodeAddress)
 		set newlink to "https://explorer-api.ambrosus.com/atlases?next=" & nextpageid
 		set page to page + 1
 		set mJson to do shell script "curl -s " & newlink
-		set AppleScript's text item delimiters to {nodeAddress}
+		set AppleScript's text item delimiters to {nodeaddress}
 		set keyNodeList to (every text item in mJson) as list
 		set AppleScript's text item delimiters to ""
 		
@@ -149,7 +154,24 @@ on pullAPIdataATLAS(nodeAddress)
 	set theNumber to text item 1 of commaseperation & "," & text item 2 of commaseperation
 	set balance to theNumber
 	
-	return {balance, stake, allbundles}
+	-- get payout
+	set firstSet to item 2 of keyNodeList
+	set AppleScript's text item delimiters to {","}
+	set keyValueList to (every text item in firstSet) as list
+	set AppleScript's text item delimiters to ""
+	set theKeyValuePair to item 17 of keyValueList
+	set AppleScript's text item delimiters to {": "}
+	set theKeyValueBufferList to (every text item in theKeyValuePair) as list
+	set AppleScript's text item delimiters to ""
+	set payout to item 2 of theKeyValueBufferList
+	
+	set AppleScript's text item delimiters to "."
+	set commaseperation to (every text item in payout) as list
+	set AppleScript's text item delimiters to ""
+	set theNumber to text item 1 of commaseperation & "," & text item 2 of commaseperation
+	set payout to theNumber
+	
+	return {balance, stake, allbundles, payout}
 end pullAPIdataATLAS
 
 
