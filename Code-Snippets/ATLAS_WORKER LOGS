@@ -1,5 +1,5 @@
 
  tell application "Terminal"
-	set currentTab to do script "docker logs atlas_worker --since 1h" in window 1
+	set currentTab to do script "docker logs atlas_worker --tail 50" in window 1
 	
 end tell
