@@ -2,7 +2,7 @@
 
 set overallvpscosts to 0.0
 set taxrate to 0.0
-set ApolloStake to 250000
+set ApolloStake to 1000000
 set NumberApollo to 0
 set NumberZeta to 0
 set NumberSigma to 0
