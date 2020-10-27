@@ -1,6 +1,11 @@
 UPDATES:
 
 
+27.10.20
+
+The Apollo Reward tracking Python script has been updated to be easier managable (no functional update).
+Currency can simply be input in a variable at the top now and the guide has been made more clear in description.
+
 19.10.20
 
 Version 3.0 uploaded and code snippets for SystemUpdate, Parity Logs, AtlasWorker Logs, AtlasMainStats and MultipleAtlasMainStats updated.
