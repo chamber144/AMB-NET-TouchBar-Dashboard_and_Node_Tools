@@ -23,6 +23,9 @@ node4active = 0
 node5active = 0
 node6active = 0
 
+#currency to write price into the csv file (for example EUR, CAD, CHF, CNY, RUB, JPY, for available conversations check: https://www.coingecko.com/)
+currency = 'USD'
+
 #############################################################
 
 nodes = [node1]
@@ -95,10 +98,8 @@ for each in nodes:
     print(status[count])
     count = count + 1
 
-
 #change currency to track amb-price in at the very end of the link (for example: USD,EUR,CNY,JPY,CHF,CAD,AUD,GBP,INR,NOK,PLN):
-
-api_url_info = 'https://api.coingecko.com/api/v3/simple/price?ids=amber&vs_currencies=USD'
+api_url_info = ('https://api.coingecko.com/api/v3/simple/price?ids=amber&vs_currencies='+str(currency))
 response = requests.get(api_url_info)
 data = str(response.json())
 closePrice = (data.split(':'))
