@@ -3,7 +3,8 @@ UPDATES:
 
 31.10.20
 
-A Python script for automating Atlas Payout, tracking the rewards and optionally sending them out to another account has been added to the wiki.
+A Python script for automating Atlas Payout, tracking the rewards and optionally sending them out to another account has been added.
+There is a detailed setup guide to the wiki of this repo.
 
 27.10.20
 
