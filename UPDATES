@@ -1,10 +1,14 @@
 UPDATES:
 
 
+31.10.20
+
+A Python script for automating Atlas Payout, tracking the rewards and optionally sending them out to another account has been added to the wiki.
+
 27.10.20
 
 The Apollo Reward tracking Python script has been updated to be easier managable (no functional update).
-Currency can simply be input in a variable at the top now and the guide has been made more clear in description.
+Currency can simply be written into a variable at the top now and the guide has been made more clear in description.
 
 19.10.20
 
