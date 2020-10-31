@@ -31,7 +31,7 @@ ambtokeep = 50
 #This nodes private key to be able to send the transactions.
 key = '0x0000000000000000000000000000000000000000000000000000000000000000'
 
-#currency to write price into the csv file (for example EUR, CAD, CHF, CNY, RUB, JPY, for available conversations check: https://www.coingecko.com/)
+#currency to write price into the csv file (for example EUR, CAD, CHF, CNY, RUB, JPY, for available conversions check: https://www.coingecko.com/)
 currency = 'USD'
        
 
