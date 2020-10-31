@@ -209,6 +209,10 @@ Here is a solution and guide to track daily apollo noderewards automatically int
 
 [Track daily Apollo rewards through Python](https://github.com/inlak16/AMB-NET-TouchBar-Dashboard/wiki/Track-daily-Apollo-rewards)
 
+For Atlas nodes there is a solution aswell that automates payout, tracks rewards in a csv-file and optionally sends out payout funds to another account.
+
+[Automate Atlas payout, track rewards and optionally send out funds through Python](https://github.com/inlak16/AMB-NET-TouchBar-Dashboard/wiki/Automate-Atlas-Payout,-track-rewards-and-optionally-send-to-another-account)
+
 ### What's next ?
 
 I'm excited to hear about ideas and useful commands that can be implemented and what you are going to customize out of this set of tools. 
