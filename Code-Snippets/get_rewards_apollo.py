@@ -23,7 +23,7 @@ node4active = 0
 node5active = 0
 node6active = 0
 
-#currency to write price into the csv file (for example EUR, CAD, CHF, CNY, RUB, JPY, for available conversations check: https://www.coingecko.com/)
+#currency to write price into the csv file (for example EUR, CAD, CHF, CNY, RUB, JPY, for available conversions check: https://www.coingecko.com/)
 currency = 'USD'
 
 #############################################################
