@@ -5,6 +5,7 @@ UPDATES:
 
 The Atlas Payout Python script has been updated, as for some users pulling the nodes public address through web3 didn't work, so this is set up in the script now directly.
 If you have set up the script but didn't test it yet, its better to update to this version, as it has been corrected to run on newer Python3 versions aswell.
+Float conversion of substraction variables has been deleted after a short time period this day, as it was in the initial version.
 
 31.10.20
 
