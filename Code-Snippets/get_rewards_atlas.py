@@ -124,7 +124,7 @@ else:
 
 balance = web3.eth.getBalance(account)
 keepinaccount = web3.toWei(ambtokeep, 'ether');
-tosendbalance = float(balance) - float(keepinaccount)
+tosendbalance = balance - keepinaccount
 if tosendbalance <= 0:
     tosendbalance = 0
     ambtosend = 0
