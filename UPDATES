@@ -3,8 +3,8 @@ UPDATES:
 
 29.11.20
 
-A telegram-notification script was added tha allows any nodeoperator to monitor all his nodes. Warnings are given, whenevera node goes offline, online or a low balancce is detected on Atlas nodes.
-An overall overview can be activated that is sent once a day.
+A telegram-notification script was added that allows any nodeoperator to monitor all his nodes. Warnings are given, whenever a node goes offline, back online or a low balancce is detected on Atlas nodes.
+An overall Status overview can be activated that is sent once a day.
 
 07.11.20
 
