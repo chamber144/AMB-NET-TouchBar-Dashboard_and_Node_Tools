@@ -173,6 +173,7 @@ for each in apollonodes:
         next = (data.split('next'))
         if (len(next)) < 2:
             statusapollo.append("OFFLINE")
+            print("Apollo "+each+" is not synced yet. It needs to be synced and found in the API in order for the script to work properly")
             break
         else:
             pageCloseEnd = (next[1].split(','))
