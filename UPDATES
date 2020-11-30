@@ -1,5 +1,9 @@
 UPDATES:
 
+30.11.20
+
+Just added output text to the script for the cases where an Atlas or Apollo is not synced to AMB-net and cannot be found in the API.
+In this case you can just wait for the sync and onboarding to complete and the script should work. 
 
 29.11.20
 
