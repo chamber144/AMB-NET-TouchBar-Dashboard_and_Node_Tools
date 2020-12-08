@@ -1,5 +1,15 @@
 UPDATES:
 
+
+08.12.20
+
+The telegram-notification script has been refined. Maintenance of the script has become much easier.
+It now automatically manages buffer files. You just need to add or delete nodes at the top in the script.
+You can now set Daily-Bundle notifications that trigger a notification once. 
+A sensitivity value defines how much bundles value need to fall back for this trigger to be activated again.
+This way notifications dont happen again and again, if the value fluctuates.
+A seperate little script allows for low-diskspace warnings from each individual node!
+
 30.11.20
 
 Just added output text to the script for the cases where an Atlas or Apollo is not synced to AMB-net and cannot be found in the API.
