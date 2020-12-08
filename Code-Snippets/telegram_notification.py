@@ -1,47 +1,123 @@
-import requests
-import random
-from time import gmtime, strftime
+#Enter your Settings here:
+#------------------------------------------------------------
 
-#---------------------------------------------------------------
 
 #enter your home directory with your username
-home = '/home/myUserName/'
+home = "/home/myusername/"
 
-
-#enter your Telegram Token like this '1366402345:AA41ZAEV...' and chat id '514579...'
+#enter your Telegram Token and chat id
 Telegram_Token = ''
 Telegram_Chat_ID = ''
 
-
 #enter your atlas node(s) in the brackets, seperated by comma and surrounded by inverted commas like this ['0x21...','0x35...','0x64...']
 atlasnodes = []
-
 
 #enter your apollo node(s) in the brackets, seperated by comma and surrounded by inverted commas like this ['0x21...','0x35...','0x64...']
 apollonodes = []
 
 
 #Send daily status message? (1 = yes, 0 = no)
-statusmessage = '1'
+statusmessage = "1"
+
+#Set (server)time when to send daily stats message
+statstime = "1505"
 
 
-#When to send daily stats message (Server time)?
-statstime = '1505'
+#to set Bundle Warnings, enter as many values as you'd like to be notified at, seperated by comma and surrounded by inverted commas like this ['100','200','1000']
+dailybundlewarnings = ['60','100','200','300']
 
+#once a daily-bundles value has triggered a warning, how much lower does the value need to go, until it can be triggered again?
+#without this mechanism, notifications would be sent repeatedly, if you get too many Bundle Warnings, raise the following value:
+sensitivity = "10"
 
 #---------------------------------------------------------------
+
+
+import requests
+import random
+import os.path
+from time import gmtime, strftime
 
 nodeOffline = '\U0001f6a8'
 nodeOnline = '\u2705'
 lowBalance = '\u26A0\uFE0F'
+celeb1 = '\U0001F389'
+celeb2 = '\U0001F973'
+celeb3 = '\U0001F37E'
 
 #get time
 time = strftime("%H%M", gmtime())
 datewrite = strftime("%Y-%m-%d", gmtime())
 
-#stats buffer file
+folder = 'telegram_notification_buffers/'
+
+#check if folder for buffer files exists, create, if not.
+if os.path.isdir(home+folder):
+    print ("")   
+else:
+    print ("Folder not accessible creating telegram_notification_buffers folder !")
+    os.mkdir(home+folder)
+
+
+reset = "0"
+
+#function to check if buffer file exists, set it up if necessary.
+def buffer_exist(bfile,nodetype):
+    val = ""
+    try:
+        f = open(home+folder+bfile)
+    except IOError:
+        print("File not accessible creating "+bfile+" !")
+        global reset
+        reset = "1"
+        f = open(home+folder+bfile,"w")
+        count = 0
+        for each in nodetype:
+            if count == len(nodetype)-1:
+                val = (val+"0")
+            else:
+                val = (val+"0\n")
+            count = count + 1
+        f.writelines(val)
+    finally:
+        f.close()
+
+#function to check if nodes are correctly registered in buffer file, reset if needed and read.
+def buffer_slots(bfile,nodetype,nodename,type):
+    f = open(home+folder+bfile,"r")
+    readtxt = f.readlines()
+    f.close()
+    val = ""
+    if len(nodetype) != len(readtxt):
+        print("Number of "+nodename+" has changed, resetting "+type+" file!")
+        global reset
+        reset = "1"
+        f = open(home+folder+bfile,"w")
+        count = 0
+        for each in nodetype:
+            if count == len(nodetype)-1:
+                val = (val+"0")
+            else:
+                val = (val+"0\n")
+            count = count + 1
+        f.writelines(val)
+        f.close()
+        return reset
+
+buffer_exist("bundlebuffer.txt",dailybundlewarnings)
+buffer_slots("bundlebuffer.txt",dailybundlewarnings,"Bundle Warnings","buffer")
+
+
+#check if atlas buffer files are setup correctly and read values
 if (len(atlasnodes)) > 0:
-    statsfile = open(home+"statsatlas.txt","r")
+
+    buffer_exist("statsatlas.txt",atlasnodes)
+    buffer_exist("atlasbuffer.txt",atlasnodes)
+
+    buffer_slots("statsatlas.txt",atlasnodes,"Atlas Nodes","status")
+    buffer_slots("atlasbuffer.txt",atlasnodes,"Atlas Nodes","buffer")
+
+    statsfile = open(home+folder+"statsatlas.txt","r")
     statsat = statsfile.readlines()
     statsfile.close()
     count = 0 
@@ -49,8 +125,16 @@ if (len(atlasnodes)) > 0:
         statsat[count] = (statsat[count].replace("\n", ""))
         count = count + 1
 
+#check if apollo buffer files are setup correctly and read values
 if (len(apollonodes)) > 0:
-    statsfile = open(home+"statsapollo.txt","r")
+
+    buffer_exist("statsapollo.txt",apollonodes)
+    buffer_exist("apollobuffer.txt",apollonodes)
+
+    buffer_slots("statsapollo.txt",apollonodes,"Apollo Nodes","status")
+    buffer_slots("apollobuffer.txt",apollonodes,"Apollo Nodes","buffer")    
+
+    statsfile = open(home+folder+"statsapollo.txt","r")
     statsap = statsfile.readlines()
     statsfile.close()
     count = 0
@@ -60,7 +144,6 @@ if (len(apollonodes)) > 0:
 
 writeatlasbuffer = []
 writeapollobuffer = []
-
 
 
 #send to telegram function
@@ -80,7 +163,6 @@ def send_message(msg):
     return requests.post('https://api.telegram.org/bot{token}/sendMessage'.format(token=Telegram_Token),data=payload).content
 
 
-
 #get atlas status
 
 api_url_base = 'https://explorer-api.ambrosus.com/atlases'
@@ -91,6 +173,7 @@ bundlesatlas = []
 balanceatlas = []
 Sat = []
 writeatlasbundlebuffer = []
+iconatlas = []
 for each in atlasnodes:
     print("Atlas "+each)
     response = requests.get(api_url_base)
@@ -101,7 +184,6 @@ for each in atlasnodes:
         next = (data.split('next'))
         if (len(next)) < 2:
             statusatlas.append("OFFLINE")
-            print("Atlas "+each+" is not synced yet. It needs to be synced and found in the API in order for the script to work properly")
             break
         else:
             pageCloseEnd = (next[1].split(','))
@@ -148,8 +230,10 @@ for each in atlasnodes:
         send_message(lowBalance+" Your Atlas Node "+str(count+1)+" has a very low balance of "+ str(feebalance)+" AMB.\n\nFunds might soon not be sufficient to pay the nodes challenge transactions.\nPlease raise the balance: <a href=\"https://explorer.ambrosus.com/atlas/"+each+"\">"+each+"</a>\n\n-------------------------------")
     if statusatlas[count] == "ONLINE":
         Sat.append("1")
+        iconatlas.append(nodeOnline)
     else:
         Sat.append("0")            
+        iconatlas.append(nodeOffline)
     writeatlasbuffer.append(Sat[count]+"\n",)
     count = count + 1
 
@@ -163,6 +247,7 @@ statusapollo = []
 balanceapollo = []
 Sap = []
 writeapollobalancebuffer = []
+iconapollo = []
 for each in apollonodes:
     print("Apollo "+each)
     response = requests.get(api_url_base)
@@ -173,7 +258,6 @@ for each in apollonodes:
         next = (data.split('next'))
         if (len(next)) < 2:
             statusapollo.append("OFFLINE")
-            print("Apollo "+each+" is not synced yet. It needs to be synced and found in the API in order for the script to work properly")
             break
         else:
             pageCloseEnd = (next[1].split(','))
@@ -207,7 +291,7 @@ for each in apollonodes:
     
     if stateapollo[count] == "RETIRED":
         statusapollo[count] = "OFFLINE"
-        
+    
     print(statusapollo[count])
     if statusapollo[count] != "ONLINE" and statsap[count] == "1":
         send_message(nodeOffline+" Your Apollo Node "+str(count+1)+" has just gone offline! <a href=\"https://explorer.ambrosus.com/atlas/"+each+"\">"+each+"</a>\n\n-------------------------------")
@@ -217,23 +301,38 @@ for each in apollonodes:
         #send_message('Your Apollo Node '+str(count+1)+' is back online! https://explorer.ambrosus.com/apollo/'+each)
     if statusapollo[count] == "ONLINE":
         Sap.append("1")
+        iconapollo.append(nodeOnline)
     else:
         Sap.append("0")
+        iconapollo.append(nodeOffline)
     writeapollobuffer.append(Sap[count]+"\n")        
     count = count + 1
 
-#write statsbuffer
+
 if (len(atlasnodes)) > 0:
-    statsfile = open(home+"statsatlas.txt","w")
+    statsfile = open(home+folder+"statsatlas.txt","w")
     statsat = statsfile.writelines(writeatlasbuffer)
     statsfile.close()
 
 if (len(apollonodes)) > 0:    
-    statsfile = open(home+"statsapollo.txt","w")
+    statsfile = open(home+folder+"statsapollo.txt","w")
     statsap = statsfile.writelines(writeapollobuffer)
     statsfile.close()
 
-#get general amb-net stats
+print(reset)
+if reset == "1":
+    if (len(atlasnodes)) > 0:
+        statsfile = open(home+folder+"atlasbuffer.txt","w")
+        statsat = statsfile.writelines(writeatlasbundlebuffer)
+        statsfile.close()
+
+    if (len(apollonodes)) > 0:    
+        statsfile = open(home+folder+"apollobuffer.txt","w")
+        statsap = statsfile.writelines(writeapollobalancebuffer)
+        statsfile.close()
+
+
+#get network stats
 api_url_info = 'https://explorer-api.ambrosus.com/info'
 response = requests.get(api_url_info)
 data = str(response.json())
@@ -258,13 +357,64 @@ ApolloStake = (ApolloStake.replace("}", ""))
 
 AllStake = float(AtlasStake) + float(ApolloStake)
 
-#send daily stats
+closeratlas = (closeBundles[16].split(':'))
+atlasnum = (closeratlas[2].replace(" ", ""))
+atlasnum = (atlasnum.replace("}", ""))
+
+closerapollo = (closeBundles[13].split(':'))
+apollonum = (closerapollo[1].replace(" ", ""))
+apollonum = (apollonum.replace("}", ""))
+
+closerhermes = (closeBundles[17].split(':'))
+hermesnum = (closerhermes[2].replace(" ", ""))
+hermesnum = (hermesnum.replace("}", ""))
+
+
+#check for Bundle warnings to trigger
+f = open(home+folder+"bundlebuffer.txt","r")
+bundletriggers = f.readlines()
+f.close()
+count = 0
+trig = "0"
+for each in bundletriggers:
+    bundletriggers[count] = (bundletriggers[count].replace("\n", ""))
+    if int(networkBundles) < int(dailybundlewarnings[count])-int(sensitivity):
+        if bundletriggers[count] == "1":
+            trig = "1"
+            bundletriggers[count] = "0"
+    if int(networkBundles) >= int(dailybundlewarnings[count]):
+        if bundletriggers[count] == "0":
+            if int(networkBundles) >= 5000:
+                send_message(celeb2+" Daily Bundles value raised \nabove "+str(dailybundlewarnings[count])+" to "+str(networkBundles)+" "+celeb3+"\n"+celeb3+celeb3+celeb3+celeb3+celeb3+celeb3+celeb3+celeb3+celeb3+celeb3+"\n-------------------------------")
+            elif int(networkBundles) >= 1000:
+                send_message(celeb1+" Daily Bundles value raised \nabove "+str(dailybundlewarnings[count])+" to "+str(networkBundles)+" "+celeb2+"\n-------------------------------")
+            else:
+                send_message(celeb1+" Daily Bundles value raised \nabove "+str(dailybundlewarnings[count])+" to "+str(networkBundles)+" "+celeb1+"\n-------------------------------")
+            trig = "1"
+            bundletriggers[count] = "1" 
+    count = count + 1
+
+if trig == "1":
+    count = 0
+    val = ""
+    for each in bundletriggers:
+        if count == len(bundletriggers)-1:
+            val = (val+bundletriggers[count])
+        else:
+            val = (val+bundletriggers[count]+"\n")
+        count = count + 1
+    f = open(home+folder+"bundlebuffer.txt","w")
+    f.writelines(val)
+    f.close()
+
+#Daily Overview and network statistics
 if time == statstime:
         baldifallapollo = 0
         baldifapollo = []
         apollostring = ""
+        balanceall = 0
         if (len(apollonodes)) > 0:
-            bufffile = open(home+"apollobuffer.txt","r")
+            bufffile = open(home+folder+"apollobuffer.txt","r")
             count = 0
             buff = bufffile.readlines()
             bufffile.close()
@@ -272,14 +422,17 @@ if time == statstime:
                 buff[count] = (buff[count].replace("\n", ""))
                 baldifapollo.append(float(balanceapollo[count]) - float(buff[count]))
                 baldifallapollo = baldifallapollo + baldifapollo[count]
-                apollostring = (apollostring+"<a href=\"https://explorer.ambrosus.com/apollo/"+str(apollonodes[count])+"\">Apollo "+str(count+1)+"</a> "+str(statusapollo[count])+"\t "+str(int(float(balanceapollo[count])))+"\tnew: "+str(int(float(baldifapollo[count])))+" AMB\n")
+                balanceall = balanceall + float(balanceapollo[count])
+                apollostring = (apollostring+"<a href=\"https://explorer.ambrosus.com/apollo/"+str(apollonodes[count])+"\">Apollo "+str(count+1)+"</a>  "+str(iconapollo[count])+"\t "+str(int(float(balanceapollo[count])))+"\t new: "+str(int(float(baldifapollo[count])))+" AMB\n")
                 count = count + 1
+            apollostring = (apollostring+"                      –––––––––––––––––––\n                      "+str(int(balanceall))+" new: "+str(int(baldifallapollo))+" AMB\n")
             
         baldifallatlas = 0
         baldifatlas = []
         atlasstring = ""
+        bundleall = 0
         if (len(atlasnodes)) > 0:
-            bufffile = open(home+"atlasbuffer.txt","r")
+            bufffile = open(home+folder+"atlasbuffer.txt","r")
             count = 0
             buff = bufffile.readlines()
             bufffile.close()
@@ -287,20 +440,19 @@ if time == statstime:
                 buff[count] = (buff[count].replace("\n", ""))
                 baldifatlas.append(int(bundlesatlas[count]) - int(buff[count]))
                 baldifallatlas = baldifallatlas + baldifatlas[count]
-                atlasstring = (atlasstring+"<a href=\"https://explorer.ambrosus.com/atlas/"+str(atlasnodes[count])+"\">Atlas "+str(count+1)+"</a> "+str(stateatlas[count])+"\t "+str(int(float(bundlesatlas[count])))+"\tnew: "+str(int(float(baldifatlas[count])))+" Bundles\n")
+                bundleall = bundleall + (int(bundlesatlas[count]))
+                atlasstring = (atlasstring+"<a href=\"https://explorer.ambrosus.com/atlas/"+str(atlasnodes[count])+"\">Atlas "+str(count+1)+"</a>  "+str(iconatlas[count])+"\t "+str(int(float(bundlesatlas[count])))+"\tnew: "+str(int(float(baldifatlas[count])))+" Bundles\n")
                 count = count + 1
+            atlasstring = (atlasstring+"                     –––––––––––––––––––\n                     "+str(bundleall)+" new: "+str(baldifallatlas)+" Bundles\n")
 
-        send_message(str(datewrite)+"\n\n"+str(atlasstring)+"\n"+str(apollostring)+"\nAMB-Net Atlas Stake = "+str(AtlasStake)+" AMB\nAMB-Net Apollo Stake = "+str(ApolloStake)+" AMB\nAll Stake = "+str(AllStake)+" AMB\n\nAverage Transactions per Block = "+str(AverageBlockTransactions)+"\nDaily Usage = "+str(networkBundles)+" Bundles\nBundlecost = "+str(Bundlecost)+" AMB\n\n--------------------------")
+        send_message(str(datewrite)+"\n\n"+str(atlasstring)+"\n"+str(apollostring)+"\nNetwork Stats:\nAtlasnodes = "+atlasnum+"\nApollonodes = "+apollonum+"\nHermesnodes = "+hermesnum+"\nAll Stake = "+str(int(AllStake))+" AMB\nTxns per Block = "+str(AverageBlockTransactions)+"\nDaily Usage = "+str(networkBundles)+" Bundles\nBundlecost = "+str(Bundlecost)+" AMB\n\n--------------------------")
 
-        #write bundle and balance buffer
         if (len(atlasnodes)) > 0:
-            statsfile = open(home+"atlasbuffer.txt","w")
+            statsfile = open(home+folder+"atlasbuffer.txt","w")
             statsat = statsfile.writelines(writeatlasbundlebuffer)
             statsfile.close()
 
         if (len(apollonodes)) > 0:    
-            statsfile = open(home+"apollobuffer.txt","w")
+            statsfile = open(home+folder+"apollobuffer.txt","w")
             statsap = statsfile.writelines(writeapollobalancebuffer)
             statsfile.close()
-
-
