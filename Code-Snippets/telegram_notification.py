@@ -1,7 +1,6 @@
 #Enter your Settings here:
 #------------------------------------------------------------
 
-
 #enter your home directory with your username
 home = "/home/myusername/"
 
