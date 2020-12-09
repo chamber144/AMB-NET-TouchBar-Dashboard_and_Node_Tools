@@ -1,5 +1,3 @@
-import requests
-import shutil
 
 #---------------------------------------------------------------
 
@@ -25,6 +23,9 @@ freeSpaceTreshold = '4'
 
 
 #---------------------------------------------------------------
+
+import requests
+import shutil
 
 lowSpace = '\u26A0\uFE0F'
 
