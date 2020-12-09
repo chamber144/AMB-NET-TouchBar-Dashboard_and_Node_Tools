@@ -1,6 +1,13 @@
 UPDATES:
 
 
+09.12.20
+
+If you were disabling daily overview notification in the telegram notification, 
+it was not working accordingly and always sending.
+This has been fixed now. 
+Diskspace telegram notification script has been slightly modified in visuals (no functional update).
+
 08.12.20
 
 The telegram-notification script has been refined. Daily overview is much better readable on a smartphone now. 
