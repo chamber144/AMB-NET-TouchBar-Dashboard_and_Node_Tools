@@ -318,7 +318,6 @@ if (len(apollonodes)) > 0:
     statsap = statsfile.writelines(writeapollobuffer)
     statsfile.close()
 
-print(reset)
 if reset == "1":
     if (len(atlasnodes)) > 0:
         statsfile = open(home+folder+"atlasbuffer.txt","w")
