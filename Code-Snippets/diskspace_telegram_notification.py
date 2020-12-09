@@ -1,5 +1,5 @@
-
-#---------------------------------------------------------------
+Enter your Settings here:
+#------------------------------------------------------------
 
 #enter your Telegram Token like this '1366402345:AA41ZAEV...' and chat id '514579...'
 Telegram_Token = ''
