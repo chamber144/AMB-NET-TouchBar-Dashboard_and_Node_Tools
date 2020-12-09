@@ -443,8 +443,9 @@ if time == statstime:
                 atlasstring = (atlasstring+"<a href=\"https://explorer.ambrosus.com/atlas/"+str(atlasnodes[count])+"\">Atlas "+str(count+1)+"</a>  "+str(iconatlas[count])+"\t "+str(int(float(bundlesatlas[count])))+"\tnew: "+str(int(float(baldifatlas[count])))+" Bundles\n")
                 count = count + 1
             atlasstring = (atlasstring+"                     –––––––––––––––––––\n                     "+str(bundleall)+" new: "+str(baldifallatlas)+" Bundles\n")
-
-        send_message(str(datewrite)+"\n\n"+str(atlasstring)+"\n"+str(apollostring)+"\nNetwork Stats:\nAtlasnodes = "+atlasnum+"\nApollonodes = "+apollonum+"\nHermesnodes = "+hermesnum+"\nAll Stake = "+str(int(AllStake))+" AMB\nTxns per Block = "+str(AverageBlockTransactions)+"\nDaily Usage = "+str(networkBundles)+" Bundles\nBundlecost = "+str(Bundlecost)+" AMB\n\n--------------------------")
+        
+        if statusmessage == "1":
+            send_message(str(datewrite)+"\n\n"+str(atlasstring)+"\n"+str(apollostring)+"\nNetwork Stats:\nAtlasnodes = "+atlasnum+"\nApollonodes = "+apollonum+"\nHermesnodes = "+hermesnum+"\nAll Stake = "+str(int(AllStake))+" AMB\nTxns per Block = "+str(AverageBlockTransactions)+"\nDaily Usage = "+str(networkBundles)+" Bundles\nBundlecost = "+str(Bundlecost)+" AMB\n\n--------------------------")
 
         if (len(atlasnodes)) > 0:
             statsfile = open(home+folder+"atlasbuffer.txt","w")
