@@ -1,11 +1,5 @@
-
-import requests
-import os
-import csv
-from time import gmtime, strftime
-
-os.system('ls')
-
+#Enter your Settings here:
+#------------------------------------------------------------
 #enter your home directory with your username
 home = "/home/myusername/"
 
@@ -17,7 +11,16 @@ apollonodes = []
 #currency to write price into the csv file (for example EUR, CAD, CHF, CNY, RUB, JPY, for available conversions check: https://www.coingecko.com/)
 currency = 'USD'
 
-#############################################################
+#------------------------------------------------------------
+
+
+
+import requests
+import os
+import csv
+from time import gmtime, strftime
+
+os.system('ls')
 
 api_url_base = 'https://explorer-api.ambrosus.com/apollos'
 count = 0
