@@ -4,8 +4,8 @@ UPDATES:
 20.12.20
 
 The apollo reward python script has been shortened and simplified (no functional update).
-Setup is much easier now, as the buffer file is created automatically.
-This also means that the tracking starts working on the second execution after start/reset and the first creates wrong values (full balance).
+Setup is much easier now, as the buffer file is created and reset automatically (reset = change in the number of nodes in the script).
+This also means that the tracking starts working on the second execution after start/reset and the first creates wrong values (full balance in csv that needs to be deleted).
 Always check the values as Nodenames are derived from the address order in the script.
 
 09.12.20
