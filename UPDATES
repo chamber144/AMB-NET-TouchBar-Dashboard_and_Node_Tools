@@ -1,5 +1,12 @@
 UPDATES:
 
+24.12.20
+
+The atlas payout script has a new payout-address to send the payout-activation transaction to, as this address has changed. 
+It works for now, but another update is needed in the future, I'm in exchange with the team for the best solution. 
+Please keep looking for updates here once or twice a month.
+
+Have a great and healthy christmas holiday everyone.
 
 20.12.20
 
