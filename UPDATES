@@ -1,5 +1,11 @@
 UPDATES:
 
+
+30.12.20
+
+The AMB-info API changed and the telegram notification script has been updated. 
+DailyBundles and averange Transactions are showing correctly again in the daily overview.
+
 24.12.20
 
 The atlas payout script has a new payout-address to send the payout-activation transaction to, as this address has changed. 
