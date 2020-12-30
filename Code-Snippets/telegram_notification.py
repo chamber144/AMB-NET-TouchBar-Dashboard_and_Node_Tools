@@ -335,10 +335,10 @@ api_url_info = 'https://explorer-api.ambrosus.com/info'
 response = requests.get(api_url_info)
 data = str(response.json())
 closeBundles = (data.split(','))
-closerBundles = (closeBundles[34].split(':'))
+closerBundles = (closeBundles[32].split(':'))
 networkBundles = (closerBundles[1].replace(" ", ""))
 
-closerBlockTransactions = (closeBundles[31].split(':'))
+closerBlockTransactions = (closeBundles[29].split(':'))
 AverageBlockTransactions = (closerBlockTransactions[1].replace(" ", ""))
 
 closerBundleCost = (closeBundles[22].split(':'))
