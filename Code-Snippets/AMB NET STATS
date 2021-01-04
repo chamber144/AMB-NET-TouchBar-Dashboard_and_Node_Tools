@@ -5,7 +5,7 @@ set keyValueList to (every text item in mJson) as list
 set AppleScript's text item delimiters to ""
 
 -- get network bundles
-set theKeyValuePair to item 35 of keyValueList
+set theKeyValuePair to item 33 of keyValueList
 set AppleScript's text item delimiters to {": "}
 set theKeyValueBufferList to (every text item in theKeyValuePair) as list
 set AppleScript's text item delimiters to ""
