@@ -8,12 +8,11 @@ set NumberZeta to 0
 set NumberSigma to 0
 set NumberOmega to 1
 
+
 -- show Block and Bundle rewards for Apollo
 set DetailedApolloRewardView to 0
 
-
 -- You can change to any other currency aside from EUR in the link below:
-
 
 set mJson to do shell script "curl -s 'https://api.coingecko.com/api/v3/simple/price?ids=amber&vs_currencies=EUR&include_24hr_vol=true&include_24hr_change=true'"
 set AppleScript's text item delimiters to {","}
@@ -40,7 +39,7 @@ set AppleScript's text item delimiters to ""
 set apollos to item 2 of theKeyValueBufferList
 
 -- get network bundles
-set theKeyValuePair to item 35 of keyValueList
+set theKeyValuePair to item 33 of keyValueList
 set AppleScript's text item delimiters to {": "}
 set theKeyValueBufferList to (every text item in theKeyValuePair) as list
 set AppleScript's text item delimiters to ""
@@ -90,27 +89,37 @@ set AppleScript's text item delimiters to ""
 set theKeyValuePair to item 2 of keyValueList
 set AppleScript's text item delimiters to {":"}
 set theKeyValueBufferList to (every text item in theKeyValuePair) as list
-set AppleScript's text item delimiters to ""
 set omegas to item 13 of theKeyValueBufferList
+set AppleScript's text item delimiters to {","}
+set theKeyValueBufferList to (every text item in omegas) as list
+set AppleScript's text item delimiters to ""
+set omegas to item 1 of theKeyValueBufferList
 
 set theKeyValuePair to item 2 of keyValueList
 set AppleScript's text item delimiters to {":"}
 set theKeyValueBufferList to (every text item in theKeyValuePair) as list
-set AppleScript's text item delimiters to ""
 set sigmas to item 14 of theKeyValueBufferList
+set AppleScript's text item delimiters to {","}
+set theKeyValueBufferList to (every text item in sigmas) as list
+set AppleScript's text item delimiters to ""
+set sigmas to item 1 of theKeyValueBufferList
 
 set theKeyValuePair to item 2 of keyValueList
 set AppleScript's text item delimiters to {":"}
 set theKeyValueBufferList to (every text item in theKeyValuePair) as list
-set AppleScript's text item delimiters to ""
 set zetas to item 15 of theKeyValueBufferList
+set AppleScript's text item delimiters to {","}
+set theKeyValueBufferList to (every text item in zetas) as list
+set AppleScript's text item delimiters to ""
+set zetas to item 1 of theKeyValueBufferList
 
 set omegas to returnNumbersInString(omegas)
 set sigmas to returnNumbersInString(sigmas)
 set zetas to returnNumbersInString(zetas)
 
 set dailybundles to RemoveFromString("\"", dailybundles)
-set bundlecost to returnNumbersInString(bundlecost)
+set bundlecost to RemoveFromString("}", bundlecost)
+--set bundlecost to returnNumbersInString(bundlecost)
 
 -- REWARD FORMULAS ATLAS: -------------------
 
@@ -139,7 +148,8 @@ set usdPrice to changetocomma(usdPrice)
 set usdPrice to RoundImperialNumberToThreeDecimals(usdPrice)
 
 set AllApolloStake to RemoveFromString("}", AllApolloStake)
-set AllApolloStake to changetocomma(AllApolloStake)
+--set AllApolloStake to changetocomma(AllApolloStake)
+
 set apollos to RemoveFromString("\"", apollos)
 
 
