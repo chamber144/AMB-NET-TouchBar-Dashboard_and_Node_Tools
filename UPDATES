@@ -4,7 +4,7 @@ UPDATES:
 
 05.01.21
 
-AMB-Dashboar 3.3 contains a little change in the reward estimation scripts.
+AMB-Dashboard 3.3 contains a little change in the reward estimation scripts.
 There were recent API changes that needed adjustments.
 Block and Bundle Rewards for node operators have risen from 50% to 60% at the start of 2021.
 Code Snippets have been updated aswell.
