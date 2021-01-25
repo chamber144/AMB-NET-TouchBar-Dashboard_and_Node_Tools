@@ -2,7 +2,7 @@ UPDATES:
 
 25.01.21
 
-AMB-Dashboard 3.4 contains no functional updates, except speeding up pulling nodedata.
+AMB-Dashboard 3.4 contains no functional updates, except running faster with much less API calls.
 Code Snippets have been updated accordingly.
 
 05.01.21
