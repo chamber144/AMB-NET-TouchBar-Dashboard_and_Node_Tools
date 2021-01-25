@@ -4,40 +4,24 @@ set nodeaddress to "0x0000000000000000000000000000000000000000"
 
 
 
+-- set payt to 1 to show available payout, set it to 0 to hide available payout: 
+set payt to 1
+
 -- get info around particular Atlas node
-set mJson to do shell script "curl -s 'https://explorer-api.ambrosus.com/atlases'"
+set link to "https://explorer-api.ambrosus.com/atlases/" & nodeaddress
+set mJson to do shell script "curl -s " & link
 set AppleScript's text item delimiters to {nodeaddress}
 set keyNodeList to (every text item in mJson) as list
 set AppleScript's text item delimiters to ""
 
 set listSize to count of keyNodeList
-set page to 1
--- iterate through pages of 50 nodes to find the right one
-repeat while listSize = 1
-	set AppleScript's text item delimiters to {"\"next\":"}
-	set keyNodeList to (every text item in mJson) as list
-	set AppleScript's text item delimiters to ""
-	set pageEnd to item 2 of keyNodeList
-	
-	set AppleScript's text item delimiters to {","}
-	set nextPageIdList to (every text item in pageEnd) as list
-	set AppleScript's text item delimiters to ""
-	set nextpageid to item 1 of nextPageIdList
-	
-	set nextpageid to RemoveFromString("\"", nextpageid)
-	set nextpageid to RemoveFromString(" ", nextpageid)
-	set newlink to "https://explorer-api.ambrosus.com/atlases?next=" & nextpageid
-	set page to page + 1
-	set mJson to do shell script "curl -s " & newlink
-	set AppleScript's text item delimiters to {nodeaddress}
-	set keyNodeList to (every text item in mJson) as list
-	set AppleScript's text item delimiters to ""
-	
-	set listSize to count of keyNodeList
-	--display dialog ((count of keyNodeList) as string)
-	if listSize is not equal to 1 then exit repeat
-end repeat
-
+if listSize is not equal to 2 then
+	set status to "ONLINE"
+	set nodefound to "yes"
+else
+	set status to "OFFLINE"
+	set nodefound to "no"
+end if
 
 -- get allbundles
 set firstSet to item 2 of keyNodeList
@@ -75,7 +59,7 @@ set firstSet to item 2 of keyNodeList
 set AppleScript's text item delimiters to {","}
 set keyValueList to (every text item in firstSet) as list
 set AppleScript's text item delimiters to ""
-set theKeyValuePair to item 17 of keyValueList
+set theKeyValuePair to item 19 of keyValueList
 set AppleScript's text item delimiters to {": "}
 set theKeyValueBufferList to (every text item in theKeyValuePair) as list
 set AppleScript's text item delimiters to ""
@@ -91,7 +75,8 @@ set stake to returnNumbersInString(stake)
 
 set balance to RoundImperialNumberToTwoDecimals(balance)
 
-set unformatedValue to "| " & balance & " AMB | " & payout & " AMB inPayout | " & allbundles & " Bundles | " & stake & " Stake |"
+if payt is not equal to 0 then set unformatedValue to "| " & balance & " AMB | " & payout & " AMB inPayout | " & allbundles & " Bundles | " & stake & " Stake |"
+if payt is equal to 0 then set unformatedValue to "| " & balance & " AMB | " & allbundles & " Bundles | " & stake & " Stake |"
 
 
 return RemoveFromString("\"", unformatedValue)
