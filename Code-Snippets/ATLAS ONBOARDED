@@ -4,43 +4,20 @@ set nodeaddress to "0x000000000000000000000000000000000000000"
 
 
 -- get info around particular Atlas node
-set mJson to do shell script "curl -s 'https://explorer-api.ambrosus.com/atlases'"
+set link to "https://explorer-api.ambrosus.com/atlases/" & nodeaddress
+set mJson to do shell script "curl -s " & link
 set AppleScript's text item delimiters to {nodeaddress}
 set keyNodeList to (every text item in mJson) as list
 set AppleScript's text item delimiters to ""
 
-set nodefound to "yes"
-
 set listSize to count of keyNodeList
-set page to 1
--- iterate through pages of 50 nodes to find the right one
-repeat while listSize = 1
-	set AppleScript's text item delimiters to {"\"next\":"}
-	set keyNodeList to (every text item in mJson) as list
-	set AppleScript's text item delimiters to ""
-	if (count of keyNodeList) is 1 then set nodefound to "no"
-	if (count of keyNodeList) is 1 then exit repeat
-	set pageEnd to item 2 of keyNodeList
-	
-	set AppleScript's text item delimiters to {","}
-	set nextPageIdList to (every text item in pageEnd) as list
-	set AppleScript's text item delimiters to ""
-	set nextpageid to item 1 of nextPageIdList
-	
-	set nextpageid to RemoveFromString("\"", nextpageid)
-	set nextpageid to RemoveFromString(" ", nextpageid)
-	set newlink to "https://explorer-api.ambrosus.com/atlases?next=" & nextpageid
-	set page to page + 1
-	set mJson to do shell script "curl -s " & newlink
-	set AppleScript's text item delimiters to {nodeaddress}
-	set keyNodeList to (every text item in mJson) as list
-	set AppleScript's text item delimiters to ""
-	
-	set listSize to count of keyNodeList
-	--display dialog ((count of keyNodeList) as string)
-	if listSize is not equal to 1 then exit repeat
-end repeat
-
+if listSize is not equal to 2 then
+	set status to "ONLINE"
+	set nodefound to "yes"
+else
+	set status to "OFFLINE"
+	set nodefound to "no"
+end if
 
 if nodefound is equal to "yes" then
 	-- get state
