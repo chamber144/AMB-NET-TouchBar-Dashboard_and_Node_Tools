@@ -3,15 +3,15 @@ UPDATES:
 
 26.01.21
 
-A new functionality has been implemented in the the Automate Atlas Payout script to save monthly fees into a seperate csv file. 
+A new functionality has been implemented in the Automate Atlas Payout script to save monthly fees into a seperate csv file. 
 API calls are more efficient now.
 
 A minor bug in pulling the price from Coingecko in the last version of the Apollo Reward tracker also has been fixed.
 Here API calls are running much more efficiently now, too.
-If you transfer funds out of the node (more than 1000 AMB), the script to a certain extend should add a warning into the csv file, 
+If you transfer funds out of the node (more than 1000 AMB), the script should add a warning into the csv file, 
 that a transfer has happened on this day, so you know later how to correct the numbers for that day.
 
-The Telegram Notification script runs more efficiently on API calls aswell in the updated version, but contains no functional updates.
+The Telegram Notification script runs more efficiently on API calls aswell in the updated version, but contains no functional update.
 
 25.01.21
 
