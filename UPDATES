@@ -8,8 +8,8 @@ API calls are more efficient now. If fees exceed 1000 AMB, its detected as a pot
 
 A minor bug in pulling the price from Coingecko in the last version of the Apollo Reward tracker also has been fixed.
 Here API calls are running much more efficiently now, too.
-If you transfer funds out of the node, the script adds a warning into the csv file, 
-that a transfer has happened on this day, so you have an additional reminder to correct the numbers for that day.
+If you transfer funds out of the node, the script adds a warning into the csv file that a transfer has happened on this day, 
+so you have an additional reminder to correct the numbers for that day.
 
 The Telegram Notification script runs more efficiently on API calls aswell in the updated version, but contains no functional update.
 
