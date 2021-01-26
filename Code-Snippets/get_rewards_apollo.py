@@ -20,36 +20,20 @@ import os
 import csv
 from time import gmtime, strftime
 
-os.system('ls')
-
-api_url_base = 'https://explorer-api.ambrosus.com/apollos'
 count = 0
 state = []
 status = []
 balance = []
 for each in apollonodes:
     print(each)
+    api_url_base = ('https://explorer-api.ambrosus.com/apollos/'+each)
     response = requests.get(api_url_base)
     data = str(response.json())
     found = (data.split(each))
     search = (len(found))
-    while search == 1:
-        next = (data.split('next'))
-        if (len(next)) < 2:
-            status[count] = "OFFLINE"
-            balance.append = 0
-            break
-        else:
-            pageCloseEnd = (next[1].split(','))
-            pageCloserEnd = (pageCloseEnd[0].split(': '))
-            pageEnd = pageCloserEnd[1]
-            pageEnd = (pageEnd.replace("'", ""))
-            newlink = ("https://explorer-api.ambrosus.com/apollos?next="+pageEnd)
-            #print(newlink)
-            response = requests.get(newlink)
-            data = str(response.json())
-            found = (data.split(each))
-            search = (len(found))
+    if search == 2:
+        status = "OFFLINE"
+        print('Node is OFFLINE, please wait for sync to complete!')   
 
     closeBalance = (found[2].split(','))
     closerBalance = (closeBalance[2].split(': '))
@@ -81,7 +65,7 @@ response = requests.get(api_url_info)
 data = str(response.json())
 closePrice = (data.split(':'))
 closerPrice = (closePrice[2].replace("}",""))
-priceusd = (closerPrice[1].replace(" ", ""))
+priceusd = (closerPrice.replace(" ", ""))
 
 
 datewrite = strftime("%Y-%m-%d %H:%M:%S", gmtime())
@@ -156,7 +140,10 @@ csvfile = open(home+"rewards.csv","a")
 for each in apollonodes:
     buff[count] = (buff[count].replace("\n", ""))
     baldif = (float(balance[count]) - float(buff[count]))
-    csv = ("\"Staking\",\""+str(baldif)+"\",\"AMB\",\"\",\"\",\"\",\"\",\"\",\"\",\"Apollo Node"+str(count+1)+"\",\""+datewrite+"\",\""+priceusd+"\"\n")
+    transfer = ""
+    if baldif < 0:
+        transfer = "It seems you have transfered funds manually that need to be added to the balance!"
+    csv = ("\"Staking\",\""+str(baldif)+"\",\"AMB\",\"\",\"\",\"\",\"\",\"\",\""+transfer+"\",\"Apollo Node"+str(count+1)+"\",\""+datewrite+"\",\""+priceusd+"\"\n")
     csvfile.writelines(csv)
     count = count + 1
 csvfile.close()
