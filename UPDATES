@@ -1,5 +1,15 @@
 UPDATES:
 
+
+26.01.21
+
+The Autoamte Atlas Payout script has a new function to save monthly fees into a seperate csv file. API calls are more efficient now.
+
+The Apollo Reward tracker also runs more efficiently on API calls and a minor bug in pulling the price from coingecko in the last version has been fixed.
+If you transfer funds out of the node, the script to a certain extend should add a warning to the csv file, that a transfer has happened on this day.
+
+The Telegram Notification script runs more efficient on API calls aswell in the updated version.
+
 25.01.21
 
 AMB-Dashboard 3.4 contains no functional updates, except running faster with much less API calls.
