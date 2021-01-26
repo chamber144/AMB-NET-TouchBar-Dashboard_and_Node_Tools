@@ -11,7 +11,7 @@ Here API calls are running much more efficiently now, too.
 If you transfer funds out of the node (more than 1000 AMB), the script to a certain extend should add a warning into the csv file, 
 that a transfer has happened on this day, so you know later how to correct the numbers for that day.
 
-The Telegram Notification script runs more efficiently on API calls aswell in the updated version.
+The Telegram Notification script runs more efficiently on API calls aswell in the updated version, but contains no functional updates.
 
 25.01.21
 
