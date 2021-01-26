@@ -164,7 +164,6 @@ def send_message(msg):
 
 #get atlas status
 
-api_url_base = 'https://explorer-api.ambrosus.com/atlases'
 count = 0
 stateatlas = []
 statusatlas = []
@@ -175,26 +174,15 @@ writeatlasbundlebuffer = []
 iconatlas = []
 for each in atlasnodes:
     print("Atlas "+each)
+    api_url_base = ('https://explorer-api.ambrosus.com/atlases/'+each)
     response = requests.get(api_url_base)
     data = str(response.json())
     found = (data.split(each))
     search = (len(found))
-    while search == 1:
-        next = (data.split('next'))
-        if (len(next)) < 2:
-            statusatlas.append("OFFLINE")
-            break
-        else:
-            pageCloseEnd = (next[1].split(','))
-            pageCloserEnd = (pageCloseEnd[0].split(': '))
-            pageEnd = pageCloserEnd[1]
-            pageEnd = (pageEnd.replace("'", ""))
-            newlink = ("https://explorer-api.ambrosus.com/atlases?next="+pageEnd)
-            response = requests.get(newlink)
-            data = str(response.json())
-            found = (data.split(each))
-            search = (len(found))
-
+    if search == 2:
+        status = "OFFLINE"
+        print('Node is OFFLINE, please wait for sync to complete!')
+        
     closerBundle = (found[1].split('totalBundles'))
     evenCloserBundle = (closerBundle[1].split(','))
     evenCloserBundlenow = (evenCloserBundle[0].split(': '))
@@ -239,7 +227,6 @@ for each in atlasnodes:
 
 #get apollo status
     
-api_url_base = 'https://explorer-api.ambrosus.com/apollos'
 count = 0
 stateapollo = []
 statusapollo = []
@@ -249,25 +236,14 @@ writeapollobalancebuffer = []
 iconapollo = []
 for each in apollonodes:
     print("Apollo "+each)
+    api_url_base = ('https://explorer-api.ambrosus.com/apollos/'+each)
     response = requests.get(api_url_base)
     data = str(response.json())
     found = (data.split(each))
     search = (len(found))
-    while search == 1:
-        next = (data.split('next'))
-        if (len(next)) < 2:
-            statusapollo.append("OFFLINE")
-            break
-        else:
-            pageCloseEnd = (next[1].split(','))
-            pageCloserEnd = (pageCloseEnd[0].split(': '))
-            pageEnd = pageCloserEnd[1]
-            pageEnd = (pageEnd.replace("'", ""))
-            newlink = ("https://explorer-api.ambrosus.com/apollos?next="+pageEnd)
-            response = requests.get(newlink)
-            data = str(response.json())
-            found = (data.split(each))
-            search = (len(found))
+    if search == 2:
+        status = "OFFLINE"
+        print('Node is OFFLINE, please wait for sync to complete!') 
 
     closeBalance = (found[2].split(','))
     closerBalance = (closeBalance[2].split(': '))
