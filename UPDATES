@@ -11,6 +11,8 @@ Additionally estimated next Bundle price in AMB, next Payout day and price in cu
 Thanks to nejimakiya from the japanese Ambrosus community for giving me a glimpse at his code to get ideas 
 for how especially hermes info could be shown in a useful way.
 
+Any ideas for new features are welcome.
+
 26.01.21
 
 A new functionality has been implemented in the Automate Atlas Payout script to save monthly fees into a seperate csv file. 
