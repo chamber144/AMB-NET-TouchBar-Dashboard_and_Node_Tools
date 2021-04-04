@@ -112,7 +112,7 @@ For an accurate estimate of rewards to be calculated, be sure to set the first l
 
 Note that Atlas Node Rewards are distributed over the timeframe of 1 year to incentivise keeping bundles available for the network. Similarly Apollo Bundle Rewards are not equally distributed every day, but average out over a longer time period. See Payout-Scheme made by community member CaptainCrypto for Atlas Nodes below:
 
-![alt text](https://github.com/inlak16/AMB-NET-Touchbar-Dashboard/blob/master/tutorial-images/paouts-infographics.jpg)
+![alt text](https://camo.githubusercontent.com/4ca5cef1b8d18e56e8dc33ccb209dd0c7874609bec87f61918580586874c6334/68747470733a2f2f696d672e696d61676575706c6f61642e6e65742f323032302f31302f32302f41746c61732d2d2d7265776172642d73797374656d2e706e67)
 
 ### Logging into your node and setup of the Terminal Background for aesthetics and orientation
 
