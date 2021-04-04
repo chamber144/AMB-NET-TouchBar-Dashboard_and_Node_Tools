@@ -8,7 +8,8 @@ The telegram notification script has been updated with new functionality.
 You have the option to calculate daily rewards into the currency of your choice.
 A list of bundles is shown as short list. You can specify to just show non-heartbeat bundles, just those on AMB-NET or with TEST-NET, too.
 Additionally estimated next Bundle price in AMB, next Payout day and price in currency of your choice are shown. 
-Thanks to nejimakiya from the japanese Ambrosus community for giving me a glimpse at his code to get ideas for how especially hermes info could be shown in a useful way.
+Thanks to nejimakiya from the japanese Ambrosus community for giving me a glimpse at his code to get ideas 
+for how especially hermes info could be shown in a useful way.
 
 26.01.21
 
