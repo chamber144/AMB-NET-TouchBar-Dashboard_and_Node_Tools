@@ -19,7 +19,7 @@ apollonodes = []
 
 #Send daily status message? (1 = yes, 0 = no)
 statusmessage = '1'
-#Set (server)time when to send daily statuss message
+#Set (server)time when to send daily status message
 statstime = '1505'
 #show rewards in currency of choice? For Atlas, amount of AMB and currency are shown. This has to be split into 13 Payouts. (1 = yes, 0 = no)
 calculateFiat = '1'
