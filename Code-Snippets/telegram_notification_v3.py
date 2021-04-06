@@ -347,7 +347,7 @@ writeatlasbundlebuffer = []
 iconatlas = []
 for each in atlasnodes:
     print("Atlas "+each)
-    api_url_base = ('https://explorer-api.ambrosus.com/atlases/'+each)
+    api_url_base = ('https://explorer-api.ambrosus.io/atlases/'+each)
     response = requests.get(api_url_base)
     data = str(response.json())
     found = (data.split(each))
@@ -380,12 +380,12 @@ for each in atlasnodes:
         statusatlas.append("OFFLINE")
     print(statusatlas[count])
     if statusatlas[count] != "ONLINE" and statsat[count] == "1":
-        send_message(nodeOffline+" Your Atlas Node "+str(count+1)+" has just gone offline! <a href=\"https://explorer.ambrosus.com/atlas/"+each+"\">"+each+"</a>\n\n-------------------------------")
+        send_message(nodeOffline+" Your Atlas Node "+str(count+1)+" has just gone offline! <a href=\"https://explorer.ambrosus.io/atlas/"+each+"\">"+each+"</a>\n\n-------------------------------")
     if statusatlas[count] == "ONLINE" and statsat[count] == "0":
-        send_message(nodeOnline+" Your Atlas Node "+str(count+1)+" is back online! <a href=\"https://explorer.ambrosus.com/atlas/"+each+"\">"+each+"</a>\n\n-------------------------------")
+        send_message(nodeOnline+" Your Atlas Node "+str(count+1)+" is back online! <a href=\"https://explorer.ambrosus.io/atlas/"+each+"\">"+each+"</a>\n\n-------------------------------")
     if feebalance <= 10:
         print('Atlas balance is low: '+str(feebalance)) 
-        send_message(lowBalance+" Your Atlas Node "+str(count+1)+" has a very low balance of "+ str(feebalance)+" AMB.\n\nFunds might soon not be sufficient to pay the nodes challenge transactions.\nPlease raise the balance: <a href=\"https://explorer.ambrosus.com/atlas/"+each+"\">"+each+"</a>\n\n-------------------------------")
+        send_message(lowBalance+" Your Atlas Node "+str(count+1)+" has a very low balance of "+ str(feebalance)+" AMB.\n\nFunds might soon not be sufficient to pay the nodes challenge transactions.\nPlease raise the balance: <a href=\"https://explorer.ambrosus.io/atlas/"+each+"\">"+each+"</a>\n\n-------------------------------")
     if statusatlas[count] == "ONLINE":
         Sat.append("1")
         iconatlas.append(nodeOnline)
@@ -407,7 +407,7 @@ writeapollobalancebuffer = []
 iconapollo = []
 for each in apollonodes:
     print("Apollo "+each)
-    api_url_base = ('https://explorer-api.ambrosus.com/apollos/'+each)
+    api_url_base = ('https://explorer-api.ambrosus.io/apollos/'+each)
     response = requests.get(api_url_base)
     data = str(response.json())
     found = (data.split(each))
@@ -440,9 +440,9 @@ for each in apollonodes:
     
     print(statusapollo[count])
     if statusapollo[count] != "ONLINE" and statsap[count] == "1":
-        send_message(nodeOffline+" Your Apollo Node "+str(count+1)+" has just gone offline! <a href=\"https://explorer.ambrosus.com/atlas/"+each+"\">"+each+"</a>\n\n-------------------------------")
+        send_message(nodeOffline+" Your Apollo Node "+str(count+1)+" has just gone offline! <a href=\"https://explorer.ambrosus.io/atlas/"+each+"\">"+each+"</a>\n\n-------------------------------")
     if statusapollo[count] == "ONLINE" and statsap[count] == "0":
-        send_message(nodeOnline+" Your Apollo Node "+str(count+1)+" is back online! <a href=\"https://explorer.ambrosus.com/atlas/"+each+"\">"+each+"</a>\n\n-------------------------------")
+        send_message(nodeOnline+" Your Apollo Node "+str(count+1)+" is back online! <a href=\"https://explorer.ambrosus.io/atlas/"+each+"\">"+each+"</a>\n\n-------------------------------")
     if statusapollo[count] == "ONLINE":
         Sap.append("1")
         iconapollo.append(nodeOnline)
@@ -476,7 +476,7 @@ if reset == "1":
 
 
 #get network stats
-api_url_info = 'https://explorer-api.ambrosus.com/info'
+api_url_info = 'https://explorer-api.ambrosus.io/info'
 response = requests.get(api_url_info)
 data = str(response.json())
 closeBundles = (data.split(','))
@@ -611,7 +611,7 @@ if time == statstime:
                 fiat = ("                      "+str(int(allfiat))+" new: ~"+str(newfiat)+" "+currency+"\n")
                 if calculateFiat != "1":
                     fiat = ""
-                apollostring = (apollostring+"<a href=\"https://explorer.ambrosus.com/apollo/"+str(apollonodes[count])+"\">Apollo "+str(count+1)+"</a>  "+str(iconapollo[count])+"\t "+str(int(float(balanceapollo[count])))+"\t new: "+str(int(float(baldifapollo[count])))+" AMB\n")
+                apollostring = (apollostring+"<a href=\"https://explorer.ambrosus.io/apollo/"+str(apollonodes[count])+"\">Apollo "+str(count+1)+"</a>  "+str(iconapollo[count])+"\t "+str(int(float(balanceapollo[count])))+"\t new: "+str(int(float(baldifapollo[count])))+" AMB\n")
                 count = count + 1
             apollostring = (apollostring+"                      –––––––––––––––––––\n                      "+str(int(balanceall))+" new: "+str(int(baldifallapollo))+" AMB\n"+str(fiat))
             
@@ -641,7 +641,7 @@ if time == statstime:
                     ambrewardsss = ""
                 hint = ("                     split into 13 Payouts\n")
                 hint = ""
-                atlasstring = (atlasstring+"<a href=\"https://explorer.ambrosus.com/atlas/"+str(atlasnodes[count])+"\">Atlas "+str(count+1)+"</a>  "+str(iconatlas[count])+"\t "+str(int(float(bundlesatlas[count])))+"\tnew: "+str(int(float(baldifatlas[count])))+" Bundles\n")
+                atlasstring = (atlasstring+"<a href=\"https://explorer.ambrosus.io/atlas/"+str(atlasnodes[count])+"\">Atlas "+str(count+1)+"</a>  "+str(iconatlas[count])+"\t "+str(int(float(bundlesatlas[count])))+"\tnew: "+str(int(float(baldifatlas[count])))+" Bundles\n")
                 count = count + 1
             atlasstring = (atlasstring+"                     –––––––––––––––––––\n                     "+str(bundleall)+" new: "+str(baldifallatlas)+" Bundles\n"+str(ambrewardsss)+str(fiat)+str(hint))
 
