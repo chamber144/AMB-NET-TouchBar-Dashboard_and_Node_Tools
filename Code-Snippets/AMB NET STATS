@@ -1,5 +1,5 @@
 -- get AMB-NET stats info
-set mJson to do shell script "curl -s 'https://explorer-api.ambrosus.com/info'"
+set mJson to do shell script "curl -s 'https://explorer-api.ambrosus.io/info'"
 set AppleScript's text item delimiters to {","}
 set keyValueList to (every text item in mJson) as list
 set AppleScript's text item delimiters to ""
