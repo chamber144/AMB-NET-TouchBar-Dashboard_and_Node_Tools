@@ -1,5 +1,5 @@
 -- get price data
-set mJson to do shell script "curl -s 'https://token.ambrosus.com/'"
+set mJson to do shell script "curl -s 'https://token.ambrosus.io/'"
 set AppleScript's text item delimiters to {","}
 set keyValueList to (every text item in mJson) as list
 set AppleScript's text item delimiters to ""
