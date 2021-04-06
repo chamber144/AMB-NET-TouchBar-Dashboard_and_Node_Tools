@@ -48,7 +48,7 @@ web3 = Web3(HTTPProvider("http://localhost:8545"))
 
 #account = web3.eth.coinbase
 
-api_url_base = ('https://explorer-api.ambrosus.com/atlases/'+account)
+api_url_base = ('https://explorer-api.ambrosus.io/atlases/'+account)
 response = requests.get(api_url_base)
 data = str(response.json())
 found = (data.split(account))
