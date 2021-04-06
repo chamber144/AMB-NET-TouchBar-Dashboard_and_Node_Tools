@@ -26,7 +26,7 @@ status = []
 balance = []
 for each in apollonodes:
     print(each)
-    api_url_base = ('https://explorer-api.ambrosus.com/apollos/'+each)
+    api_url_base = ('https://explorer-api.ambrosus.io/apollos/'+each)
     response = requests.get(api_url_base)
     data = str(response.json())
     found = (data.split(each))
