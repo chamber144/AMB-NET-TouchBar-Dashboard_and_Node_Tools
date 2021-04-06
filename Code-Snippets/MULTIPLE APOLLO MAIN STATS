@@ -41,7 +41,7 @@ repeat with n from 1 to nodeactive
 	
 	if item n of nodeactivearr is equal to 1 then
 		-- get info around particular Apollo node
-		set link to "https://explorer-api.ambrosus.com/apollos/" & item n of nodes
+		set link to "https://explorer-api.ambrosus.io/apollos/" & item n of nodes
 		set mJson to do shell script "curl -s " & link
 		set AppleScript's text item delimiters to {item n of nodes}
 		set keyNodeList to (every text item in mJson) as list
