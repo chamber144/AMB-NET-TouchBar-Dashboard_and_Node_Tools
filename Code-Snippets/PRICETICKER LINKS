@@ -4,6 +4,6 @@ tell application "Brave Browser"
 	open location "https://coinmarketcap.com/currencies/amber/"
 	open location "https://twitter.com/AmbrosusAMB"
 	open location "https://reddit.com/r/ambrosus"
-	open location "https://stats.ambrosus.com/"
+	open location "https://stats.ambrosus.io/"
 	activate
 end tell
