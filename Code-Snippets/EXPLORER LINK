@@ -1,5 +1,5 @@
 tell application "Brave Browser"
 	activate
-	open location "https://explorer.ambrosus.com"
+	open location "https://explorer.ambrosus.io"
 	activate
 end tell
