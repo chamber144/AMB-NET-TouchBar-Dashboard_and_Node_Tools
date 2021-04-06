@@ -8,7 +8,7 @@ set nodeaddress to "0x0000000000000000000000000000000000000000"
 set payt to 1
 
 -- get info around particular Atlas node
-set link to "https://explorer-api.ambrosus.com/atlases/" & nodeaddress
+set link to "https://explorer-api.ambrosus.io/atlases/" & nodeaddress
 set mJson to do shell script "curl -s " & link
 set AppleScript's text item delimiters to {nodeaddress}
 set keyNodeList to (every text item in mJson) as list
