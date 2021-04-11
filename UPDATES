@@ -1,6 +1,11 @@
 UPDATES:
 
 
+11.04.21
+
+Corrected the test-net links of shown hermes nodes in the telegram script to the test-net-explorer, which seems to be offline for now.
+Data can only be pulled through the API at the moment.
+
 06.04.21
 
 All ambrosus.com links in all scripts and Touchbar-Dashboard have been updated to ambrosus.io. 
