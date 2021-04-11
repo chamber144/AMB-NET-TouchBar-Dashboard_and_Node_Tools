@@ -779,7 +779,7 @@ if time == statstime:
                                     elif int(diff) >= 5:    
                                         celeb = '\U0001F441'
                                     name = hermesTestNames[countherm].split('//')      
-                                    string = (string+"\n<a href=\"https://explorer.ambrosus.io/addresses/"+hermesTestAddress[countherm]+"\">"+name[1]+"</a>\n"+"New Bundles: "+str(diff)+celeb)  
+                                    string = (string+"\n<a href=\"https://explorer.ambrosus-test.io/addresses/"+hermesTestAddress[countherm]+"\">"+name[1]+"</a>\n"+"New Bundles: "+str(diff)+celeb)  
                         else:
                             counta = count + 1
                             diff = int(hermesTestBundles[countherm]) - int(hermesTest[counta])
@@ -793,7 +793,7 @@ if time == statstime:
                                 elif int(diff) >= 5:    
                                     celeb = '\U0001F441'
                                 name = hermesTestNames[countherm].split('//')      
-                                string = (string+"\n<a href=\"https://explorer.ambrosus.io/addresses/"+hermesTestAddress[countherm]+"\">"+name[1]+"</a>\n"+"New Bundles: "+str(diff)+celeb)
+                                string = (string+"\n<a href=\"https://explorer.ambrosus-test.io/addresses/"+hermesTestAddress[countherm]+"\">"+name[1]+"</a>\n"+"New Bundles: "+str(diff)+celeb)
                     countherm = countherm + 1
                 count = count + 1
 
@@ -830,7 +830,7 @@ if time == statstime:
                 string = (string+"\n\nNew Test-Hermes"+celeb1+":\n")
                 for each in hermesTestNames:
                     name = hermesTestNames[count].split('//')  
-                    string = (string+"<a href=\"https://explorer.ambrosus.io/addresses/"+hermesTestAddress[count]+"\">"+name[1]+"</a>") 
+                    string = (string+"<a href=\"https://explorer.ambrosus-test.io/addresses/"+hermesTestAddress[count]+"\">"+name[1]+"</a>") 
                     count = count + 1
 
         if hermesinfo == "0":
