@@ -1,5 +1,9 @@
 UPDATES:
 
+17.03.21
+
+Address links for hermes nodes changed in the explorer and have been fixed in the telegram notification script.
+A minor bug not linking apollos on offline-warning to the respective explorer page has been fixed aswell.
 
 11.04.21
 
