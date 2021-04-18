@@ -1,4 +1,4 @@
-# AMB-NET TouchBar Dashboard
+# AMB-NET TouchBar Dashboard & Node Tools
 
 ![alt text](https://github.com/inlak16/AMB-NET-Touchbar-Dashboard/blob/master/tutorial-images/Node_Control_Touchbar_sm_.jpg)
 
