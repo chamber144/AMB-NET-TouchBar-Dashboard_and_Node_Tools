@@ -4,9 +4,11 @@
 
 ### Hello fellow AMB-Net node operators. Welcome to this little repository.
 
-Here I present a complete setup that may help you monitor and control your ATLAS or APOLLO node(s) through the MacBook TouchBar.
+Here on the Repos main page I present a complete setup that may help you monitor and control your ATLAS or APOLLO node(s) through the MacBook TouchBar.
 
-_In the Wiki section of this Repository you find other useful tools that run directly on your node(s) (and need no mac), like a telegram notification tool, automatic payout tool for Atlas nodes with csv data collection and a tool to write Apollo rewards into a csv file automatically.<br>([Click here to go to the Wiki](https://github.com/inlak16/AMB-NET-TouchBar-Dashboard/wiki))_  
+### Python Node Tools that make operating a node much easier.
+
+In the Wiki section of this Repository you find other useful tools that run directly on your node(s) (_**and need no Mac**_), like a telegram notification tool, automatic payout tool for Atlas nodes with csv data collection and a tool to write Apollo rewards into a csv file automatically.<br>([Click here to go to the Wiki, as this main page is reserved for the TouchBar Dashboard guide](https://github.com/inlak16/AMB-NET-TouchBar-Dashboard/wiki))  
 
 Please note that _this is NOT an official tool created by Ambrosus_, but a setup that I built to control my own node and found quite useful to share with the whole community. 
 Although I don't expect any dangerous errors to occur, _I give no warranty that this is bug-free_, so please have a look at the code, before running it. I have been controlling my node with this for over a year without major issues now.<br>
