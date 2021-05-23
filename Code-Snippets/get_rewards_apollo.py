@@ -3,7 +3,7 @@
 #enter your home directory with your username
 home = "/home/myusername/"
 
-#enter your apollo node(s) in the brackets, seperated by comma and surrounded by inverted commas like this ['0x21...','0x35...','0x64...']
+#enter your apollo node(s) in the brackets, separated by comma and surrounded by inverted commas like this ['0x21...','0x35...','0x64...']
 
 apollonodes = []
 
