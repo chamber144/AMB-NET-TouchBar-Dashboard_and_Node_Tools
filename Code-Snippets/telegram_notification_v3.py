@@ -10,10 +10,10 @@ home = '/root/'
 Telegram_Token = ''
 Telegram_Chat_ID = ''
 
-#enter your atlas node(s) in the brackets, seperated by comma and surrounded by inverted commas like this ['0x21...','0x35...','0x64...']
+#enter your atlas node(s) in the brackets, separated by comma and surrounded by inverted commas like this ['0x21...','0x35...','0x64...']
 atlasnodes = []
 
-#enter your apollo node(s) in the brackets, seperated by comma and surrounded by inverted commas like this ['0x21...','0x35...','0x64...']
+#enter your apollo node(s) in the brackets, separated by comma and surrounded by inverted commas like this ['0x21...','0x35...','0x64...']
 apollonodes = []
 
 
