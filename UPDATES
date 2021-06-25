@@ -1,6 +1,12 @@
 UPDATES:
 
 
+
+25.06.21
+
+In the Telegram notification script there was a bug when more than 1 new Hermes are onboarding, those info was not separated by line (didnt expect more than 1 Hermes to onboard on a day).
+This has been fixed now and new Hermes are presented separated by line.
+
 17.04.21
 
 Address links for hermes nodes changed in the explorer and have been fixed in the telegram notification script.
