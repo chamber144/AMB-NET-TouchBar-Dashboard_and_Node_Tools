@@ -737,10 +737,10 @@ if time == statstime:
             string = ("\n\nAMB-NET Hermes:"+string)
         if len(hermesNames) > 0:
             count = 0
-            string = (string+"\n\nNew Hermes"+celeb1+":\n")
+            string = (string+"\n\nNew Hermes"+celeb1+":")
             for each in hermesNames:
                 name = hermesNames[count].split('//')  
-                string = (string+"<a href=\"https://explorer.ambrosus.io/address/"+hermesAddress[count]+"\">"+name[1]+"</a>") 
+                string = (string+"\n<a href=\"https://explorer.ambrosus.io/address/"+hermesAddress[count]+"\">"+name[1]+"</a>") 
                 count = count + 1
 
         #open hermesTest buffer
@@ -827,10 +827,10 @@ if time == statstime:
 
             if len(hermesTestNames) > 0:
                 count = 0
-                string = (string+"\n\nNew Test-Hermes"+celeb1+":\n")
+                string = (string+"\n\nNew Test-Hermes"+celeb1+":")
                 for each in hermesTestNames:
                     name = hermesTestNames[count].split('//')  
-                    string = (string+"<a href=\"https://explorer.ambrosus-test.io/address/"+hermesTestAddress[count]+"\">"+name[1]+"</a>") 
+                    string = (string+"\n<a href=\"https://explorer.ambrosus-test.io/address/"+hermesTestAddress[count]+"\">"+name[1]+"</a>") 
                     count = count + 1
 
         if hermesinfo == "0":
