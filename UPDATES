@@ -5,8 +5,9 @@ UPDATES:
 05.07.21
 
 AMB-Dashboard 3.6
-As the Ambrosus.com domain is not used any more I foudn a tiny bug in the Reward Estimate Scripts for the Mac Touchbar Dashboard.
-It's been fixed in Version 3.6. Might be faster to change token.ambrosus.com to token.ambrosus.io in the scripts by hand.
+- As the Ambrosus.com domain is not used any more I found a tiny bug in the Reward Estimate Scripts for the Mac Touchbar Dashboard.
+- It's been fixed in Version 3.6. Might be faster to change token.ambrosus.com to token.ambrosus.io in the scripts by hand.
+- The Code Snippets have been updated aswell.
 
 25.06.21
 
