@@ -59,7 +59,7 @@ set theKeyValueBufferList to (every text item in theKeyValuePair) as list
 set AppleScript's text item delimiters to ""
 set AllApolloStake to item 2 of theKeyValueBufferList
 
-set mJson to do shell script "curl -s 'https://token.ambrosus.com/'"
+set mJson to do shell script "curl -s 'https://token.ambrosus.io/'"
 set AppleScript's text item delimiters to {","}
 set keyValueList to (every text item in mJson) as list
 set AppleScript's text item delimiters to ""
