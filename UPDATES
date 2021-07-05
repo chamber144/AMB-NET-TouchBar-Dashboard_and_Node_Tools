@@ -2,6 +2,12 @@ UPDATES:
 
 
 
+05.07.21
+
+AMB-Dashboard 3.6
+As the Ambrosus.com domain is not used any more I foudn a tiny bug in the Reward Estimate Scripts for the Mac Touchbar Dashboard.
+It's been fixed in Version 3.6. Might be faster to change token.ambrosus.com to token.ambrosus.io in the scripts by hand.
+
 25.06.21
 
 In the Telegram notification script there was a bug when more than 1 new Hermes are onboarding, those info was not separated by line (didnt expect more than 1 Hermes to onboard on a day).
