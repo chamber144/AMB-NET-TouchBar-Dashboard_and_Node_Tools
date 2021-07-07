@@ -61,7 +61,7 @@ repeat with n from 1 to nodeactive
 			set keyValueList to (every text item in firstSet) as list
 			set AppleScript's text item delimiters to ""
 			
-			set theKeyValuePair to item 9 of keyValueList
+			set theKeyValuePair to item 14 of keyValueList
 			set AppleScript's text item delimiters to {": "}
 			set theKeyValueBufferList to (every text item in theKeyValuePair) as list
 			set AppleScript's text item delimiters to ""
