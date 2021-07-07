@@ -1,6 +1,11 @@
 UPDATES:
 
 
+08.07.21
+
+AMB-Dashboard 3.7
+- Found that Atlas Bundles are cast differently in the API, which needed minor changes in the scripts. 
+- Atlas Main Stats and Multiple Atlas Main Stats Code Snippets have been updated accordingly.
 
 05.07.21
 
