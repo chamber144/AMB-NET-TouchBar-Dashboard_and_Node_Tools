@@ -148,7 +148,7 @@ set usdPrice to changetocomma(usdPrice)
 set usdPrice to RoundImperialNumberToThreeDecimals(usdPrice)
 
 set AllApolloStake to RemoveFromString("}", AllApolloStake)
---set AllApolloStake to changetocomma(AllApolloStake)
+set AllApolloStake to changetocomma(AllApolloStake)
 
 set apollos to RemoveFromString("\"", apollos)
 
