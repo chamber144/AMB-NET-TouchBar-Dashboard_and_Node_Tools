@@ -1,6 +1,13 @@
 UPDATES:
 
 
+
+10.07.21
+
+AMB-Dashboard 3.7 2-character fix
+If suddenly your Dashboard doesn't show rewards for Apollo Nodes since around today, 
+just erase -- in the beginning of line 151 of the Reward estimation script. Code Snippets and the whole setup have been updated.
+
 08.07.21
 
 AMB-Dashboard 3.7
