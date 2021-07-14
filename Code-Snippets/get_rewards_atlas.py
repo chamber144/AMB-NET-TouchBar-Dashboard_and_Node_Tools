@@ -6,8 +6,8 @@ nodename = 'AtlasNode1'
 #set this nodes public address
 account = '0x0000000000000000000000000000000000000000'
 
-#enter your home directory with your username
-home = "/home/myusername/"
+#enter your home directory with your username or if you are on root, the root directory (check with the pwd command) be sure to have a / in the end
+home = '/root/'
 
 #After invoking payout-action, send the funds to another account? (1 = yes, 0 = no)
 sendAMBout = 0
