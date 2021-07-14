@@ -1,6 +1,11 @@
 UPDATES:
 
 
+14.07.21
+
+Changed standard folder in the telegram notification, 
+Apollo Reward and Atlas Reward scripts to '/root/' to work for 95% of users out of the gate.
+NO CODE CHANGE 
 
 10.07.21
 
