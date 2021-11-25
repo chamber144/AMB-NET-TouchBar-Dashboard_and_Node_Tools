@@ -1,6 +1,13 @@
 UPDATES:
 
 
+25.11.21
+
+The Atlas Payout Contract address changed to 0xB040E8C55F0bFE4e7f3de6eE570Ebf95EA689023.
+It has been changed in the Atlas payout script. Easiest is to just exchange the Address in line 92 of your setup script from 0x77C70B382bEf2Ff2D01E25902d0D338586b51Df6 
+↓  to
+0xB040E8C55F0bFE4e7f3de6eE570Ebf95EA689023
+
 14.07.21
 
 Changed standard folder in the telegram notification, 
