@@ -1,5 +1,14 @@
 UPDATES:
 
+06.01.22
+
+As Ambrosus Cryptonomics have changed, the Reward estimation scripts have been updated accordingly. 
+Treasury lowered to 30%, inflation changed to fixed amb amount of 14 amb every Block (5 seconds).
+I will not update the whole Touchbar setup for now, as it's much easier to just overwrite the updated snippets in the better touch tool setup and 
+set the node configuration. As the Macbook Touchbar has been discontinued by Apple, this part of the github will not have priority for now. 
+Feel free to get back to me for support on this. to use these script one a mac without touchbar, just un-# the display dialog in line ...
+
+
 
 25.11.21
 
