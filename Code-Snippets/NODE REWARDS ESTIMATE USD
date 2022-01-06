@@ -182,11 +182,13 @@ set yearly to RoundImperialNumberToTwoDecimals(yearly)
 
 if DetailedApolloRewardView = 1 then
 	set unformatedValue to "Rewards ~" & DailyReward & " AMB = Bu " & DailyBundleReward & " AMB + Bl " & ApolloDailyBlockReward & " AMB | " & daily & " $ perDay | " & monthly & " $ perMonth | " & yearly & " $ perYear |"
+	--display dialog RemoveFromString("\"", unformatedValue)
 	return RemoveFromString("\"", unformatedValue)
 end if
 
 if DetailedApolloRewardView = 0 then
 	set unformatedValue to "Rewards ~" & DailyReward & " AMB | " & daily & " $ perDay | " & monthly & " $ perMonth | " & yearly & " $ perYear |"
+	--display dialog RemoveFromString("\"", unformatedValue)
 	return RemoveFromString("\"", unformatedValue)
 end if
 
