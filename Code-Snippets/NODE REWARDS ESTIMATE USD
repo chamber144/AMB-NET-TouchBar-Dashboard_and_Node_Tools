@@ -126,7 +126,7 @@ set bundlecost to RemoveFromString("}", bundlecost)
 set ZetaWeight to 1
 set SigmaWeight to 4
 set OmegaWeight to 12
-set AllAtlasBundleRewards to 0.6 * 0.7 * bundlecost * dailybundles
+set AllAtlasBundleRewards to 0.7 * 0.7 * bundlecost * dailybundles
 set AllAtlasWeight to omegas * OmegaWeight + sigmas * SigmaWeight + zetas * ZetaWeight
 
 set AllOmegaRewards to AllAtlasBundleRewards * (omegas * OmegaWeight / AllAtlasWeight)
@@ -156,8 +156,8 @@ set apollos to RemoveFromString("\"", apollos)
 
 -- REWARD FORMULAS APOLLO: -------------------
 
-set ApolloDailyBundleReward to 0.6 * 0.3 * bundlecost * dailybundles / apollos * NumberApollo as text
-set ApolloDailyBlockReward to 0.6 * 0.1 * totalSupply / 365 * (ApolloStake / AllApolloStake)
+set ApolloDailyBundleReward to 0.7 * 0.3 * bundlecost * dailybundles / apollos * NumberApollo as text
+set ApolloDailyBlockReward to 0.7 * 14 * 12 * 60 * 24 * (ApolloStake / AllApolloStake)
 
 if NumberApollo is 0 then set ApolloDailyBlockReward to 0
 
