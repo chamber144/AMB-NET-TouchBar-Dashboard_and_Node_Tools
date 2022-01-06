@@ -157,7 +157,7 @@ set apollos to RemoveFromString("\"", apollos)
 -- REWARD FORMULAS APOLLO: -------------------
 
 set ApolloDailyBundleReward to 0.7 * 0.3 * bundlecost * dailybundles / apollos * NumberApollo as text
-set ApolloDailyBlockReward to 0.7 * 14 * 12 * 24 * (ApolloStake / AllApolloStake)
+set ApolloDailyBlockReward to 0.7 * 14 * 12 * 60 * 24 * (ApolloStake / AllApolloStake)
 
 if NumberApollo is 0 then set ApolloDailyBlockReward to 0
 
