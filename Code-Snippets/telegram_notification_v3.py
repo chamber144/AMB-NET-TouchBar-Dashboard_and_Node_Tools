@@ -34,7 +34,7 @@ hideTestnet = '0'
 
 
 #to set Bundle Warnings, enter as many values as you'd like to be notified at, seperated by comma and surrounded by inverted commas like this ['100','200','1000']
-dailybundlewarnings = ['60','100','125','150','200','300','400','500','1000','5000']
+dailybundlewarnings = ['60','100','125','150','200','300','400','500','600','700','800','900','1000','5000']
 
 #once a daily-bundles value has triggered a warning, how much lower does the value need to go, until it can be triggered again?
 #without this mechanism, notifications would be sent repeatedly, if you get too many Bundle Warnings, raise the following value:
@@ -528,7 +528,7 @@ for line in lines:
                         wk1=line.split(': ')
                         totalpricewk=wk1[1][1:-1]
                         totalprice=Decimal(totalpricewk)
-                        nextcost=25/totalprice
+                        nextcost=8/totalprice
                         nextcost = Decimal(nextcost).quantize(Decimal("1"),rounding=ROUND_HALF_UP)
 
 #change currency to track amb-price in at the very end of the link (for example: USD,EUR,CNY,JPY,CHF,CAD,AUD,GBP,INR,NOK,PLN):
