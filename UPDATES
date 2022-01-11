@@ -8,7 +8,7 @@ You can update your installed script by simply exchanging the number 25 with 8 i
         
 The factor for Atlas Bundlereward calculation changed aswell, as the treasury gets 30% of Bundlecosts as compared to 40% before.
 line 60 needs to look like this:
-
+atlasrewardfactor = 0.7 * 0.7 * 0.1428571429
 
 06.01.22
 
