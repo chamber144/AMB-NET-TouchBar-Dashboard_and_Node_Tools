@@ -57,7 +57,7 @@ celeb2 = '\U0001F973'
 celeb3 = '\U0001F37E'
 
 #atlas reward calculation
-atlasrewardfactor = 0.7 * 0.6 * 0.1428571429
+atlasrewardfactor = 0.7 * 0.7 * 0.1428571429
 
 #get time
 time = strftime("%H%M", gmtime())
