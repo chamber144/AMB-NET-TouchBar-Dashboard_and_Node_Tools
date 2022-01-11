@@ -11,6 +11,9 @@ The factor for Atlas Bundlereward calculation changed aswell, as the treasury ge
 line 60 needs to look like this:
 atlasrewardfactor = 0.7 * 0.7 * 0.1428571429
 
+To make future changes more easy to change, I have added "bundlecostusd" and "treasury" variables at the end of the settings in the python script.
+To adapt this into your installed script, its easiest to copy everything below line 42 in the v3.1 python script and exchange this part in your installed version.
+
 06.01.22
 
 As Ambrosus Cryptonomics have changed, the Reward estimation scripts have been updated accordingly. 
