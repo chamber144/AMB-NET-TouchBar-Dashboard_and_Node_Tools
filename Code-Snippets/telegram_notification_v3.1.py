@@ -56,7 +56,7 @@ celeb1 = '\U0001F389'
 celeb2 = '\U0001F973'
 celeb3 = '\U0001F37E'
 
-#atlas reward calculation
+#atlas reward calculation (split to 7 atlas nodes in the end)
 atlasrewardfactor = 0.7 * 0.7 * 0.1428571429
 
 #get time
