@@ -40,6 +40,9 @@ dailybundlewarnings = ['60','100','125','150','200','300','400','500','600','700
 #without this mechanism, notifications would be sent repeatedly, if you get too many Bundle Warnings, raise the following value:
 sensitivity = '10'
 
+#cryptonomics - only change if cryptonomics change
+bundlecostusd = 8
+treasury = 0.7
 #---------------------------------------------------------------
 
 import requests
@@ -57,7 +60,7 @@ celeb2 = '\U0001F973'
 celeb3 = '\U0001F37E'
 
 #atlas reward calculation (split to 7 atlas nodes in the end)
-atlasrewardfactor = 0.7 * 0.7 * 0.1428571429
+atlasrewardfactor = 0.7 * treasury * 0.1428571429
 
 #get time
 time = strftime("%H%M", gmtime())
@@ -528,7 +531,7 @@ for line in lines:
                         wk1=line.split(': ')
                         totalpricewk=wk1[1][1:-1]
                         totalprice=Decimal(totalpricewk)
-                        nextcost=8/totalprice
+                        nextcost=bundlecostusd/totalprice
                         nextcost = Decimal(nextcost).quantize(Decimal("1"),rounding=ROUND_HALF_UP)
 
 #change currency to track amb-price in at the very end of the link (for example: USD,EUR,CNY,JPY,CHF,CAD,AUD,GBP,INR,NOK,PLN):
