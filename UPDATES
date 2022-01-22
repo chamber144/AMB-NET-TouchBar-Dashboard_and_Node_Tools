@@ -8,7 +8,7 @@ DailyBundles notification fix on API-glitches in telegram notification
 
 I have added a rule that if bundles jump more than 10x from active daily bundles barriers (set by the user), 
 no notification is sent, as it is likely a glitch in the API. Last night bundles shortly jumped to 35561694 in the API for example.
-Easiest step for updating is exchanging everything down from line 46 in the script.
+Easiest step for updating is exchanging everything down from line 46 in the script (detailed changes starting line 557).
 
 11.01.22
 
