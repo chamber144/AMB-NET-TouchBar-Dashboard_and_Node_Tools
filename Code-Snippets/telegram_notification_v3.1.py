@@ -567,7 +567,8 @@ for each in bundletriggers:
             trig = "1"
             bundletriggers[count] = "0"
     if int(networkBundles)>(int(dailybundlewarnings[count])*10):
-        print("Likely an explorer glitch, seems to be a too steep rise in bundles!")
+        if bundletriggers[count] == "0":
+                print("Likely an explorer glitch, seems to be a too steep rise in bundles!")
     else:    
         if int(networkBundles) >= int(dailybundlewarnings[count]):
             if bundletriggers[count] == "0":
