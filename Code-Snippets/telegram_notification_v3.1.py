@@ -566,16 +566,19 @@ for each in bundletriggers:
         if bundletriggers[count] == "1":
             trig = "1"
             bundletriggers[count] = "0"
-    if int(networkBundles) >= int(dailybundlewarnings[count]):
-        if bundletriggers[count] == "0":
-            if int(networkBundles) >= 5000:
-                send_message(celeb2+" Daily Bundles value raised \nabove "+str(dailybundlewarnings[count])+" to "+str(networkBundles)+" "+celeb3+"\n"+celeb3+celeb3+celeb3+celeb3+celeb3+celeb3+celeb3+celeb3+celeb3+celeb3+"\n-------------------------------")
-            elif int(networkBundles) >= 1000:
-                send_message(celeb1+" Daily Bundles value raised \nabove "+str(dailybundlewarnings[count])+" to "+str(networkBundles)+" "+celeb2+"\n-------------------------------")
-            else:
-                send_message(celeb1+" Daily Bundles value raised \nabove "+str(dailybundlewarnings[count])+" to "+str(networkBundles)+" "+celeb1+"\n-------------------------------")
-            trig = "1"
-            bundletriggers[count] = "1" 
+    if int(networkBundles)>(int(dailybundlewarnings[count])*10):
+        print("Likely an explorer glitch, seems to be a too steep rise in bundles!")
+    else:    
+        if int(networkBundles) >= int(dailybundlewarnings[count]):
+            if bundletriggers[count] == "0":
+                if int(networkBundles) >= 5000:
+                        send_message(celeb2+" Daily Bundles value raised \nabove "+str(dailybundlewarnings[count])+" to "+str(networkBundles)+" "+celeb3+"\n"+celeb3+celeb3+celeb3+celeb3+celeb3+celeb3+celeb3+celeb3+celeb3+celeb3+"\n-------------------------------")
+                elif int(networkBundles) >= 1000:
+                        send_message(celeb1+" Daily Bundles value raised \nabove "+str(dailybundlewarnings[count])+" to "+str(networkBundles)+" "+celeb2+"\n-------------------------------")
+                else:
+                        send_message(celeb1+" Daily Bundles value raised \nabove "+str(dailybundlewarnings[count])+" to "+str(networkBundles)+" "+celeb1+"\n-------------------------------")
+                trig = "1"
+                bundletriggers[count] = "1" 
     count = count + 1
 
 if trig == "1":
