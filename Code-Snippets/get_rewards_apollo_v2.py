@@ -1,7 +1,8 @@
 #Enter your Settings here:
 #------------------------------------------------------------
-#enter your home directory with your username
-home = "/home/myusername/"
+
+#enter your home directory with your username or if you are on root, the root directory (check with the pwd command) be sure to have a / in the end
+home = '/root/'
 
 #enter your apollo node(s) in the brackets, separated by comma and surrounded by inverted commas like this ['0x21...','0x35...','0x64...']
 
@@ -26,7 +27,7 @@ status = []
 balance = []
 for each in apollonodes:
     print(each)
-    api_url_base = ('https://explorer-api.ambrosus.com/apollos/'+each)
+    api_url_base = ('https://explorer-api.ambrosus.io/apollos/'+each)
     response = requests.get(api_url_base)
     data = str(response.json())
     found = (data.split(each))
