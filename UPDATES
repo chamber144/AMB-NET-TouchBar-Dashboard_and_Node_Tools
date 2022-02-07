@@ -7,6 +7,8 @@ Apollo Reward Tracking v2
 The Apollo reward tracker has been updated to create a separate csv called rewards_combined.csv tracking all your apollos daily rewards into one value.
 This makes tracking much easier if your jurisdiciotn allowes to add up the values and you are running several Apollo nodes.
 
+You can update your script simply by exchanging everything down from line 15.
+
 Also note its very important to use Cointrackings example excel file to put the data in (top two lines are not read into cointracking for a reason as it seems)
 You find instructions and the master excel here: https://cointracking.info/import/import_xls/
 
