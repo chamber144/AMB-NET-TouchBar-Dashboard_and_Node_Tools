@@ -5,7 +5,7 @@ UPDATES:
 Apollo Reward Tracking v2
 
 The Apollo reward tracker has been updated to create a separate csv called rewards_combined.csv tracking all your apollos daily rewards into one value.
-This makes tracking much easier if your jurisdiciotn allowes to add up the values and you are running several Apollo nodes.
+This makes tracking much easier if your jurisdiction allows to add up the values and you are running several Apollo nodes.
 
 You can update your script simply by exchanging everything down from line 15.
 
