@@ -1,5 +1,11 @@
 UPDATES:
 
+
+10.02.22
+
+There was a tiny bug in the Apollo rewards tracker v2 so it was not tracking at all, in case you already used the code.
+Please exchange everything down from line 15 again. Now it should work exactly as expected.
+
 07.02.22
 
 Apollo Reward Tracking v2
