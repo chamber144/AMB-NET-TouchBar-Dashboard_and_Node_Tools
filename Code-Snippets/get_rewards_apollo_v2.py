@@ -153,8 +153,9 @@ csvfile.close()
 
 #write combined csv
 csvfile = open(home+"rewards_combined.csv","a")
-transfer = "It seems you have transfered funds manually that need to be added to the balance!"
-csv = ("\"Staking\",\""+str(combined)+"\",\"AMB\",\"\",\"\",\"\",\"\",\"AMB Staking Rewards\",\""+transfer+"\",\""+str(len(apollonodes))+" Apollo Node(s)"\",\""+datewrite+"\",\""+priceusd+"\"\n")
+if baldif < 0:
+    transfer = "It seems you have transfered funds manually that need to be added to the balance!"
+csv = ("\"Staking\",\""+str(combined)+"\",\"AMB\",\"\",\"\",\"\",\"\",\"AMB Staking Rewards\",\""+transfer+"\",\""+str(len(apollonodes))+" Apollo Node(s)\",\""+datewrite+"\",\""+priceusd+"\"\n")
 csvfile.writelines(csv)
 csvfile.close()
 
