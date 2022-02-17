@@ -1,4 +1,4 @@
-#Amb-Net Telegram Notification v3.2 2022January22
+#Amb-Net Telegram Notification v3.3 2022February17
 #Enter your Settings here:
 #------------------------------------------------------------
 
@@ -152,111 +152,126 @@ hermes_url = 'https://explorer-api.ambrosus.io/hermeses'
 hermes_test = 'https://explorer-api.ambrosus-test.io/hermeses'
 
 #get Amb-net Hermes Data
-response = requests.get(hermes_url)
-dataraw = str(response.json())
+HermesError = ""
+try:
+    response = requests.get(hermes_url)
+    dataraw = str(response.json())
 
-nextherm = (dataraw.split('hasNext'))
-nexthermm = (nextherm[1].split(','))
-nexthermmm = (nexthermm[0].replace('\': ', ''))
-while nexthermmm == "true":
-    pageCloseEnd = (nexthermm[1].split(': '))
-    pageEnd = (pageCloseEnd[1].replace('\'', ''))
-    newHermesLink = (hermes_url+"?next="+pageEnd)
-    #print(newHermesLink)
-    response = requests.get(newHermesLink)
-    data = str(response.json())
-    nextherm = (data.split('hasNext'))
+    nextherm = (dataraw.split('hasNext'))
     nexthermm = (nextherm[1].split(','))
     nexthermmm = (nexthermm[0].replace('\': ', ''))
-    dataraw = dataraw+data
+    while nexthermmm == "true":
+        pageCloseEnd = (nexthermm[1].split(': '))
+        pageEnd = (pageCloseEnd[1].replace('\'', ''))
+        newHermesLink = (hermes_url+"?next="+pageEnd)
+        #print(newHermesLink)
+        response = requests.get(newHermesLink)
+        data = str(response.json())
+        nextherm = (data.split('hasNext'))
+        nexthermm = (nextherm[1].split(','))
+        nexthermmm = (nexthermm[0].replace('\': ', ''))
+        dataraw = dataraw+data
 
-closeBundles = (dataraw.split('totalBundles'))
-countit = 0
-hermesBundles = []
-hermesNames = []
-for each in closeBundles:
-    closerBundless = (closeBundles[countit].split(': '))
-    closerBundles = (closerBundless[1].split(','))
-    hermesBundles.append(closerBundles[0].replace("'", ""))
-    closerName = (closerBundless[2].split(','))
-    hermesNames.append(closerName[0].replace("'", ""))
-    countit = countit + 1
+    closeBundles = (dataraw.split('totalBundles'))
+    countit = 0
+    hermesBundles = []
+    hermesNames = []
+    for each in closeBundles:
+        closerBundless = (closeBundles[countit].split(': '))
+        closerBundles = (closerBundless[1].split(','))
+        hermesBundles.append(closerBundles[0].replace("'", ""))
+        closerName = (closerBundless[2].split(','))
+        hermesNames.append(closerName[0].replace("'", ""))
+        countit = countit + 1
 
-hermesNames.pop(0)
-hermesBundles.pop(0)
-print(hermesNames)                            
-print(hermesBundles)
+    hermesNames.pop(0)
+    hermesBundles.pop(0)
+    print(hermesNames)                            
+    print(hermesBundles)
 
-closeAddress = (dataraw.split('address'))
-countit = 0
-countherm = 0
-hermesAddress = []
-for each in closeAddress:
-    closerAddresss = (closeAddress[countit].split(': '))
-    closerAddress = (closerAddresss[1].split(','))
-    hermesAddress.append(closerAddress[0].replace("'", ""))
-    if len(hermesAddress) >= 3:
-        if hermesAddress[countherm-1] == hermesAddress[countherm]:
-            hermesAddress.pop(countherm)
-            countherm = countherm - 1
-    countherm = countherm + 1       
-    countit = countit + 1
-hermesAddress.pop(0)
-#print(len(hermesAddress))
+    closeAddress = (dataraw.split('address'))
+    countit = 0
+    countherm = 0
+    hermesAddress = []
+    for each in closeAddress:
+        closerAddresss = (closeAddress[countit].split(': '))
+        closerAddress = (closerAddresss[1].split(','))
+        hermesAddress.append(closerAddress[0].replace("'", ""))
+        if len(hermesAddress) >= 3:
+            if hermesAddress[countherm-1] == hermesAddress[countherm]:
+                hermesAddress.pop(countherm)
+                countherm = countherm - 1
+        countherm = countherm + 1       
+        countit = countit + 1
+    hermesAddress.pop(0)
+    #print(len(hermesAddress))
+except ValueError:  # includes simplejson.decoder.JSONDecodeError
+    HermesError = "Decoding Data for Mainnet Hermes has failed"
+    print("Decoding Data for Mainnet Hermes has failed") 
+    hermesAddress = []
+    hermesBundles = []
+    hermesNames = []
 
 #get Test-Net Hermes Data
-response = requests.get(hermes_test)
-dataraw = str(response.json())
-
-nextherm = (dataraw.split('hasNext'))
-nexthermm = (nextherm[1].split(','))
-nexthermmm = (nexthermm[0].replace('\': ', ''))
-while nexthermmm == "true":
-    pageCloseEnd = (nexthermm[1].split(': '))
-    pageEnd = (pageCloseEnd[1].replace('\'', ''))
-    newTestHermesLink = (hermes_test+"?next="+pageEnd)
-    #print(newTestHermesLink)
-    response = requests.get(newTestHermesLink)
-    data = str(response.json())
-    nextherm = (data.split('hasNext'))
+testHermesError = ""    
+try:
+    response = requests.get(hermes_test)
+    dataraw = str(response.json())
+    nextherm = (dataraw.split('hasNext'))
     nexthermm = (nextherm[1].split(','))
     nexthermmm = (nexthermm[0].replace('\': ', ''))
-    dataraw = dataraw+data
+    while nexthermmm == "true":
+        pageCloseEnd = (nexthermm[1].split(': '))
+        pageEnd = (pageCloseEnd[1].replace('\'', ''))
+        newTestHermesLink = (hermes_test+"?next="+pageEnd)
+        #print(newTestHermesLink)
+        response = requests.get(newTestHermesLink)
+        data = str(response.json())
+        nextherm = (data.split('hasNext'))
+        nexthermm = (nextherm[1].split(','))
+        nexthermmm = (nexthermm[0].replace('\': ', ''))
+        dataraw = dataraw+data
 
 
-closeBundles = (dataraw.split('totalBundles'))
-countit = 0
-hermesTestBundles = []
-hermesTestNames = []
-for each in closeBundles:
-    closerBundless = (closeBundles[countit].split(': '))
-    closerBundles = (closerBundless[1].split(','))
-    hermesTestBundles.append(closerBundles[0].replace("'", ""))
-    closerName = (closerBundless[2].split(','))
-    hermesTestNames.append(closerName[0].replace("'", ""))
-    countit = countit + 1
+    closeBundles = (dataraw.split('totalBundles'))
+    countit = 0
+    hermesTestBundles = []
+    hermesTestNames = []
+    for each in closeBundles:
+        closerBundless = (closeBundles[countit].split(': '))
+        closerBundles = (closerBundless[1].split(','))
+        hermesTestBundles.append(closerBundles[0].replace("'", ""))
+        closerName = (closerBundless[2].split(','))
+        hermesTestNames.append(closerName[0].replace("'", ""))
+        countit = countit + 1
 
-hermesTestNames.pop(0)
-hermesTestBundles.pop(0)
-print(hermesTestNames)                            
-print(hermesTestBundles)    
+    hermesTestNames.pop(0)
+    hermesTestBundles.pop(0)
+    print(hermesTestNames)                            
+    print(hermesTestBundles)    
 
-closeTestAddress = (dataraw.split('address'))
-countit = 0
-countherm = 0
-hermesTestAddress = []
-for each in closeTestAddress:
-    closerTestAddresss = (closeTestAddress[countit].split(': '))
-    closerTestAddress = (closerTestAddresss[1].split(','))
-    hermesTestAddress.append(closerTestAddress[0].replace("'", ""))
-    if len(hermesTestAddress) >= 3:
-        if hermesTestAddress[countherm-1] == hermesTestAddress[countherm]:
-            hermesTestAddress.pop(countherm)
-            countherm = countherm - 1
-    countherm = countherm + 1       
-    countit = countit + 1
-hermesTestAddress.pop(0)
-#print(len(hermesTestAddress))
+    closeTestAddress = (dataraw.split('address'))
+    countit = 0
+    countherm = 0
+    hermesTestAddress = []
+    for each in closeTestAddress:
+        closerTestAddresss = (closeTestAddress[countit].split(': '))
+        closerTestAddress = (closerTestAddresss[1].split(','))
+        hermesTestAddress.append(closerTestAddress[0].replace("'", ""))
+        if len(hermesTestAddress) >= 3:
+            if hermesTestAddress[countherm-1] == hermesTestAddress[countherm]:
+                hermesTestAddress.pop(countherm)
+                countherm = countherm - 1
+        countherm = countherm + 1       
+        countit = countit + 1
+    hermesTestAddress.pop(0)
+    #print(len(hermesTestAddress))
+except ValueError:  # includes simplejson.decoder.JSONDecodeError
+    testHermesError = "Decoding Data for Testnet Hermes has failed"
+    print("Decoding Data for Testnet Hermes has failed") 
+    hermesTestAddress = []
+    hermesTestBundles = []
+    hermesTestNames = []
 
 #function to check if Hermes buffer file exists, set it up if necessary.
 def bufferhermes_exist(bfiles,hermesNames,hermesBundles):
@@ -596,7 +611,8 @@ if trig == "1":
     f.close()
 
 #Daily Overview and network statistics
-if time == statstime:
+#if time == statstime:
+if time == time:    
         baldifallapollo = 0
         baldifapollo = []
         apollostring = ""
@@ -803,6 +819,7 @@ if time == statstime:
                                 string = (string+"\n<a href=\"https://explorer.ambrosus-test.io/address/"+hermesTestAddress[countherm]+"\">"+name[1]+"</a>\n"+"New Bundles: "+str(diff)+celeb)
                     countherm = countherm + 1
                 count = count + 1
+                string = (string+"\n\n"+HermesError)
 
         #overwrite hermesTest buffer
         f = open(home+folder+"hermesTest.txt","w")
@@ -839,7 +856,7 @@ if time == statstime:
                     name = hermesTestNames[count].split('//')  
                     string = (string+"\n<a href=\"https://explorer.ambrosus-test.io/address/"+hermesTestAddress[count]+"\">"+name[1]+"</a>") 
                     count = count + 1
-
+            string = (string+"\n\n"+testHermesError)
         if hermesinfo == "0":
             string = ""
 
@@ -856,5 +873,3 @@ if time == statstime:
             statsfile = open(home+folder+"apollobuffer.txt","w")
             statsap = statsfile.writelines(writeapollobalancebuffer)
             statsfile.close()
-
-
