@@ -43,7 +43,18 @@ sensitivity = '10'
 #cryptonomics - only change if cryptonomics change
 bundlecostusd = 8
 treasury = 0.7
+
+#API URLs - only change if API URLs change
+atlas_url = 'https://explorer-api.ambrosus.io/atlases/'
+apollo_url = 'https://explorer-api.ambrosus.io/apollos/'
+api_url_info = 'https://explorer-api.ambrosus.io/info'
+api_internalprice_url = 'https://token.ambrosus.io/price'
+coingecko_url = 'https://api.coingecko.com/api/v3/simple/price?ids=amber&vs_currencies='
+hermes_url = 'https://explorer-api.ambrosus.io/hermeses'
+hermes_test = 'https://explorer-api.ambrosus-test.io/hermeses'
+
 #---------------------------------------------------------------
+
 
 import requests
 import random
@@ -147,9 +158,6 @@ def buffer_slots(bfile,nodetype,nodename,type):
 
 buffer_exist("bundlebuffer.txt",dailybundlewarnings)
 buffer_slots("bundlebuffer.txt",dailybundlewarnings,"Bundle Warnings","buffer")    
-
-hermes_url = 'https://explorer-api.ambrosus.io/hermeses'
-hermes_test = 'https://explorer-api.ambrosus-test.io/hermeses'
 
 #get Amb-net Hermes Data
 HermesError = ""
@@ -363,56 +371,60 @@ balanceatlas = []
 Sat = []
 writeatlasbundlebuffer = []
 iconatlas = []
-for each in atlasnodes:
-    print("Atlas "+each)
-    api_url_base = ('https://explorer-api.ambrosus.io/atlases/'+each)
-    response = requests.get(api_url_base)
-    data = str(response.json())
-    found = (data.split(each))
-    search = (len(found))
-    if search == 2:
-        status = "OFFLINE"
-        print('Node is OFFLINE, please wait for sync to complete!')
+AtlasError = ""    
+try:
+    for each in atlasnodes:
+        print("Atlas "+each)
+        api_url_base = (atlas_url+each)
+        response = requests.get(api_url_base)
+        data = str(response.json())
+        found = (data.split(each))
+        search = (len(found))
+        if search == 2:
+            status = "OFFLINE"
+            print('Node is OFFLINE, please wait for sync to complete!')
 
-    closerBundle = (found[1].split('totalBundles'))
-    evenCloserBundle = (closerBundle[1].split(','))
-    evenCloserBundlenow = (evenCloserBundle[0].split(': '))
-    bundlesatlas.append(evenCloserBundlenow[1].replace("\"", ""))
-    writeatlasbundlebuffer.append(bundlesatlas[count]+"\n") 
+        closerBundle = (found[1].split('totalBundles'))
+        evenCloserBundle = (closerBundle[1].split(','))
+        evenCloserBundlenow = (evenCloserBundle[0].split(': '))
+        bundlesatlas.append(evenCloserBundlenow[1].replace("\"", ""))
+        writeatlasbundlebuffer.append(bundlesatlas[count]+"\n") 
 
-    closerBalance = (found[1].split('balance'))
-    evenCloserBalance = (closerBalance[1].split(','))
-    evenCloserBalancenow = (evenCloserBalance[1].split(': '))
-    balanceatlas.append(evenCloserBalancenow[1].replace("\"", ""))
-    balanceatlas[count] = (balanceatlas[count].replace("}", ""))
-    feebalance =  float(balanceatlas[count])
+        closerBalance = (found[1].split('balance'))
+        evenCloserBalance = (closerBalance[1].split(','))
+        evenCloserBalancenow = (evenCloserBalance[1].split(': '))
+        balanceatlas.append(evenCloserBalancenow[1].replace("\"", ""))
+        balanceatlas[count] = (balanceatlas[count].replace("}", ""))
+        feebalance =  float(balanceatlas[count])
 
-    closerState = (found[1].split('state'))
-    evenCloserState = (closerState[1].split(','))
-    evenCloserStatenow = (evenCloserState[0].split(': '))
-    stateatlas.append(evenCloserStatenow[1].replace("\"", ""))
-    stateatlas[count] = (stateatlas[count].replace("'", "")) 
-    if stateatlas[count] == "ONBOARDED":
-        statusatlas.append("ONLINE")
-    else:
-        statusatlas.append("OFFLINE")
-    print(statusatlas[count])
-    if statusatlas[count] != "ONLINE" and statsat[count] == "1":
-        send_message(nodeOffline+" Your Atlas Node "+str(count+1)+" has just gone offline! <a href=\"https://explorer.ambrosus.io/atlas/"+each+"\">"+each+"</a>\n\n-------------------------------")
-    if statusatlas[count] == "ONLINE" and statsat[count] == "0":
-        send_message(nodeOnline+" Your Atlas Node "+str(count+1)+" is back online! <a href=\"https://explorer.ambrosus.io/atlas/"+each+"\">"+each+"</a>\n\n-------------------------------")
-    if feebalance <= 10:
-        print('Atlas balance is low: '+str(feebalance)) 
-        send_message(lowBalance+" Your Atlas Node "+str(count+1)+" has a very low balance of "+ str(feebalance)+" AMB.\n\nFunds might soon not be sufficient to pay the nodes challenge transactions.\nPlease raise the balance: <a href=\"https://explorer.ambrosus.io/atlas/"+each+"\">"+each+"</a>\n\n-------------------------------")
-    if statusatlas[count] == "ONLINE":
-        Sat.append("1")
-        iconatlas.append(nodeOnline)
-    else:
-        Sat.append("0")            
-        iconatlas.append(nodeOffline)
-    writeatlasbuffer.append(Sat[count]+"\n",)
-    count = count + 1
-
+        closerState = (found[1].split('state'))
+        evenCloserState = (closerState[1].split(','))
+        evenCloserStatenow = (evenCloserState[0].split(': '))
+        stateatlas.append(evenCloserStatenow[1].replace("\"", ""))
+        stateatlas[count] = (stateatlas[count].replace("'", "")) 
+        if stateatlas[count] == "ONBOARDED":
+            statusatlas.append("ONLINE")
+        else:
+            statusatlas.append("OFFLINE")
+        print(statusatlas[count])
+        if statusatlas[count] != "ONLINE" and statsat[count] == "1":
+            send_message(nodeOffline+" Your Atlas Node "+str(count+1)+" has just gone offline! <a href=\"https://explorer.ambrosus.io/atlas/"+each+"\">"+each+"</a>\n\n-------------------------------")
+        if statusatlas[count] == "ONLINE" and statsat[count] == "0":
+            send_message(nodeOnline+" Your Atlas Node "+str(count+1)+" is back online! <a href=\"https://explorer.ambrosus.io/atlas/"+each+"\">"+each+"</a>\n\n-------------------------------")
+        if feebalance <= 10:
+            print('Atlas balance is low: '+str(feebalance)) 
+            send_message(lowBalance+" Your Atlas Node "+str(count+1)+" has a very low balance of "+ str(feebalance)+" AMB.\n\nFunds might soon not be sufficient to pay the nodes challenge transactions.\nPlease raise the balance: <a href=\"https://explorer.ambrosus.io/atlas/"+each+"\">"+each+"</a>\n\n-------------------------------")
+        if statusatlas[count] == "ONLINE":
+            Sat.append("1")
+            iconatlas.append(nodeOnline)
+        else:
+            Sat.append("0")            
+            iconatlas.append(nodeOffline)
+        writeatlasbuffer.append(Sat[count]+"\n",)
+        count = count + 1
+except ValueError:  # includes simplejson.decoder.JSONDecodeError
+    AtlasError = "Decoding Data for Atlas has failed"
+    print("Decoding Data for Atlas has failed") 
 
 #get apollo status
     
@@ -423,53 +435,57 @@ balanceapollo = []
 Sap = []
 writeapollobalancebuffer = []
 iconapollo = []
-for each in apollonodes:
-    print("Apollo "+each)
-    api_url_base = ('https://explorer-api.ambrosus.io/apollos/'+each)
-    response = requests.get(api_url_base)
-    data = str(response.json())
-    found = (data.split(each))
-    search = (len(found))
-    if search == 2:
-        status = "OFFLINE"
-        print('Node is OFFLINE, please wait for sync to complete!') 
+ApolloError = ""
+try:
+    for each in apollonodes:
+        print("Apollo "+each)
+        api_url_base = (apollo_url+each)
+        response = requests.get(api_url_base)
+        data = str(response.json())
+        found = (data.split(each))
+        search = (len(found))
+        if search == 2:
+            status = "OFFLINE"
+            print('Node is OFFLINE, please wait for sync to complete!') 
 
-    closeBalance = (found[2].split(','))
-    closerBalance = (closeBalance[2].split(': '))
-    evenCloserBalance = (closerBalance[1].replace("\"", ""))
-    evenCloserBalance = (evenCloserBalance.replace("}", ""))
-    balanceapollo.append(evenCloserBalance)        
-    writeapollobalancebuffer.append(balanceapollo[count]+"\n")    
+        closeBalance = (found[2].split(','))
+        closerBalance = (closeBalance[2].split(': '))
+        evenCloserBalance = (closerBalance[1].replace("\"", ""))
+        evenCloserBalance = (evenCloserBalance.replace("}", ""))
+        balanceapollo.append(evenCloserBalance)        
+        writeapollobalancebuffer.append(balanceapollo[count]+"\n")    
 
-    closerState = (found[1].split('state'))
-    evenCloserState = (closerState[1].split(','))
-    evenCloserStatenow = (evenCloserState[0].split(': '))
-    stateapollo.append(evenCloserStatenow[1].replace("\"", ""))
-    stateapollo[count] = (stateapollo[count].replace("'", "")) 
+        closerState = (found[1].split('state'))
+        evenCloserState = (closerState[1].split(','))
+        evenCloserStatenow = (evenCloserState[0].split(': '))
+        stateapollo.append(evenCloserStatenow[1].replace("\"", ""))
+        stateapollo[count] = (stateapollo[count].replace("'", "")) 
 
-    closerStatus = (found[1].split('status'))
-    evenCloserStatus = (closerStatus[1].split(","))
-    evenCloserStatusnow = (evenCloserStatus[0].split(": "))
-    statusapollo.append(evenCloserStatusnow[1].replace("\"", ""))
-    statusapollo[count] = (statusapollo[count].replace("'", ""))
+        closerStatus = (found[1].split('status'))
+        evenCloserStatus = (closerStatus[1].split(","))
+        evenCloserStatusnow = (evenCloserStatus[0].split(": "))
+        statusapollo.append(evenCloserStatusnow[1].replace("\"", ""))
+        statusapollo[count] = (statusapollo[count].replace("'", ""))
     
-    if stateapollo[count] == "RETIRED":
-        statusapollo[count] = "OFFLINE"
+        if stateapollo[count] == "RETIRED":
+            statusapollo[count] = "OFFLINE"
     
-    print(statusapollo[count])
-    if statusapollo[count] != "ONLINE" and statsap[count] == "1":
-        send_message(nodeOffline+" Your Apollo Node "+str(count+1)+" has just gone offline! <a href=\"https://explorer.ambrosus.io/apollo/"+each+"\">"+each+"</a>\n\n-------------------------------")
-    if statusapollo[count] == "ONLINE" and statsap[count] == "0":
-        send_message(nodeOnline+" Your Apollo Node "+str(count+1)+" is back online! <a href=\"https://explorer.ambrosus.io/apollo/"+each+"\">"+each+"</a>\n\n-------------------------------")
-    if statusapollo[count] == "ONLINE":
-        Sap.append("1")
-        iconapollo.append(nodeOnline)
-    else:
-        Sap.append("0")
-        iconapollo.append(nodeOffline)
-    writeapollobuffer.append(Sap[count]+"\n")        
-    count = count + 1
-
+        print(statusapollo[count])
+        if statusapollo[count] != "ONLINE" and statsap[count] == "1":
+            send_message(nodeOffline+" Your Apollo Node "+str(count+1)+" has just gone offline! <a href=\"https://explorer.ambrosus.io/apollo/"+each+"\">"+each+"</a>\n\n-------------------------------")
+        if statusapollo[count] == "ONLINE" and statsap[count] == "0":
+            send_message(nodeOnline+" Your Apollo Node "+str(count+1)+" is back online! <a href=\"https://explorer.ambrosus.io/apollo/"+each+"\">"+each+"</a>\n\n-------------------------------")
+        if statusapollo[count] == "ONLINE":
+            Sap.append("1")
+            iconapollo.append(nodeOnline)
+        else:
+            Sap.append("0")
+            iconapollo.append(nodeOffline)
+        writeapollobuffer.append(Sap[count]+"\n")        
+        count = count + 1
+except ValueError:  # includes simplejson.decoder.JSONDecodeError
+    ApolloError = "Decoding Data for Apollos has failed"
+    print("Decoding Data for Apollos has failed") 
 
 if (len(atlasnodes)) > 0:
     statsfile = open(home+folder+"statsatlas.txt","w")
@@ -494,69 +510,92 @@ if reset == "1":
 
 
 #get network stats
-api_url_info = 'https://explorer-api.ambrosus.io/info'
-response = requests.get(api_url_info)
-data = str(response.json())
-closeBundles = (data.split(','))
-closerBundles = (closeBundles[32].split(':'))
-networkBundles = (closerBundles[1].replace(" ", ""))
+networkBundles = "0"
+AverageBlockTransactions = "0"
+Bundlecost = "0"
+AtlasStake = "0"
+ApolloStake = "0"
+AllStake = "0"
+atlasnum = "0"
+apollonum = "0"
+hermesnum = "0"
+try:
+    response = requests.get(api_url_info)
+    data = str(response.json())
+    closeBundles = (data.split(','))
+    closerBundles = (closeBundles[32].split(':'))
+    networkBundles = (closerBundles[1].replace(" ", ""))
 
-closerBlockTransactions = (closeBundles[29].split(':'))
-AverageBlockTransactions = (closerBlockTransactions[1].replace(" ", ""))
-AverageBlockTransactions = Decimal(AverageBlockTransactions).quantize(Decimal("0.01"),rounding=ROUND_HALF_UP)
+    closerBlockTransactions = (closeBundles[29].split(':'))
+    AverageBlockTransactions = (closerBlockTransactions[1].replace(" ", ""))
+    AverageBlockTransactions = Decimal(AverageBlockTransactions).quantize(Decimal("0.01"),rounding=ROUND_HALF_UP)
 
-closerBundleCost = (closeBundles[22].split(':'))
-Bundlecost = (closerBundleCost[1].replace(" ", ""))
-Bundlecost = (Bundlecost.replace("}", ""))
+    closerBundleCost = (closeBundles[22].split(':'))
+    Bundlecost = (closerBundleCost[1].replace(" ", ""))
+    Bundlecost = (Bundlecost.replace("}", ""))
 
-closerAtlasStake = (closeBundles[11].split(':'))
-AtlasStake = (closerAtlasStake[1].replace(" ", ""))
-AtlasStake = (AtlasStake.replace("}", ""))
+    closerAtlasStake = (closeBundles[11].split(':'))
+    AtlasStake = (closerAtlasStake[1].replace(" ", ""))
+    AtlasStake = (AtlasStake.replace("}", ""))
 
-closerApolloStake = (closeBundles[9].split(':'))
-ApolloStake = (closerApolloStake[1].replace(" ", ""))
-ApolloStake = (ApolloStake.replace("}", ""))
+    closerApolloStake = (closeBundles[9].split(':'))
+    ApolloStake = (closerApolloStake[1].replace(" ", ""))
+    ApolloStake = (ApolloStake.replace("}", ""))
 
-AllStake = float(AtlasStake) + float(ApolloStake)
+    AllStake = float(AtlasStake) + float(ApolloStake)
 
-closeratlas = (closeBundles[16].split(':'))
-atlasnum = (closeratlas[2].replace(" ", ""))
-atlasnum = (atlasnum.replace("}", ""))
+    closeratlas = (closeBundles[16].split(':'))
+    atlasnum = (closeratlas[2].replace(" ", ""))
+    atlasnum = (atlasnum.replace("}", ""))
 
-closerapollo = (closeBundles[13].split(':'))
-apollonum = (closerapollo[1].replace(" ", ""))
-apollonum = (apollonum.replace("}", ""))
+    closerapollo = (closeBundles[13].split(':'))
+    apollonum = (closerapollo[1].replace(" ", ""))
+    apollonum = (apollonum.replace("}", ""))
 
-closerhermes = (closeBundles[17].split(':'))
-hermesnum = (closerhermes[2].replace(" ", ""))
-hermesnum = (hermesnum.replace("}", ""))
+    closerhermes = (closeBundles[17].split(':'))
+    hermesnum = (closerhermes[2].replace(" ", ""))
+    hermesnum = (hermesnum.replace("}", ""))
+except ValueError:  # includes simplejson.decoder.JSONDecodeError
+    print("Decoding Data for amb stats has failed")     
 
 #get projected future bundle price
-api_internalprice_url='https://token.ambrosus.io/price'
 totalprice = 0
 nextcost = 0
-response = requests.get(api_internalprice_url)
-data = str(response.json())
-lines=data.split(',')
-for line in lines:
-        if '\'total_price_usd\':' in line:
-                if 'None' in line:
-                        nextcost = 0.00
-                else:
-                        wk1=line.split(': ')
-                        totalpricewk=wk1[1][1:-1]
-                        totalprice=Decimal(totalpricewk)
-                        nextcost=bundlecostusd/totalprice
-                        nextcost = Decimal(nextcost).quantize(Decimal("1"),rounding=ROUND_HALF_UP)
+try:
+    response = requests.get(api_internalprice_url)
+    data = str(response.json())
+    lines=data.split(',')
+    for line in lines:
+            if '\'total_price_usd\':' in line:
+                    if 'None' in line:
+                            nextcost = 0.00
+                    else:
+                            wk1=line.split(': ')
+                            totalpricewk=wk1[1][1:-1]
+                            totalprice=Decimal(totalpricewk)
+                            nextcost=bundlecostusd/totalprice
+                            nextcost = Decimal(nextcost).quantize(Decimal("1"),rounding=ROUND_HALF_UP)
+except ValueError:  # includes simplejson.decoder.JSONDecodeError
+    print("Decoding Data for amb token has failed") 
 
 #change currency to track amb-price in at the very end of the link (for example: USD,EUR,CNY,JPY,CHF,CAD,AUD,GBP,INR,NOK,PLN):
-api_url_info = ('https://api.coingecko.com/api/v3/simple/price?ids=amber&vs_currencies='+str(currency))
-response = requests.get(api_url_info)
-data = str(response.json())
-closePrice = (data.split(':'))
-closerPrice = (closePrice[2].replace("}",""))
-price = (closerPrice.replace(" ", ""))
-
+   
+api_url_info = (coingecko_url+str(currency))
+coingeckoError = ""
+try:
+    response = requests.get(api_url_info)
+    data = str(response.json())
+    closePrice = (data.split(':'))
+    if len(closePrice)>1:
+        closerPrice = (closePrice[2].replace("}",""))
+        price = (closerPrice.replace(" ", ""))
+    else:
+        price = "0"
+        coingeckoError = "Decoding Data from coingecko has failed"
+except ValueError:  # includes simplejson.decoder.JSONDecodeError
+    print("Decoding Data from coingecko has failed")
+    coingeckoError = "Decoding Data from coingecko has failed"
+    price = "0"
 
 if currency == "USD":
     currency = "$"
@@ -611,12 +650,12 @@ if trig == "1":
     f.close()
 
 #Daily Overview and network statistics
-#if time == statstime:
-if time == time:    
+if time == statstime:    
         baldifallapollo = 0
         baldifapollo = []
         apollostring = ""
         balanceall = 0
+        fiat = ""
         if (len(apollonodes)) > 0:
             bufffile = open(home+folder+"apollobuffer.txt","r")
             count = 0
@@ -637,6 +676,8 @@ if time == time:
                 apollostring = (apollostring+"<a href=\"https://explorer.ambrosus.io/apollo/"+str(apollonodes[count])+"\">Apollo "+str(count+1)+"</a>  "+str(iconapollo[count])+"\t "+str(int(float(balanceapollo[count])))+"\t new: "+str(int(float(baldifapollo[count])))+" AMB\n")
                 count = count + 1
             apollostring = (apollostring+"                      –––––––––––––––––––\n                      "+str(int(balanceall))+" new: "+str(int(baldifallapollo))+" AMB\n"+str(fiat))
+        if ApolloError != "":
+            apollostring = ApolloError+"\n\n"    
             
         baldifallatlas = 0
         baldifatlas = []
@@ -667,7 +708,8 @@ if time == time:
                 atlasstring = (atlasstring+"<a href=\"https://explorer.ambrosus.io/atlas/"+str(atlasnodes[count])+"\">Atlas "+str(count+1)+"</a>  "+str(iconatlas[count])+"\t "+str(int(float(bundlesatlas[count])))+"\tnew: "+str(int(float(baldifatlas[count])))+" Bundles\n")
                 count = count + 1
             atlasstring = (atlasstring+"                     –––––––––––––––––––\n                     "+str(bundleall)+" new: "+str(baldifallatlas)+" Bundles\n"+str(ambrewardsss)+str(fiat)+str(hint))
-
+        if AtlasError != "":
+            atlasstring = AtlasError+"\n\n" 
 #Get hermes information and add to daily status message
       
         #open hermes buffer
@@ -819,7 +861,10 @@ if time == time:
                                 string = (string+"\n<a href=\"https://explorer.ambrosus-test.io/address/"+hermesTestAddress[countherm]+"\">"+name[1]+"</a>\n"+"New Bundles: "+str(diff)+celeb)
                     countherm = countherm + 1
                 count = count + 1
-                string = (string+"\n\n"+HermesError)
+        if coingeckoError != "":
+            string = (string+"\n\n"+coingeckoError)    
+        if HermesError != "":
+            string = (string+"\n\n"+HermesError)
 
         #overwrite hermesTest buffer
         f = open(home+folder+"hermesTest.txt","w")
@@ -856,7 +901,8 @@ if time == time:
                     name = hermesTestNames[count].split('//')  
                     string = (string+"\n<a href=\"https://explorer.ambrosus-test.io/address/"+hermesTestAddress[count]+"\">"+name[1]+"</a>") 
                     count = count + 1
-            string = (string+"\n\n"+testHermesError)
+            if testHermesError != "":
+                string = (string+"\n\n"+testHermesError)
         if hermesinfo == "0":
             string = ""
 
