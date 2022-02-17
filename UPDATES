@@ -7,9 +7,11 @@ Telegram Notification 3.3
 
 The Testnet API is not available under the known link at the moment, causing the daily overview not to work. 
 I have added a check that ensures the script runs even if any of the used APIs are down, sending a notification in the daily status message. 
-As this only covers the case that the api is not available and no API data-structure changes, be aware that there are still edge cases, although less likely.
+As this only covers the case that the API is not available and no API data-structure changes, be aware that there are still edge cases, although less likely.
 I have put all used API URLs to the top within the settings space of the script, so it can be easily modified.
 If a new link for the Hermes Testnet API is posted, you can update it there in the new 3.3 version of the script.
+
+Easiest way to update: Exchange the script from line 46 downwards.
 
 10.02.22
 
