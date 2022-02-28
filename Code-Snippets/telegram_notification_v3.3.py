@@ -59,7 +59,7 @@ hermes_test = 'https://explorer-api.ambrosus-test.io/hermeses'
 import requests
 import random
 import os.path
-from time import gmtime, strftime
+from time import localtime, strftime
 import datetime
 from decimal import Decimal,ROUND_HALF_UP
 
@@ -74,8 +74,8 @@ celeb3 = '\U0001F37E'
 atlasrewardfactor = 0.7 * treasury * 0.1428571429
 
 #get time
-time = strftime("%H%M", gmtime())
-datewrite = strftime("%Y-%m-%d", gmtime())
+time = strftime("%H%M", localtime())
+datewrite = strftime("%Y-%m-%d", localtime())
 
 datetimenow = datetime.datetime.now()
 date = datetimenow.strftime('%Y-%m-%d')
