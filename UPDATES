@@ -1,6 +1,13 @@
 UPDATES:
 
 
+01.03.22
+
+Telegram Notification 3.4
+
+Thanks to Jorma for hinting at using localtime instead of gmtime for better usability worldwide.
+Be sure to check if changes need to be made in crontab settings on when to execute the daily overview, after update.
+
 17.02.22
 
 Telegram Notification 3.3
