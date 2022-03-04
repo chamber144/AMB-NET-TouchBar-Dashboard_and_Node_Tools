@@ -10,7 +10,7 @@ Telegram_Chat_ID = ''
 Nodeaddress = ''
 
 
-#Atlas = 0 , Apollo = 1
+#Atlas = 0 , Apollo = 1 , Hermes = 2
 Nodetype = '0'
 
 
@@ -56,7 +56,13 @@ if Nodetype == '0':
     Nodename = ('Atlas Node '+Nodenumber)
     if float(free) <= float(freeSpaceTreshold):
         send_message(lowSpace+" Your "+Nodename+" is running low on free disk space with "+free+" gigabytes remaining.\nPlease upgrade this Nodes SSD:\n<a href=\"https://explorer.ambrosus.com/apollo/"+Nodeaddress+"\">"+Nodeaddress+"</a>\n\n-------------------------------")
-else:
+elif Nodetype == '1':
     Nodename = ('Apollo Node '+Nodenumber)
-    if free <= freeSpaceTreshold:
+    if float(free) <= float(freeSpaceTreshold):
         send_message(lowSpace+" Your "+Nodename+" is running low on free disk space with "+free+" gigabytes remaining.\nPlease upgrade this Nodes SSD:\n<a href=\"https://explorer.ambrosus.com/apollo/"+Nodeaddress+"\">"+Nodeaddress+"</a>\n\n-------------------------------")
+elif Nodetype == '2':
+    Nodename = ('Hermes Node '+Nodenumber)
+    if float(free) <= float(freeSpaceTreshold):
+        send_message(lowSpace+" Your "+Nodename+" is running low on free disk space with "+free+" gigabytes remaining.\nPlease upgrade this Nodes SSD:\n<a href=\"https://explorer.ambrosus.com/apollo/"+Nodeaddress+"\">"+Nodeaddress+"</a>\n\n-------------------------------")
+else:
+    send_message("You specified an unknown Node type for your Node with Address \n<a href=\"https://explorer.ambrosus.com/apollo/"+Nodeaddress+"\">"+Nodeaddress+"</a>. \nPlease update the notification script with a valid node type\n\n-------------------------------")
