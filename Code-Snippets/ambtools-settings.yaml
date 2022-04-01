@@ -1,0 +1,51 @@
+# This file contains user settings that have to be modified individually for every user
+
+dailystats: True
+#enter your home directory with your username or if you are on root, the root directory (check with the pwd command) be sure to have a / in the end
+home: '/root/'
+
+#enter your Telegram Token and chat id
+Telegram_Token: ''
+Telegram_Chat_ID: ''
+
+# Delete the examples and enter the public(!) addresses of all your atlas and apollo node(s) below. 
+# Stick to the formating of the example entries (2 whitespaces to start the line of every entry).
+atlasnodes:
+  - '0x21...'
+  - '0x35...'
+  - '0x64...'
+
+apollonodes:
+  - '0x21...'
+  - '0x35...'
+  - '0x64...'
+
+#Specify your node type ('Atlas', 'Apollo', 'Hermes' or 'None')
+Nodetype: 'Atlas'
+
+#To be consistent with the main telegram script, please define the number of this Node.
+Nodenumber: '1'
+
+#Send daily status message? (True, False)
+statusmessage: True
+#Set (server)time when to send daily status message
+#TODO: change it to work with command line parameter
+statstime: '1805'
+#show rewards in currency of choice? For Atlas, amount of AMB and currency are shown. This has to be split into 13 Payouts. (True, False)
+calculateFiat: True
+#currency to write price into the daily status message (for example EUR, CAD, CHF, CNY, RUB, JPY, for available conversions check: https://www.coingecko.com/)
+currency: 'EUR'
+#Show Hermes updates with daily status message? (True, False)
+hermesinfo: True
+#Hide new Heartbeat Bundles on AMB-NET and TEST-NET in daily status message? (True, False)
+hideHeartbeat: True
+#Hide new TEST-NET Bundles in daily status message? (True, False)
+hideTestnet: False
+
+
+#to set Bundle Warnings, enter as many values as you'd like to be notified at, seperated by comma and surrounded by inverted commas like this ['100','200','1000']
+dailybundlewarnings: ['300','400','500','600','700','800','900','1000','5000']
+
+#once a daily-bundles value has triggered a warning, how much lower does the value need to go, until it can be triggered again?
+#without this mechanism, notifications would be sent repeatedly, if you get too many Bundle Warnings, raise the following value:
+sensitivity: 10

@@ -10,8 +10,8 @@ Telegram_Chat_ID = ''
 Nodeaddress = ''
 
 
-#Atlas = 0 , Apollo = 1 , Hermes = 2
-Nodetype = '0'
+#Specify your node type ('Atlas', 'Apollo' or 'Hermes')
+Nodetype = 'Atlas'
 
 
 #To be consistent with the main telegram script, please define the number of this Node.
@@ -47,22 +47,17 @@ def send_message(msg):
 
 total, used, free = shutil.disk_usage("/")
 
-print("Total: %d GiB" % (total // (2**30)))
-print("Used: %d GiB" % (used // (2**30)))
-free =("%d" % (free // (2**30)))
+print('Total: %d GiB' % (total // (2**30)))
+print('Used: %d GiB' % (used // (2**30)))
+free =('%d' % (free // (2**30)))
 print(float(free))
 
-if Nodetype == '0':
-    Nodename = ('Atlas Node '+Nodenumber)
+if Nodetype.lower() in ['atlas','apollo','hermes']:
+    Nodename = (Nodetype+' Node '+Nodenumber)
     if float(free) <= float(freeSpaceTreshold):
-        send_message(lowSpace+" Your "+Nodename+" is running low on free disk space with "+free+" gigabytes remaining.\nPlease upgrade this Nodes SSD:\n<a href=\"https://explorer.ambrosus.com/apollo/"+Nodeaddress+"\">"+Nodeaddress+"</a>\n\n-------------------------------")
-elif Nodetype == '1':
-    Nodename = ('Apollo Node '+Nodenumber)
+        send_message(lowSpace+' Your '+Nodename+' is running low on free disk space with '+free+' gigabytes remaining.\nPlease upgrade this Nodes SSD:\n<a href=\"https://explorer.ambrosus.com/apollo/'+Nodeaddress+'\">'+Nodeaddress+'</a>\n\n-------------------------------')
+elif Nodetype.lower() in ['none', '', None]:
     if float(free) <= float(freeSpaceTreshold):
-        send_message(lowSpace+" Your "+Nodename+" is running low on free disk space with "+free+" gigabytes remaining.\nPlease upgrade this Nodes SSD:\n<a href=\"https://explorer.ambrosus.com/apollo/"+Nodeaddress+"\">"+Nodeaddress+"</a>\n\n-------------------------------")
-elif Nodetype == '2':
-    Nodename = ('Hermes Node '+Nodenumber)
-    if float(free) <= float(freeSpaceTreshold):
-        send_message(lowSpace+" Your "+Nodename+" is running low on free disk space with "+free+" gigabytes remaining.\nPlease upgrade this Nodes SSD:\n<a href=\"https://explorer.ambrosus.com/apollo/"+Nodeaddress+"\">"+Nodeaddress+"</a>\n\n-------------------------------")
+        send_message(lowSpace+' Your Server without Node is running low on free disk space with '+free+' gigabytes remaining.\n\n-------------------------------')
 else:
-    send_message("You specified an unknown Node type for your Node with Address \n<a href=\"https://explorer.ambrosus.com/apollo/"+Nodeaddress+"\">"+Nodeaddress+"</a>. \nPlease update the notification script with a valid node type\n\n-------------------------------")
+    send_message('You specified an unknown Node type (\''+Nodetype+'\') for your Node with Address \n<a href=\"https://explorer.ambrosus.com/apollo/'+Nodeaddress+'\">'+Nodeaddress+'</a>. \nPlease update the notification script with a valid node type\n\n-------------------------------')

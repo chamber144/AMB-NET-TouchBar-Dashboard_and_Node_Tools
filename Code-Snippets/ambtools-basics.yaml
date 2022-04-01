@@ -1,0 +1,14 @@
+#this file contains basic settings that that are the same for every user
+
+#cryptonomics - only change if cryptonomics change
+bundlecostusd: 8
+treasury: 0.7
+
+#API URLs - only change if API URLs change
+atlas_url: 'https://explorer-api.ambrosus.io/atlases/'
+apollo_url: 'https://explorer-api.ambrosus.io/apollos/'
+api_url_info: 'https://explorer-api.ambrosus.io/info'
+api_internalprice_url: 'https://token.ambrosus.io/price'
+coingecko_url: 'https://api.coingecko.com/api/v3/simple/price?ids=amber&vs_currencies='
+hermes_url: 'https://explorer-api.ambrosus.io/hermeses'
+hermes_test: 'https://explorer-api.ambrosus-test.io/hermeses'
