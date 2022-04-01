@@ -1,4 +1,4 @@
-#Amb-Net Telegram Notification v3.4 2022March1
+#Amb-Net Telegram Notification v4.0 2022March1
 #Enter your Settings here:
 #------------------------------------------------------------
 

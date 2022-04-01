@@ -1,8 +1,11 @@
 # This file contains user settings that have to be modified individually for every user
 
 dailystats: True
-#enter your home directory with your username or if you are on root, the root directory (check with the pwd command) be sure to have a / in the end
+# enter your home directory with your username or if you are on root, the root directory (check with the pwd command) be sure to have a / in the end
 home: '/root/'
+
+# If set to "True" the system will reboot when a zombie process is detected. If set to "False" only a Telegram notification will be sent. 
+rebootOnZombies: True 
 
 #enter your Telegram Token and chat id
 Telegram_Token: ''
@@ -20,7 +23,7 @@ apollonodes:
   - '0x35...'
   - '0x64...'
 
-#Specify your node type ('Atlas', 'Apollo', 'Hermes' or 'None')
+#Specify the node type of this system ('Atlas', 'Apollo', 'Hermes' or 'None' if Ambtools is running on a seperate system)
 Nodetype: 'Atlas'
 
 #To be consistent with the main telegram script, please define the number of this Node.
